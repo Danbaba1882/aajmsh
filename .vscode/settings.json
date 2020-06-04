@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/4b718b8a-1952-45dc-bb17-e493cd15e242/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Galaxynews",
+    "appService.deploySubpath": ""
+}

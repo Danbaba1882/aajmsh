@@ -12,10 +12,17 @@ const io = socketIO(server);
 
 io.on('connection', (socket) => {
     console.log('user connected');
-    socket.on('new-message', (message) => {
-        console.log(message);
-        io.emit(message);
+    socket.on('join', (data) => {
+     socket.join(data.room)
+     console.log(data.user+' joins '+data.room)
+       socket.broadcast.to(data.room).emit('new user join', {user:data.user, message:'has join this room'})
         });
+
+        socket.on('new-message', (data)=>{
+            console.log('datas ' + JSON.stringify(data));
+            io.in(data.room).emit('new-message', {user:data.user, message:data.message});
+        })
+
 });
 
 guruscabal.use(bodyparser.json());
