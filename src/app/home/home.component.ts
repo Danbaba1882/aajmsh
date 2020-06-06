@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {RandlService} from '../randl.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +8,8 @@ import {RandlService} from '../randl.service';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+
   ngOnInit(): void {
   }
-  }
+
+}
