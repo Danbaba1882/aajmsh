@@ -1,6 +1,6 @@
 <div class="header bg-dark">
   <div class="container-fluid pt-2">
-      <div class="row">
+      <div class="row welcome">
           <div class="col-md-6">
             <a routerLink>Welcome to Noor Deal Online Store</a>
           </div>
@@ -12,44 +12,104 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3 logo">
               <img src="assets/IMAGES/aslogo.png" style="width:100%" alt="">
           </div>
           <div class="col-md-6">
-              <div class="input-group md-form form-sm form-2 pl-0">
+              <div class="input-group md-form form-sm form-2 pl-0" style="padding-top:50px;">
                   <input class="form-control my-0 py-1 amber-border rounded-0" type="text" placeholder="Search" aria-label="Search">
                   <div class="input-group-append">
-                    <span class="input-group-text amber rounded-0 lighten-3" style="color:darkorange" id="basic-text1"><i class="fa fa-search rounded-0 text-grey"
+                    <span class="input-group-text amber rounded-0 lighten-3" style="color:white;background-color:#cc5500" id="basic-text1"><i class="fa fa-search rounded-0 text-grey"
                         aria-hidden="true"></i></span>
                   </div>
                 </div>
                 
           </div>
-          <div class="col-md-3"></div>
+          <div class="col-md-3 lists" style="padding-top:55px;float: right">
+<ul style="list-style:none;" class="">
+  <li><a routerLink="" style="color:#cc5500" class="mr-2"><h4><i class="fa fa-heart" aria-hidden="true"></i></h4></a></li>
+  <li><a routerLink="" style="color:#cc5500" class="mr-2"><h4><i class="fa fa-shopping-cart" aria-hidden="true"></i></h4></a>
+  </li>
+  <li> <a routerLink="" style="color:#cc5500" class="mr-2"><h4 class="mr-2"><i class="fa fa-user-circle" aria-hidden="true"></i></h4> <span class="pt-1">LOGIN | REGISTER</span> </a>
+  </li>
+</ul>
+
+          </div>
         </div>
   </div>
   
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="navbar-brand" href="#"><img src="assets/IMAGES/aslogo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="line"></span> 
+        <span class="line"></span> 
+        <span class="line"></span>
+      </button>
+      
+    <a class="navbar-brand" routerLink="#"><img src="assets/IMAGES/aslogo.png" style="margin-right:-20px" alt=""></a>
+    <div class="phones" style="display:none">
+        <a routerLink="" style="color:#cc5500;font-size: 20px" class=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <a routerLink="" style="color:#cc5500;font-size: 20px" class="ml-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        <a routerLink="" style="color:#cc5500;font-size: 20px" class="ml-2"><i class="fa fa-user-circle " aria-hidden="true"></i></a>
+       
+    </div>
+     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        
+            <li class="nav-item dropleft dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MOBILE & TABLETS
+                    </a>
+                </li>
+
+                <li class="nav-item dropleft dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MOBILE ACCESSORIES
+                    </a>
+                </li>
+
+                
+                <li class="nav-item dropleft dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ELECTRIC SCOOTER
+                        </a>
+                    </li>
+
+                    
+                <li class="nav-item dropleft dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        COMPUTER & ACCESSORIES
+                        </a>
+                    </li>
+
+                    
+                <li class="nav-item dropleft dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        SMART HOMES
+                        </a>
+                    </li>
+
+                    
+                <li class="nav-item dropleft dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        CAMERAS
+                        </a>
+                    </li>
+
       </ul>
     </div>
+    <br>
+    <form class="form-inline" style="display:none">
+      <div class="row">
+        <div class="col-10">
+            <input class="form-control rounded-0" style="float: right;width:100%;padding-right: 0px" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-2">
+            <button class="btn btn-md rounded-0" style="padding-left:0px;float: left;width:100%" type="submit" style="background-color:#cc5500;color:white"><i class="fa fa-search rounded-0 text-grey"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+      
+    </form>
   </nav>

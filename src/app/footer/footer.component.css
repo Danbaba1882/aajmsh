@@ -16,3 +16,11 @@ a{
 .head:hover{
     color:lightgray !important;
 }
+
+a{
+    font-size: 14px;
+}
+
+#call, #submit{
+    font-size: 32px;
+}
