@@ -2,53 +2,71 @@
 
 <div class="container-fluid">
     <div class="row mt-4">
-        <div class="col-md-5">
+        <div class="col-md-4">
 <div class="row">
-    <div class="col-4">
-<img src="assets/IMAGES/lenovo1.png" class="mb-2" style="height:100px; width:100px" alt=""> <br>
-<img src="assets/IMAGES/lenovo2.png" class="mb-2" style="height:100px; width:100px"  alt=""> <br>
-<img src="assets/IMAGES/lenovo3.png" class="mb-2" style="height:100px; width:100px"  alt=""><br>
-<img src="assets/IMAGES/lenovo4.png" class="mb-2" style="height:100px; width:100px"  alt="">
+    <div class="col-4" >
+        <div *ngFor="let images of product.images">
+                <img src="{{images}}" class="mb-2" style="height:100px; width:100px" alt=""> <br>
+        </div>
+
     </div>
     <div class="col-8">
-        <img src="assets/IMAGES/lenovo1.png" style="width:100%" alt="">
+        <img src="{{product.image}}" style="width:100%" alt="">
     </div>
 </div>
         </div>
         <div class="col-md-5">
-<h3>Lenovo Tab M10 (HD) 32 GB 10.1 inch with Wi-Fi+4G Tablet (Slate Black)</h3>
-<a href="" style="color:gray;font-size:14px">Brand: <span style="color:blue">Lenovo </span> </a>
+<h3>{{product.name}}</h3>
+<a href="" style="color:gray;font-size:14px">Brand: <span style="color:blue">{{product.Brand}} </span> </a>
 <hr>
-<h3 style="color:#cc5500"><b>AED 699</b></h3>
+<h3 style="color:#cc5500"><b>AED {{product.price}}</b></h3>
 <p style="font-size:14px">Status: <span style="color:lightgreen">Only 2 left in the stock</span> </p>
-<ul class="pl-3">
-    <li>2 GB RAM | 32 GB ROM | Expandable Upto 256 GB</li>
-    <li>25.65 cm (10.1 inch) HD Display</li>
-    <li>5 MP Primary Camera | 2 MP Front</li>
-    <li>Android 9.0 (Pie) | Battery: 4850 mAh Lithium Polymer</li>
-    <li>Voice Call (Single Sim, LTE)</li>
-    <li>Processor: Qualcomm Snapdragon 429 (Quad Core)</li>
+<ul class="pl-3" *ngFor="let list of product.productDetails">
+    <li>{{list}}</li>
 </ul>
 <hr>
 <div class="row">
     <div class="col-md-3 mt-1">
-            <input type="number" class="form-control" name="quantity" #quantit  [value]="1"  id="quantity">
-<input type="number" class="mb-2 form-control  rounded-0"[(ngModel)]="quantity" name="quantity" id="quantity">
+            
+<input type="number" class="mb-2 form-control  rounded-0" [(ngModel)]="quantity" name="quantity" id="quantity">
     </div>
     <div class="col-md-6 d-flex justify-content-center">
-<button class="btn btn-lg rounded-0" (click)="addToCart()" style="background-color:#cc5500;color:white">ADD TO CART</button>
+<button class="btn btn-lg rounded-0" (click)="addtocart(product)" style="background-color:#cc5500;color:white">ADD TO CART</button>
     </div>
     <div class="col-md-3" >
+        <h2 style="color:midnightblue; display:inline-block" class="d-flex">Buy Now</h2>
             <a href="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-heart" aria-hidden="true"></i></a>
 <a href="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
     </div>
 </div>
 <hr>
-<p style="font-size:14px">Categories: <a href="">Lenovo</a>, <a href="">Smart Phones</a>,<a href="">Tablets</a></p>
+<p style="font-size:14px">Categories: <a href="">{{product.Brand}}</a>, <a href="">{{product.subcategory}}</a>,<a href="">{{product.category}}</a></p>
 <div class="sharethis-inline-share-buttons"></div>
         </div>
-        <div class="col-md-2">
-            
+        <div class="col-md-3">
+            <div class="card" style="width:300px">
+                <div class="ml-2 form-group">
+                        Qty: <input type="number" style="width:100px" class="pt-4 form-control" value="1">
+                </div>
+           
+
+           <h1 class="mt-4 pl-2" style="color:midnightblue">UPC Code</h1>
+
+                <a href="" style="font-size:16px" class="pl-2"><i style="color:gray" class="fa fa-lock pr-2" aria-hidden="true"></i>     Secure Transaction</a>
+                <p class="pl-2"><b>Add a protection plan</b></p>
+                <div class="ml-2 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">1 year extended warranty for AED 150.00</label>
+                  </div>
+                  <div class="ml-2 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">1 year accidental damage protection on mobile (AED2,500-AED3,000) for AED 150.00</label>
+                      </div>
+                      <div class="ml-2 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">1 year accidental damage protection on mobile (AED2,500-AED3,000) for AED 150.00 + 1 year extended warranty</label>
+                          </div>
+            </div>
         </div>
     </div>
 
@@ -64,13 +82,11 @@
               <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <p style="font-size:14px">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus in cum rem eum autem impedit saepe pariatur exercitationem, velit dolor! Aliquid delectus ab voluptas eveniet illo aspernatur ducimus assumenda labore.
-                    </p>
+                    {{product.productDescription}}</p>
                   </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                         <p style="font-size:14px">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus in cum rem eum autem impedit saepe pariatur exercitationem, velit dolor! Aliquid delectus ab voluptas eveniet illo aspernatur ducimus assumenda labore.
-                                </p> </div>
+                            {{product.productSpec}}</p> </div>
                
               </div>
             
@@ -109,8 +125,6 @@
     </div>
 </div>
 </div>
-
-
 
   
   

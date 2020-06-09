@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { ProductService } from './product.service';
 
 @NgModule({
   declarations: [
@@ -55,12 +56,16 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
         component: CartComponent
       },
       {
-        path: 'product',
+        path: 'product/:productId',
         component: ProductDetailsComponent
-      }
+      },
+      {
+        path: 'checkout',
+        component: CheckoutComponent
+      },
     ])
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,95 @@
 <app-navbar></app-navbar>
 
 <div class="container-fluid">
-<h2 class="text-center">CART</h2>
+<h2 class="text-center mt-4">CART</h2>
+<hr>
+
+
+<div class="row">
+    <div class="col-12">
+        <table class="table table-borderless table-dark">
+            <thead style="background-color:#cc5500; color:white">
+              <tr>
+                
+                <th scope="col">PRODUCT</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANTITY</th>
+                <th scope="col"> SUBTOTAL</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of cartitems">
+              <tr>
+                
+                <td> 
+                    <div class="row">
+                        <div class="col-2">
+                                <img src="{{item.image}}" style="width:100px;height:100px" alt="">
+                        </div>
+                        <div class="col-9">
+                                {{item.name}} 
+                        </div>
+                    </div>
+                </td>
+                
+                <td>{{item.price}}</td>
+                <td><input type="number" name="" style="width:150px" value="{{item.quantity}}" (keyup)="onKey($event, item)" class="form-control" id=""></td>
+                <td>{{item.price * item.quantity}}</td>
+                <td><a routerLink="" (click)="deleteitem(item)"><i style="color:white" class="fa fa-trash" aria-hidden="true"></i></a></td>
+                <hr style="background-color:white">  
+            </tr>
+
+          
+
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-12 d-flex justify-content-center">
+    <a routerLink="/" class="btn btn-lg rounded-0" style="background-color:#cc5500;color:white">CONTINUE SHOPPING</a>
+    </div>
+    
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4"></div>
+    <div class="card rounded-0 col-md-4">
+        <h5 class="pt-2">Calculate shipping</h5>
+        <form action="">
+            <div class="form-group">
+                <label for="" class="label-control">Country</label>
+                <input type="text" class="form-control rounded-0">
+            </div>
+
+            <div class="form-group">
+                    <label for="" class="label-control">State</label>
+                    <input type="text" class="form-control rounded-0">
+                </div>
+                <div class="form-group">
+                        <label for="" class="label-control">Town/city</label>
+                        <input type="text" class="form-control rounded-0">
+                    </div>
+
+                    <button type="submit" style="background-color:#cc5500;color:white" class="btn rounded-0 mb-2 btn-lg">UPDATE</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="card rounded-0" style="background-color:lightgray">
+            <p class="pt-2 pl-2">Subtotal        AED 4567</p>
+            <hr class="pl-2">
+            <p class="pl-2">Shipping</p>
+            <p class="pl-2">Flat rate       AED 7890</p>
+            <small class="pl-2">Shipping options will be updated during checkout</small>
+            <hr class="pl-2">
+            <h4 class="mb-2">Total AED 45,980</h4>
+             
+    </div>
+    <a routerLink="/ckeckout" class="mt-4"><button style="background-color:#cc5500;color:white" class="form-control rounded-0 btn btn-lg">PROCEED TO CHECKOUT</button></a>
+           
+</div>
+
 </div>
 
 <app-footer></app-footer>

@@ -7,7 +7,8 @@ export const PRODUCTS: Product[] = [
         name: 'Asus ROG II Gaming Smartphone 6.59 HDR Display Snapdragon 855 Plus',
         Brand: 'Asus',
         price: 1945,
-        images: ['/src/assets/IMAGES/asusrog.png', '/src/assets/IMAGES/asusrog2.png', '/src/assets/IMAGES/asusrog3.png', '/src/assets/IMAGES/asusrog4.png'],
+        image: '../../assets/IMAGES/asusrog2.png',
+        images: ['../../assets/IMAGES/asusrog.png', '../../assets/IMAGES/asusrog2.png', '../../assets/IMAGES/asusrog3.png', '../../assets/IMAGES/asusrog4.png'],
         productDetails: [
     '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
     'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',
@@ -28,7 +29,8 @@ export const PRODUCTS: Product[] = [
         name: 'Nubia Red Magic 5G, 6.65 inch 144Hz ESports Ultra-Smooth AMOLED Display, Qualcomm Snapdragon 865 Processor, Dual SIM',
         Brand: 'Nubia',
         price: 2345,
-        images: ['/src/assets/IMAGES/nubia.png', '/src/assets/IMAGES/nubia2.png', '/src/assets/IMAGES/nubia3.png', '/src/assets/IMAGES/nubia4.png'],
+        image: '../../assets/IMAGES/nubia.png',
+        images: ['../../assets/IMAGES/nubia.png', '../../assets/IMAGES/nubia2.png', '../../assets/IMAGES/nubia3.png', '../../assets/IMAGES/nubia4.png'],
         productDetails: [
             '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
             'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',
@@ -48,7 +50,8 @@ export const PRODUCTS: Product[] = [
         name: 'iPhone 11 Pro 5.8-inch Super Retina XDR OLED Display With facetime-Space Grey',
         Brand: 'Iphone',
         price: 7865,
-        images: ['/src/assets/IMAGES/iphone.png', '/src/assets/IMAGES/iphone2.png', '/src/assets/IMAGES/iphone3.png', '/src/assets/IMAGES/iphone4.png'],
+        image: '../../assets/IMAGES/iphone.png',
+        images: ['../../assets/IMAGES/iphone.png', '../../assets/IMAGES/iphone2.png', '../../assets/IMAGES/iphone3.png', '../../assets/IMAGES/iphone4.png'],
         productDetails: [
             '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
             'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',
@@ -69,7 +72,8 @@ export const PRODUCTS: Product[] = [
         name: 'HUAWEI P30, 6.1 inches OLED capacitive Display, HiSilicon Kirin 980 (7 nm) Octa-core Processor, 8GB+128GB-Breathing Crystal',
         Brand: '',
         price: 8746,
-        images: ['/src/assets/IMAGES/hua.png', '/src/assets/IMAGES/hua2.png', '/src/assets/IMAGES/hua3.png', '/src/assets/IMAGES/hua4.png'],
+        image: '../../assets/IMAGES/hua.png',
+        images: ['../../assets/IMAGES/hua.png', '../../assets/IMAGES/hua2.png', '../../assets/IMAGES/hua3.png', '../../assets/IMAGES/hua4.png'],
         productDetails: [
             '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
             'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',
@@ -90,7 +94,8 @@ export const PRODUCTS: Product[] = [
         name: 'Samsung Galaxy A30S, 6.4 Inch Infinity-V Super Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4GB+128GB-Prism Crush Whites',
         Brand: 'Samsung',
         price: 5324,
-        images: ['/src/assets/IMAGES/sam.png', '/src/assets/IMAGES/sam2.png', '/src/assets/IMAGES/sam3.png', '/src/assets/IMAGES/sam4.png'],
+        image: '../../assets/IMAGES/sam.png',
+        images: ['../../assets/IMAGES/sam.png', '../../assets/IMAGES/sam2.png', '../../assets/IMAGES/sam3.png', '../../assets/IMAGES/sam4.png'],
         productDetails: [
             '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
             'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',
@@ -111,7 +116,8 @@ export const PRODUCTS: Product[] = [
         name: 'Black Shark 3 Gaming Smartphone 6.67-inch AMOLED Qualcomm Snapdragon 865 Gaming Processor',
         Brand: 'Shark',
         price: 2134,
-        images: ['/src/assets/IMAGES/shark.png', '/src/assets/IMAGES/shark2.png', '/src/assets/IMAGES/shark3.png', '/src/assets/IMAGES/shark4.png'],
+        image: '../../assets/IMAGES/shark.png',
+        images: ['../../assets/IMAGES/shark.png', '../../assets/IMAGES/shark2.png', '../../assets/IMAGES/shark3.png', '../../assets/IMAGES/shark4.png'],
         productDetails: [
             '6.59″ AMOLED capacitive touchscreen, 16M colors, (2340x1080p), FHD+',
             'Qualcomm® Snapdragon™ 855 Plus Mobile Platform with 7nm, 64-bit Octa-core Processor',

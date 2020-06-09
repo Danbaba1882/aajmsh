@@ -17,7 +17,7 @@
               <div class="carousel-caption text-left">
                 <h1>Example headline.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                <p><a class="btn btn-lg btn-primary" routerLink="#" role="button">Sign up today</a></p>
               </div>
             </div>
           </div>
@@ -27,7 +27,7 @@
               <div class="carousel-caption">
                 <h1>Another example headline.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                <p><a class="btn btn-lg btn-primary" routerLink="#" role="button">Learn more</a></p>
               </div>
             </div>
           </div>
@@ -37,16 +37,16 @@
               <div class="carousel-caption text-right">
                 <h1>One more for good measure.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                <p><a class="btn btn-lg btn-primary" routerLink="#" role="button">Browse gallery</a></p>
               </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <a class="carousel-control-prev" routerLink="#myCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <a class="carousel-control-next" routerLink="#myCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
@@ -80,173 +80,445 @@
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
+      <div class="row container-fluid">
+        <div class="col-md-3 d-flex dislay-inline">
+          <img style="border:1px solid gray" src="assets/IMAGES/m1.png" alt="">
+          <img style="border:1px solid gray" class="ml-4"  src="assets/IMAGES/m2.png" alt="">
+        </div>
+        <div class="col-md-3 d-flex dislay-inline">
+          <img style="border:1px solid gray" src="assets/IMAGES/m3.png" alt=""><img style="border:1px solid gray" class="ml-4" src="assets/IMAGES/m4.png" alt="">
+        </div>
+        <div class="col-md-3 d-flex dislay-inline">
+          <img style="border:1px solid gray" src="assets/IMAGES/m5.png" alt=""><img style="border:1px solid gray" class="ml-4" src="assets/IMAGES/m6.png" alt="">
+        </div>
+        <div class="col-md-3 d-flex dislay-inline">
+          <img style="border:1px solid gray" src="assets/IMAGES/m7.png" alt=""><img src="assets/IMAGES/m8.png" class="ml-4" style="border:1px solid gray" alt="">
+        </div>
+      </div>
+    
+
      <div class="container-fluid mt-2">
-       <div class="card rounded-0 shadow" style="width:100%;">
-          <div class="row">
-              <div class="col-md-2" >
-                <img src="assets/IMAGES/phone.png"  style="width:100%;height:100%" alt="">
-              </div>
-              <div class="col-md-2" >
-                  <img src="assets/IMAGES/phone.png" alt="" style="width:100%;height:100%">
+       <div class="card rounded-0 shadow" style="width:100%;border-top:1px solid lightgray;border-bottom: 1px solid lightgray">
+       <h6 routerLink="" class="text-center mt-3">Phones</h6> 
+        <hr>
+          <div class="row pl-2">
+            <div class="phones col-md-2" style="float:right;border-right: 1px solid lightgray" *ngFor="let product of products; index as productId">
+                   
+                        
+                            <img src={{product.image}} class="" style="width:100%;height:200px" alt="">
+                            <a [routerLink]="['/product', productId]" style="font-size:14px"  class="mr-2">{{ product.name }}</a>
+                            <br>
+                            <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
                 </div>
-                <div class="col-md-2" >
-                    <img src="assets/IMAGES/phone.png" alt="" style="width:100%;height:100%">
-                  </div>
-                  <div class="col-md-2" >
-                      <img src="assets/IMAGES/phone.png" alt="" style="width:100%;height:100%">
-                    </div>
-                    <div class="col-md-2" >
-                        <img src="assets/IMAGES/phone.png" alt="" style="width:100%;height:100%">
-                      </div>
-                      <div class="col-md-2" >
-                          <img src="assets/IMAGES/phone.png" alt="" style="width:100%;height:100%">
-                        </div>
+            
+              
+             
             </div>
        </div>
      </div>
      <div class="container-fluid mt-4">
         <div class="card rounded-0 shadow" style="width:100%;">
+          <h6 routerLink="" class="text-center mt-3">Computers</h6> 
+        <hr>
            <div class="row">
                <div class="col-md-2" >
-                 <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                 <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                 <a href="">
+                  Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                  er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                  GB+128GB-Prism Crush Whites
+                  <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                    
+                 </a>
                </div>
                <div class="col-md-2" >
-                  <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                  <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                  <a href="">
+                    Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                    er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                    GB+128GB-Prism Crush Whites
+                  
+                   </a>
+                    <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                 </div>
                 <div class="col-md-2" >
-                    <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                    <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                    <a href="">
+                      Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                      er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                      GB+128GB-Prism Crush Whites
+                      
+                     </a>
+                      <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                   </div>
                   <div class="col-md-2" >
-                      <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                      <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                      <a href="">
+                        Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                        er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                        GB+128GB-Prism Crush Whites
+                          
+                       </a>
+                        <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                     </div>
                     <div class="col-md-2" >
-                        <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                        <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                        <a href="">
+                          Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                          er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                          GB+128GB-Prism Crush Whites
+                              
+                         </a>
+                          <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                       </div>
                       <div class="col-md-2" >
-                          <img src="assets/IMAGES/laptop2.png"  style="width:100%;height:100%" alt="">
+                          <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
+                          <a href="">
+                            Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                            er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                            GB+128GB-Prism Crush Whites
+                                  
+                           </a>
+                            <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                         </div>
              </div>
         </div>
       </div>
-      <div class="container-fluid mt-4">
-          <div class="card rounded-0 shadow" style="width:100%;">
-             <div class="row">
-                 <div class="col-md-2" >
-                   <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                 </div>
-                 <div class="col-md-2" >
-                    <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                  </div>
-                  <div class="col-md-2" >
-                      <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                    </div>
-                    <div class="col-md-2" >
-                        <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                      </div>
-                      <div class="col-md-2" >
-                          <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                        </div>
-                        <div class="col-md-2" >
-                            <img src="assets/IMAGES/fridge.png"  style="width:100%;height:100%" alt="">
-                          </div>
-               </div>
-          </div>
-        </div>
         <div class="container-fluid mt-4">
             <div class="card rounded-0 shadow" style="width:100%;">
+              <h6 routerLink="" class="text-center mt-3">televisions</h6> 
+        <hr>
                <div class="row">
                    <div class="col-md-2" >
-                     <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                     <img src="assets/IMAGES/television.png"  style="width:100%;" alt="">
+                     <a href="">
+                      Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                      er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                      GB+128GB-Prism Crush Whites
+                      
+                     </a>
+                      <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                    </div>
                    <div class="col-md-2" >
-                      <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                      <img src="assets/IMAGES/television.png"  style="width:100%" alt="">
+                      <a href="">
+                        Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                        er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                        GB+128GB-Prism Crush Whites
+                          
+                       </a>
+                        <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                     </div>
                     <div class="col-md-2" >
-                        <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                        <img src="assets/IMAGES/television.png"  style="width:100%;">
+                        <a href="">
+                          Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                          er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                          GB+128GB-Prism Crush Whites
+                              
+                         </a>
+                          <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                       </div>
                       <div class="col-md-2" >
-                          <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                          <img src="assets/IMAGES/television.png"  style="width:100%;">
+                          <a href="">
+                            Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                            er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                            GB+128GB-Prism Crush Whites
+                                  
+                           </a>
+                            <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                         </div>
                         <div class="col-md-2" >
-                            <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                            <img src="assets/IMAGES/television.png"  style="width:100%;">
+                            <a href="">
+                              Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                              er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                              GB+128GB-Prism Crush Whites
+                                      
+                             </a>
+                              <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                           </div>
                           <div class="col-md-2" >
-                              <img src="assets/IMAGES/television.png"  style="width:100%;height:100%" alt="">
+                              <img src="assets/IMAGES/television.png"  style="width:100%;">
+                              <a href="">
+                                Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                GB+128GB-Prism Crush Whites
+                                          
+                               </a>
+                                <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                             </div>
                  </div>
             </div>
           </div>
-          <div class="container-fluid mt-4">
-              <div class="card rounded-0 shadow" style="width:100%;">
-                 <div class="row">
-                     <div class="col-md-2" >
-                       <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                     </div>
-                     <div class="col-md-2" >
-                        <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                      </div>
-                      <div class="col-md-2" >
-                          <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                        </div>
-                        <div class="col-md-2" >
-                            <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                          </div>
-                          <div class="col-md-2" >
-                              <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                            </div>
-                            <div class="col-md-2" >
-                                <img src="assets/IMAGES/mp3.png"  style="width:100%;height:100%" alt="">
-                              </div>
-                   </div>
-              </div>
-            </div>
+         
 
             <div class="container-fluid">
               <div class="row mt-4">
                 <div class="col-lg-6">
-                    <img src="assets/IMAGES/wfh.png"  style="width:100%;height:100%" alt="">
+                    <img src="assets/IMAGES/wfh.png"  style="width:100%;">
+                   
                 </div>
                 <div class="col-lg-6 mt-1">
-                    <img src="assets/IMAGES/homedecor.png"  style="width:100%;height:100%" alt="">
+                    <img src="assets/IMAGES/homedecor.png"  style="width:100%;">
+                    
                 </div>
               </div>
 
               <div class="row mt-4">
                 <div class="col-lg-6">
-                    <img src="assets/IMAGES/prepair.png"  style="width:100%;height:100%" alt="">
+                    <img src="assets/IMAGES/prepair.png"  style="width:100%;">
+                    
                 </div>
                 <div class="col-lg-6 mt-1">
-                    <img src="assets/IMAGES/monitors.png"  style="width:100%;height:100%" alt="">
+                    <img src="assets/IMAGES/monitors.png"  style="width:100%;">
+                    
                 </div>
               </div>
             </div>
 
             <div class="container-fluid mt-4">
                 <div class="card rounded-0 shadow" style="width:100%;">
+                  <h6 routerLink="" class="text-center mt-3">Cameras</h6> 
+        <hr>
                    <div class="row">
                        <div class="col-md-2" >
-                         <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
-                         
+                         <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                        </a>
+                        <a href="">
+                          Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                          er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                          GB+128GB-Prism Crush Whites
+                              
+                         </a>
+                          <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                        </div>
                        <div class="col-md-2" >
-                          <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
-                          
+                          <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                          </a>
+                          <a href="">
+                            Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                            er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                            GB+128GB-Prism Crush Whites
+                                  
+                           </a>
+                            <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                         </div>
                         <div class="col-md-2" >
-                            <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
-                            
+                            <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                            </a>
+                            <a href="">
+                              Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                              er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                              GB+128GB-Prism Crush Whites
+                                      
+                             </a>
+                              <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                           </div>
                           <div class="col-md-2" >
-                              <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
-                              
+                              <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                              </a>
+                              <a href="">
+                                Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                GB+128GB-Prism Crush Whites
+                                          
+                               </a>
+                                <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                             </div>
                             <div class="col-md-2" >
-                                <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
-                                
+                                <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                                </a>
+                                <a href="">
+                                  Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                  er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                  GB+128GB-Prism Crush Whites
+                                              
+                                 </a>
+                                  <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                               </div>
                               <div class="col-md-2" >
-                                  <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
+                                  <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                                  </a>
+                                  <a href="">
+                                    Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                    er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                    GB+128GB-Prism Crush Whites
+                                                  
+                                   </a>
+                                    <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                                </div>
+                     </div>
+                </div>
+              </div>
+              <div class="container-fluid mt-4">
+                <div class="card rounded-0 shadow" style="width:100%;">
+                  <h6 routerLink="" class="text-center mt-3">Cameras</h6> 
+        <hr>
+                   <div class="row">
+                       <div class="col-md-2" >
+                         <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                        </a>
+                        <a href="">
+                          Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                          er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                          GB+128GB-Prism Crush Whites
+                              
+                         </a>
+                          <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                       </div>
+                       <div class="col-md-2" >
+                          <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                          </a>
+                          <a href="">
+                            Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                            er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                            GB+128GB-Prism Crush Whites
                                   
+                           </a>
+                            <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                        </div>
+                        <div class="col-md-2" >
+                            <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                            </a>
+                            <a href="">
+                              Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                              er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                              GB+128GB-Prism Crush Whites
+                                      
+                             </a>
+                              <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                          </div>
+                          <div class="col-md-2" >
+                              <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                              </a>
+                              <a href="">
+                                Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                GB+128GB-Prism Crush Whites
+                                          
+                               </a>
+                                <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                            </div>
+                            <div class="col-md-2" >
+                                <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                                </a>
+                                <a href="">
+                                  Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                  er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                  GB+128GB-Prism Crush Whites
+                                              
+                                 </a>
+                                  <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                              </div>
+                              <div class="col-md-2" >
+                                  <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+                                  </a>
+                                  <a href="">
+                                    Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                    er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                    GB+128GB-Prism Crush Whites
+                                                  
+                                   </a>
+                                    <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                                </div>
+                     </div>
+                </div>
+              </div>
+              <div class="container-fluid mt-4">
+                <div class="card rounded-0 shadow" style="width:100%;">
+                  <h6 routerLink="" class="text-center mt-3">Music Player</h6> 
+        <hr>
+                   <div class="row">
+                       <div class="col-md-2" >
+                         <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                         <a href="">
+                          Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                          er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                          GB+128GB-Prism Crush Whites
+                              
+                         </a>
+                          <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                       </div>
+                       <div class="col-md-2" >
+                          <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                          <a href="">
+                            Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                            er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                            GB+128GB-Prism Crush Whites
+                                  
+                           </a>
+                            <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                        </div>
+                        <div class="col-md-2" >
+                            <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                            <a href="">
+                              Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                              er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                              GB+128GB-Prism Crush Whites
+                                      
+                             </a>
+                              <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                          </div>
+                          <div class="col-md-2" >
+                              <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                              <a href="">
+                                Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                GB+128GB-Prism Crush Whites
+                                          
+                               </a>
+                                <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                            </div>
+                            <div class="col-md-2" >
+                                <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                                <a href="">
+                                  Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                  er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                  GB+128GB-Prism Crush Whites
+                                              
+                                 </a>
+                                  <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
+                              </div>
+                              <div class="col-md-2" >
+                                  <img src="assets/IMAGES/mp3.png"  style="width:100%;">
+                                  <a href="">
+                                    Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
+                                    er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
+                                    GB+128GB-Prism Crush Whites
+                                                  
+                                   </a>
+                                    <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
+                      
                                 </div>
                      </div>
                 </div>
@@ -254,23 +526,28 @@
 <div class="container-fluid">
   <div class="row mt-4">
     <div class="col-md-6">
-<a href=""><img src="assets/IMAGES/pad.png"  style="width:100%;height:100%" alt=""></a>
+<a routerLink=""><img src="assets/IMAGES/pad.png"  style="width:100%;">
+</a>
     </div>
     <div class="col-md-6 mt-2">
       <div class="row">
         <div class="col-6">
-            <a href=""><img src="assets/IMAGES/camera2.png"  style="width:100%;height:100%" alt=""></a>
+            <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
+            </a>
         </div>
         <div class="col-6">
-            <a href=""><img src="assets/IMAGES/pad2.png"  style="width:100%;height:100%" alt=""></a>
+            <a routerLink=""><img src="assets/IMAGES/pad2.png"  style="width:100%;">
+            </a>
         </div>
       </div>
       <div class="row mt-2">
         <div class="col-6">
-            <a href=""><img src="assets/IMAGES/tad2.png"  style="width:100%;height:100%" alt=""></a>
+            <a routerLink=""><img src="assets/IMAGES/tad2.png"  style="width:100%;">
+            </a>
         </div>
         <div class="col-6">
-            <a href=""><img src="assets/IMAGES/mouse.png"  style="width:100%;height:100%" alt=""></a>
+            <a routerLink=""><img src="assets/IMAGES/mouse.png"  style="width:100%;">
+            </a>
         </div>
       </div>
     </div>

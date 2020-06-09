@@ -90,3 +90,7 @@ body {
     }
   }
   
+  i{
+    background-color:transparent;
+    border-color:gray;
+  }
