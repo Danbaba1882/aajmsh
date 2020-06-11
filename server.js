@@ -8,8 +8,8 @@ const User = require('./models/Users')
 
 noordeal.use(bodyparser.json());
 noordeal.use(bodyparser.urlencoded({extended: true}));
-noordeal.use(express.static(__dirname+'/dist/testtt'));
-noordeal.use('/*', express.static(__dirname+'/dist/testtt/index.html'));
+noordeal.use(express.static(__dirname+'/noordeal/dist/testtt'));
+noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'));
 
 
 
