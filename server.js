@@ -2,8 +2,8 @@ const express = require('express')
 const bodyparser = require('body-parser')
 const path = require('path')
 const noordeal = express();
-const database = require('./models/database');
-const User = require('./models/Users')
+// const database = require('./models/database');
+// const User = require('./models/Users')
 
 
 noordeal.use(bodyparser.json());
