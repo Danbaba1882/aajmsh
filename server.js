@@ -12,7 +12,7 @@ noordeal.use(express.static(__dirname+'/noordeal/dist/testtt'));
 noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'));
 
 noordeal.get('/*', function(req,res){
-    res.send('i am working')
+    res.send('/noordeal/dist/testtt/index.html');
 })
 
 
