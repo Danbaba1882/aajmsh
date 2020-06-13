@@ -127,3 +127,8 @@ height: 300px !important;
     height: 100% !important;
   }
   }
+
+  .img-cat{
+    height: 150px;
+    width: 140px;
+  }

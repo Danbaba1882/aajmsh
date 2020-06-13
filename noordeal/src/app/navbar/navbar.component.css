@@ -92,7 +92,6 @@ a{
   ul li a {
     position:relative;
     display: flex;
-     text-decoration: none;
  }
 
  ul{
