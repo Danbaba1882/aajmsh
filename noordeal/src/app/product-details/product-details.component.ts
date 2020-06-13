@@ -16,7 +16,6 @@ product;
 
   addtocart(product){
 product.quantity = this.quantity;
-alert(JSON.stringify(product));
 this.carts.addtocart(product);
   }
 

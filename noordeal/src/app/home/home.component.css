@@ -7,6 +7,12 @@ body {
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
+
+@media(min-width:576px){
+  .img-b1{
+    height: 220px;
+  }
+}
   
   
   /* CUSTOMIZE THE CAROUSEL
@@ -93,4 +99,31 @@ body {
   i{
     background-color:transparent;
     border-color:gray;
+  }
+
+  .body{
+    background-color: lightgray;
+  }
+
+  @media(max-width:576px){
+    .carousel, .carousel-item{
+height: 300px !important;
+    }
+
+    
+  .img-hom{
+    width: 200px !important;
+  }
+
+  .img{
+    width:150px !important;
+    height: 300px !important;
+  }
+  .img-b1{
+    width:100% !important;
+  }
+
+  .col-b1{
+    height: 100% !important;
+  }
   }

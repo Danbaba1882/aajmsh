@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-5">
 <h3>{{product.name}}</h3>
-<a href="" style="color:gray;font-size:14px">Brand: <span style="color:blue">{{product.Brand}} </span> </a>
+<a routerLink="" style="color:gray;font-size:14px">Brand: <span style="color:blue">{{product.Brand}} </span> </a>
 <hr>
 <h3 style="color:#cc5500"><b>AED {{product.price}}</b></h3>
 <p style="font-size:14px">Status: <span style="color:lightgreen">Only 2 left in the stock</span> </p>
@@ -31,16 +31,16 @@
 <input type="number" class="mb-2 form-control  rounded-0" [(ngModel)]="quantity" name="quantity" id="quantity">
     </div>
     <div class="col-md-6 d-flex justify-content-center">
-<button class="btn btn-lg rounded-0" (click)="addtocart(product)" style="background-color:#cc5500;color:white">ADD TO CART</button>
+<button class="btn btn-lg rounded-0" data-toggle="modal" data-target="#exampleModalCenter" (click)="addtocart(product)" style="background-color:#cc5500;color:white">ADD TO CART</button>
     </div>
     <div class="col-md-3" >
         <h2 style="color:midnightblue; display:inline-block" class="d-flex">Buy Now</h2>
-            <a href="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-heart" aria-hidden="true"></i></a>
-<a href="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
+            <a routerLink="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-heart" aria-hidden="true"></i></a>
+<a routerLink="" style="font-size:30px;color: #cc5500" class="mr-2"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
     </div>
 </div>
 <hr>
-<p style="font-size:14px">Categories: <a href="">{{product.Brand}}</a>, <a href="">{{product.subcategory}}</a>,<a href="">{{product.category}}</a></p>
+<p style="font-size:14px">Categories: <a routerLink="">{{product.Brand}}</a>, <a routerLink="">{{product.subcategory}}</a>,<a routerLink="">{{product.category}}</a></p>
 <div class="sharethis-inline-share-buttons"></div>
         </div>
         <div class="col-md-3">
@@ -52,7 +52,7 @@
 
            <h1 class="mt-4 pl-2" style="color:midnightblue">UPC Code</h1>
 
-                <a href="" style="font-size:16px" class="pl-2"><i style="color:gray" class="fa fa-lock pr-2" aria-hidden="true"></i>     Secure Transaction</a>
+                <a routerLink="" style="font-size:16px" class="pl-2"><i style="color:gray" class="fa fa-lock pr-2" aria-hidden="true"></i>     Secure Transaction</a>
                 <p class="pl-2"><b>Add a protection plan</b></p>
                 <div class="ml-2 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -75,8 +75,8 @@
     <section id="tabs">
               <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
-                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Specifications</a>
+                  <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" routerLink="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+                  <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" routerLink="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Specifications</a>
                    </div>
               </nav>
               <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -109,24 +109,87 @@
 <div class="row">
     <div class="col-md-3">
 <img src="assets/IMAGES/rs4.png" style="width:100%" alt="">
-<a href="" class="text-center">Samsung galaxy s19</a>
+<a routerLink="" class="text-center">Samsung galaxy s19</a>
     </div>
     <div class="col-md-3">
             <img src="assets/IMAGES/rs1.png" style="width:100%" alt="">
-            <a href="" class="text-center">Samsung galaxy s19</a>
+            <a routerLink="" class="text-center">Samsung galaxy s19</a>
     </div>
     <div class="col-md-3">
             <img src="assets/IMAGES/rs2.png" style="width:100%" alt="">
-            <a href="" class="text-center">Samsung galaxy s19</a>
+            <a routerLink="" class="text-center">Samsung galaxy s19</a>
     </div>
     <div class="col-md-3">
             <img src="assets/IMAGES/rs3.png" style="width:100%" alt="">
-            <a href="" class="text-center">Samsung galaxy s19</a>
+            <a routerLink="" class="text-center">Samsung galaxy s19</a>
     </div>
 </div>
 </div>
 
+ 
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
   
+  <!-- Modal -->
+  <div class="modal rounded-0 fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog rounded-0 modal-dialog-centered" role="document">
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0">
+          <h5 class="modal-title rounded-0 alert-success pl-2 pt-2 pb-2 pr-2" style="font-size:18px; text-align: center !important" id="exampleModalLongTitle">Success! Item has been added to your cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-borderless">
+                        <thead style="background-color:#cc5500; color:white">
+                          <tr>
+                            
+                            <th scope="col">PRODUCT</th>
+                            <th scope="col">QUANTITY</th>
+                            <th scope="col"> PRICE</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            
+                            <td> 
+                                <div class="row">
+                                    <div class="col-4">
+                                            <img src="{{product.image}}" style="width:100px;height:100px" alt="">
+                                    </div>
+                                    <div class="col-8">
+                                            {{product.name}} 
+                                    </div>
+                                </div>
+                            </td>
+                            
+                            <td>{{product.quantity}}</td>
+            
+                            <td>AED {{product.price * product.quantity}}</td>
+                            
+                        </tr>
+            
+                      
+            
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a data-dismiss="modal" routerLink="/cart" style="color:white;background-color:#cc5500" class="btn rounded-0 btn-md">VIEW CART</a>
+            <a data-dismiss="modal" routerLink="/checkout" style="color:white;background-color:#cc5500" class="btn rounded-0 btn-md">CHECKOUT</a>
+            <a data-dismiss="modal" routerLink="/" style="color:white;background-color:#cc5500" class="btn rounded-0 btn-md">CONTINUE SHOPPING</a>
+        </div>
+      </div>
+    </div>
+  </div>
   
     <!-- ./Tabs -->
 
