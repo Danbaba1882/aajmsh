@@ -17,6 +17,18 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { ProductService } from './product.service';
+import { FaqsComponent } from './faqs/faqs.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { AboutComponent } from './terms/about/about.component';
+import { TermsComponent } from './terms/terms.component';
+import { Covid19Component } from './covid19/covid19.component';
+import { BlogComponent } from './blog/blog.component';
+import { ContactComponent } from './contact/contact.component';
+import { DppolicyComponent } from './dppolicy/dppolicy.component';
+import { StoredirComponent } from './storedir/storedir.component';
+import { TrackComponent } from './track/track.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { ProductUploadComponent } from './product-upload/product-upload.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +42,19 @@ import { ProductService } from './product.service';
     RegisterComponent,
     CheckoutComponent,
     AdminloginComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    FaqsComponent,
+    PrivacyComponent,
+    AboutComponent,
+    TermsComponent,
+    Covid19Component,
+    BlogComponent,
+    ContactComponent,
+    DppolicyComponent,
+    StoredirComponent,
+    TrackComponent,
+    WishlistComponent,
+    ProductUploadComponent
   ],
   imports: [
     HttpClientModule,
@@ -63,6 +87,14 @@ import { ProductService } from './product.service';
         path: 'checkout',
         component: CheckoutComponent
       },
+      {
+        path: 'admin',
+        component: AdmindashboardComponent
+      },
+      {
+        path: 'uploads',
+        component: ProductUploadComponent
+      }
     ])
   ],
   providers: [ProductService],

@@ -1,5 +1,19 @@
 <app-navbar></app-navbar>
-
+<div class="container-fluid">
+  <div *ngFor="let product of hpproducts">
+<p>{{product.name}}</p>
+<p>{{product.ram}}</p>
+<div *ngFor="let image of product.images">
+    <img src="assets/productsimages/{{image.filename}}" alt="{{image.filename}}">
+    <p>{{image.path}}</p>
+    
+ </div >
+ <div *ngFor="let desc of product.description">
+   <p>{{desc}}</p>
+ </div >
+  <hr>
+  </div>
+</div>
 <div class="body">
   <div class="container-fluid">
     <div class="row pt-4">
