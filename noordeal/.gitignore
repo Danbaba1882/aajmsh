@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-/src/assets/productsimages
+
 
 # profiling files
 chrome-profiler-events*.json
@@ -45,3 +45,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/src/assets/productsimages
