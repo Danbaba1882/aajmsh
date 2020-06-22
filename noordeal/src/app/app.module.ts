@@ -29,6 +29,7 @@ import { StoredirComponent } from './storedir/storedir.component';
 import { TrackComponent } from './track/track.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductUploadComponent } from './product-upload/product-upload.component';
+import { RefundComponent } from './refund/refund.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ProductUploadComponent } from './product-upload/product-upload.componen
     StoredirComponent,
     TrackComponent,
     WishlistComponent,
-    ProductUploadComponent
+    ProductUploadComponent,
+    RefundComponent
   ],
   imports: [
     HttpClientModule,
@@ -94,6 +96,54 @@ import { ProductUploadComponent } from './product-upload/product-upload.componen
       {
         path: 'uploads',
         component: ProductUploadComponent
+      },
+      {
+        path: 'faqs',
+        component: FaqsComponent
+      },
+      {
+        path: 'terms-and-conditions',
+        component: TermsComponent
+      },
+      {
+        path: 'track-your-order',
+        component: TrackComponent
+      },
+      {
+        path: 'store-directory',
+        component: StoredirComponent
+      },
+      {
+        path: 'about-us',
+        component: AboutComponent
+      },
+      {
+        path: 'contact-us',
+        component: ContactComponent
+      },
+      {
+        path: 'about-covid-19',
+        component: Covid19Component
+      },
+      {
+        path: 'blog',
+        component: BlogComponent
+      },
+      {
+        path: 'privacy-policy',
+        component: PrivacyComponent
+      },
+      {
+        path: 'delivery-and-payment-policy',
+        component: DppolicyComponent
+      },
+      {
+        path: 'return-refund-and-cancellation-policy',
+        component: RefundComponent
+      },
+      {
+        path: 'wishlist',
+        component: WishlistComponent
       }
     ])
   ],

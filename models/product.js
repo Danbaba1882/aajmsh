@@ -16,7 +16,8 @@ const product = new schema({
     images: [],
     color: String,
     capacity: String,
-    ram: String
+    ram: String,
+    cimage: []
 })
 
 module.exports = mongoose.model('Product', product);

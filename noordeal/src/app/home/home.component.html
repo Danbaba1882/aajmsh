@@ -1,19 +1,4 @@
 <app-navbar></app-navbar>
-<div class="container-fluid">
-  <div *ngFor="let product of hpproducts">
-<p>{{product.name}}</p>
-<p>{{product.ram}}</p>
-<div *ngFor="let image of product.images">
-    <img src="assets/productsimages/{{image.filename}}" alt="{{image.filename}}">
-    <p>{{image.path}}</p>
-    
- </div >
- <div *ngFor="let desc of product.description">
-   <p>{{desc}}</p>
- </div >
-  <hr>
-  </div>
-</div>
 <div class="body">
   <div class="container-fluid">
     <div class="row pt-4">
@@ -93,41 +78,55 @@
   <div class="row mt-4">
     <div class="col-md-3 mb-2">
       <div class="row">
-        <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m1.png" alt="">
+        <div class="col-6" >
+          <img  class="img-cat" src="assets/IMAGES/m1.png" alt="" style="border:1px solid gray;"><br>
+          <a routerLink="" class="text-center">Electric Scooter</a>
+          
         </div>
-        <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m3.png" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3 mb-2">
-      <div class="row">
-        <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m5.png" alt="">
-        </div>
-        <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m7.png" alt="">
+        <div class="col-6" >
+          <img  class="img-cat" src="assets/IMAGES/m3.png" style="border:1px solid gray;" alt="">
+          <a routerLink="" class="text-center">Power Banks</a>
         </div>
       </div>
     </div>
     <div class="col-md-3 mb-2">
       <div class="row">
-      <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat"  src="assets/IMAGES/m2.png" alt="">
+          
+          
+        <div class="col-6" >
+          <img  class="img-cat" src="assets/IMAGES/m5.png" style="border:1px solid gray;" alt="">
+          <a routerLink="" class="text-center">Speakers</a>
+        </div>
+        <div class="col-6" >
+          <img  class="img-cat" src="assets/IMAGES/m7.png" style="border:1px solid gray;" alt="">
+          <a routerLink="" class="text-center">Smart Watches</a>
+        </div>
       </div>
-      <div class="col-6">
-          <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m4.png" alt="">
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="row">
+      <div class="col-6" >
+           <img  class="img-cat"  src="assets/IMAGES/m2.png" style="border:1px solid gray;" alt="">
+           <a routerLink="" class="text-center">Car Chargers</a>
       </div>
+      <div class="col-6"  >
+          <img  class="img-cat" src="assets/IMAGES/m4.png" style="border:1px solid gray;" alt="">
+          <a routerLink="" class="text-center">Headphones</a>
+      </div>
+
     </div></div>
     <div class="col-md-3 mb-2">
       <div class="row">
-        <div class="col-6">
-            <img style="border:1px solid gray" class="img-cat" src="assets/IMAGES/m6.png" alt="">
+        <div class="col-6"              >
+<img  class="img-cat" src="assets/IMAGES/m6.png" style="border:1px solid gray;" alt="">
+<a routerLink="" class="text-center">Chargers</a>
         </div>
-        <div class="col-6">
-            <img src="assets/IMAGES/m8.png" class="img-cat" style="border:1px solid gray" alt="">
+        
+        <div class="col-6"   >
+           <img src="assets/IMAGES/m8.png" class="img-cat" style="border:1px solid gray;"  alt="">
+           <a routerLink="" class="text-center">Smartphones</a>
         </div>
+        
       </div>
     </div>
   </div>
@@ -161,7 +160,7 @@
            <div class="row">
                <div class="col-md-2" >
                  <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                 <a href="">
+                 <a routerLink="">
                   Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                   er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                   GB+128GB-Prism Crush Whites
@@ -171,7 +170,7 @@
                </div>
                <div class="col-md-2" >
                   <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                  <a href="">
+                  <a routerLink="">
                     Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                     er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                     GB+128GB-Prism Crush Whites
@@ -182,7 +181,7 @@
                 </div>
                 <div class="col-md-2" >
                     <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                    <a href="">
+                    <a routerLink="">
                       Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                       er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                       GB+128GB-Prism Crush Whites
@@ -193,7 +192,7 @@
                   </div>
                   <div class="col-md-2" >
                       <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                      <a href="">
+                      <a routerLink="">
                         Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                         er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                         GB+128GB-Prism Crush Whites
@@ -204,7 +203,7 @@
                     </div>
                     <div class="col-md-2" >
                         <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                        <a href="">
+                        <a routerLink="">
                           Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                           er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                           GB+128GB-Prism Crush Whites
@@ -215,7 +214,7 @@
                       </div>
                       <div class="col-md-2" >
                           <img src="assets/IMAGES/laptop2.png"  style="width:100%;">
-                          <a href="">
+                          <a routerLink="">
                             Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                             er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                             GB+128GB-Prism Crush Whites
@@ -234,7 +233,7 @@
                <div class="row">
                    <div class="col-md-2" >
                      <img src="assets/IMAGES/television.png"  style="width:100%;" alt="">
-                     <a href="">
+                     <a routerLink="">
                       Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                       er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                       GB+128GB-Prism Crush Whites
@@ -245,7 +244,7 @@
                    </div>
                    <div class="col-md-2" >
                       <img src="assets/IMAGES/television.png"  style="width:100%" alt="">
-                      <a href="">
+                      <a routerLink="">
                         Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                         er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                         GB+128GB-Prism Crush Whites
@@ -256,7 +255,7 @@
                     </div>
                     <div class="col-md-2" >
                         <img src="assets/IMAGES/television.png"  style="width:100%;">
-                        <a href="">
+                        <a routerLink="">
                           Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                           er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                           GB+128GB-Prism Crush Whites
@@ -267,7 +266,7 @@
                       </div>
                       <div class="col-md-2" >
                           <img src="assets/IMAGES/television.png"  style="width:100%;">
-                          <a href="">
+                          <a routerLink="">
                             Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                             er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                             GB+128GB-Prism Crush Whites
@@ -278,7 +277,7 @@
                         </div>
                         <div class="col-md-2" >
                             <img src="assets/IMAGES/television.png"  style="width:100%;">
-                            <a href="">
+                            <a routerLink="">
                               Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                               er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                               GB+128GB-Prism Crush Whites
@@ -289,7 +288,7 @@
                           </div>
                           <div class="col-md-2" >
                               <img src="assets/IMAGES/television.png"  style="width:100%;">
-                              <a href="">
+                              <a routerLink="">
                                 Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                 er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                 GB+128GB-Prism Crush Whites
@@ -335,7 +334,7 @@
                        <div class="col-md-2" >
                          <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                         </a>
-                        <a href="">
+                        <a routerLink="">
                           Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                           er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                           GB+128GB-Prism Crush Whites
@@ -347,7 +346,7 @@
                        <div class="col-md-2" >
                           <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                           </a>
-                          <a href="">
+                          <a routerLink="">
                             Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                             er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                             GB+128GB-Prism Crush Whites
@@ -359,7 +358,7 @@
                         <div class="col-md-2" >
                             <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                             </a>
-                            <a href="">
+                            <a routerLink="">
                               Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                               er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                               GB+128GB-Prism Crush Whites
@@ -371,7 +370,7 @@
                           <div class="col-md-2" >
                               <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                               </a>
-                              <a href="">
+                              <a routerLink="">
                                 Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                 er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                 GB+128GB-Prism Crush Whites
@@ -383,7 +382,7 @@
                             <div class="col-md-2" >
                                 <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                                 </a>
-                                <a href="">
+                                <a routerLink="">
                                   Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                   er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                   GB+128GB-Prism Crush Whites
@@ -395,7 +394,7 @@
                               <div class="col-md-2" >
                                   <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                                   </a>
-                                  <a href="">
+                                  <a routerLink="">
                                     Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                     er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                     GB+128GB-Prism Crush Whites
@@ -415,7 +414,7 @@
                        <div class="col-md-2" >
                          <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                         </a>
-                        <a href="">
+                        <a routerLink="">
                           Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                           er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                           GB+128GB-Prism Crush Whites
@@ -427,7 +426,7 @@
                        <div class="col-md-2" >
                           <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                           </a>
-                          <a href="">
+                          <a routerLink="">
                             Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                             er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                             GB+128GB-Prism Crush Whites
@@ -439,7 +438,7 @@
                         <div class="col-md-2" >
                             <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                             </a>
-                            <a href="">
+                            <a routerLink="">
                               Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                               er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                               GB+128GB-Prism Crush Whites
@@ -451,7 +450,7 @@
                           <div class="col-md-2" >
                               <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                               </a>
-                              <a href="">
+                              <a routerLink="">
                                 Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                 er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                 GB+128GB-Prism Crush Whites
@@ -463,7 +462,7 @@
                             <div class="col-md-2" >
                                 <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                                 </a>
-                                <a href="">
+                                <a routerLink="">
                                   Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                   er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                   GB+128GB-Prism Crush Whites
@@ -475,7 +474,7 @@
                               <div class="col-md-2" >
                                   <a routerLink=""><img src="assets/IMAGES/camera2.png"  style="width:100%;">
                                   </a>
-                                  <a href="">
+                                  <a routerLink="">
                                     Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                     er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                     GB+128GB-Prism Crush Whites
@@ -494,7 +493,7 @@
                    <div class="row">
                        <div class="col-md-2" >
                          <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                         <a href="">
+                         <a routerLink="">
                           Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                           er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                           GB+128GB-Prism Crush Whites
@@ -505,7 +504,7 @@
                        </div>
                        <div class="col-md-2" >
                           <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                          <a href="">
+                          <a routerLink="">
                             Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                             er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                             GB+128GB-Prism Crush Whites
@@ -516,7 +515,7 @@
                         </div>
                         <div class="col-md-2" >
                             <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                            <a href="">
+                            <a routerLink="">
                               Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                               er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                               GB+128GB-Prism Crush Whites
@@ -527,7 +526,7 @@
                           </div>
                           <div class="col-md-2" >
                               <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                              <a href="">
+                              <a routerLink="">
                                 Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                 er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                 GB+128GB-Prism Crush Whites
@@ -538,7 +537,7 @@
                             </div>
                             <div class="col-md-2" >
                                 <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                                <a href="">
+                                <a routerLink="">
                                   Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                   er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                   GB+128GB-Prism Crush Whites
@@ -549,7 +548,7 @@
                               </div>
                               <div class="col-md-2" >
                                   <img src="assets/IMAGES/mp3.png"  style="width:100%;">
-                                  <a href="">
+                                  <a routerLink="">
                                     Samsung Galaxy A30S, 6.4 Inch Infinity-V Sup
                                     er Amoled Display, Exynos 7904 Octa Core processor, 4GB+64GB/4
                                     GB+128GB-Prism Crush Whites

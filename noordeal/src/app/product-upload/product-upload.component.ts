@@ -16,6 +16,7 @@ export class ProductUploadComponent implements OnInit {
   ram;
   feature;
   features;
+  cimagess = [];
   images;
   description;
   descriptions;
@@ -30,6 +31,8 @@ export class ProductUploadComponent implements OnInit {
   smarth;
   gbrand;
   dimages;
+  cimage;
+  cimages;
   ufeatures = [];
   udescription = [];
   uimages = [];
@@ -37,9 +40,13 @@ export class ProductUploadComponent implements OnInit {
   constructor(private prodservice: ProductService) { }
   ngOnInit(): void {
   }
-
+oncoverupload(e){
+this.cimage = e.target.files[0];
+console.log(this.cimage);
+}
   onFileChanged(e){
     this.uimages = e.target.files;
+    console.log(this.uimages);
   }
 
   ondescimages(e){
@@ -110,10 +117,8 @@ alert(this.subcat1);
     this.subcategory2 = this.subcat2;
     console.log(this.subcategory1, this.subcategory2, this.category);
     this.prodservice.upload(this.name, this.brand, this.price, this.quantity, this.color, this.capacity, this.ram,
-    this.features, this.description, this.images, this.dimages, this.ucategory, this.subcategory1, this.subcategory2).subscribe(data => {
-    console.log(this.features);
-    console.log(this.description);
-    alert(this.description);
+    this.features, this.description, this.images, this.dimages, this.ucategory, this.subcategory1, this.subcategory2,
+    this.cimage).subscribe(data => {
     });
   }
 }

@@ -6,7 +6,7 @@
 
 
 
-        <table class="table table-borderless table-dark">
+        <table class="table table-borderless table-dark big">
             <thead style="background-color:#cc5500; color:white">
               <tr>
                 
@@ -26,7 +26,8 @@
                                 <img src="{{item.image}}" style="width:100px;height:100px" alt="">
                         </div>
                         <div class="col-9">
-                                {{item.name}} 
+                            <p class="pl-4">{{item.name}} </p>
+                                
                         </div>
                     </div>
                 </td>
@@ -34,7 +35,7 @@
                 <td>{{item.price}}</td>
                 <td><input type="number" name="" style="width:150px" value="{{item.quantity}}" (keyup)="onKey($event, item)" class="form-control" id=""></td>
                 <td>{{item.price * item.quantity}}</td>
-                <td><a routerLink="" (click)="deleteitem(item)"><i style="color:white" class="fa fa-trash" aria-hidden="true"></i></a></td>
+                <td><a (click)="deleteitem(item)" class="delete"><i style="color:white" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
                 <hr style="background-color:white">  
             </tr>
 
@@ -42,6 +43,40 @@
 
             </tbody>
           </table>
+
+
+          <table class="table table-borderless table-dark small">
+                <thead style="background-color:#cc5500; color:white">
+                  <tr>
+                    
+                    <th scope="col">PRODUCT</th>
+                    <th scope="col">QUANTITY</th>
+                    <th style="background-color:#cc5500" scope="col" sty></th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of cartitems">
+                  <tr>
+                    
+                    <td> 
+                        
+                                    <img src="{{item.image}}" style="width:100px;height:100px" alt=""><br>
+                            
+                                   <P>{{item.name}}</P> 
+                                   <p style="color:#cc5500">PRICE: <span style="color:white">{{item.price}}</span></p>  
+                                    <p style="color:#cc5500">SUBTOTAL: <span style="color:white">{{item.price * item.quantity}}</span></p>
+
+                         
+                    </td>
+                    
+                    <td><input type="number" name="" style="width:50px" value="{{item.quantity}}" (keyup)="onKey($event, item)" class="form-control" id=""></td>
+                    <td><a (click)="deleteitem(item)" class="delete"><i style="color:white" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
+                    <hr style="background-color:white">  
+                </tr>
+    
+              
+    
+                </tbody>
+              </table>
 
 
 <div class="row mt-2">

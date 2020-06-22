@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <h3 class="text-center mt-4">ANEESAA</h3>
+          <h3 class="text-center mt-4">PRODUCTS UPLOAD</h3>
           <hr>
           <form  enctype="multipart/form-data" (submit)="uploadProduct($event)">
             <div class="form-group">
@@ -184,6 +184,10 @@
                   </div>
 
                   <div class="form-group">
+                    <label for="images" class="label-control">  COVER IMAGE</label>
+                    <input type="file"  (change)="oncoverupload($event)" name="cfile" id="cfile" class="form-control rounded-0">
+                </div>
+                  <div class="form-group">
                     <label for="images" class="label-control">PRODUCT IMAGES</label>
                     <input type="file" multiple  (change)="onFileChanged($event)" name="file" id="file" class="form-control rounded-0">
                 </div>
@@ -240,5 +244,5 @@
     </div>
   
         </div>
-        
+        <button type="submit"></button>
 <app-footer></app-footer>
