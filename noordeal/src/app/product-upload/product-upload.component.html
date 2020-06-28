@@ -1,248 +1,393 @@
-<app-navbar></app-navbar>
 
-<div class="container-fluid">
+<div class="body">
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <h3 class="text-center mt-4">PRODUCTS UPLOAD</h3>
-          <hr>
-          <form  enctype="multipart/form-data" (submit)="uploadProduct($event)">
-            <div class="form-group">
-                <label for="name" class="label-control">PRODUCT NAME</label>
-                <input type="text" name="name" id="name" class="form-control rounded-0">
-            </div>
-            <div class="form-group">
-                    <label class="label-control" for="categories">PRODUCT CATEGORY</label>
-                    <select class="form-control rounded-0" (change)="getcatvalue($event)" >
-                      <option selected >Please Choose</option>
-                      <option value="Smartphones">Smartphones</option>
-                     <option value="Tablets">Tablets</option>
-                      <option value="Mobile Phones">Mobile Phones</option>
-                      <option value="Mobile Accessories">Mobile Accessories</option>
-                      <option value="Electric Scooter">Electric Scooter</option>
-                      <option value="Computer and Accessories">Computer and Accessories</option>
-                      <option value="Smart Home">Smart Home</option>
-                      <option value="Cameras">Cameras</option>
-                    </select>
+        <div class="col-md-2 bg-dark h-auto ">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-center">
+                    <img src="assets/IMAGES/Amazfit GTS Black.jpg" style="width:50px;height:50px;border-radius:50%" class="mt-4 bg-white" alt="">
                   </div>
-
-
-                  <div class="form-group" *ngIf='category === "Smartphones" || category==="Tablets" || category==="Mobile Phones"'>
-                    <label for="brand" class="label-control">{{category | uppercase}} BRAND</label>
-                    <select class="form-control  rounded-0" id="brand" (change)="getbrand($event)">
-                        <option selected >Select {{category}} Brand</option>
-                      <option value="Iphone">Iphone</option>
-                      <option value="Xiaomi Mobile Phones">Xiaomi Mobile Phones</option>
-                      <option value="Huawei Mobile Phones">Huawei Mobile phones</option>
-                      <option value="Honor Mobile">Honor Mobile Phones</option>
-                      <option value="Black shark">Black Shark</option>
-                      <option value="One Plus">One Plus</option>
-                      <option value="Oppo">Oppo</option>
-                      <option value="Real Me">Real Me</option>
-                      <option value="Lenovo">Lenovo</option>
-                      <option value="Nokia">Nokia</option>
-                      <option value="Nubia">Nubia</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='category==="Mobile Accessories"'>
-                    <label class="label-control" for="mobile">{{category | uppercase}} SUBCATEGORY</label>
-                    <select class="form-control rounded-0 subcat1" (change)="getsubcat1($event)" (change)="mobileacat($event)">
-                        <option selected >Select {{category}} Subcategory</option>
-                      <option value="Speaker">Speaker</option>
-                      <option value="Cables">Cables</option>
-                      <option value="Power Bank">Power Bank</option>
-                      <option value="Chargers">Chargers</option>
-                      <option value="Wearables">Wearables</option>
-                      <option value="Car Accessories">Car Accessories</option>
-                      <option value="Headphones">Headphones</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='maccat==="Chargers" && category==="Mobile Accessories"'>
-                    <label class="label-control" for="charger">CHARGER SUBCATEGORY</label>
-                    <select class="form-control rounded-0 subcat2" (change)="getsubcat2($event)">
-                        <option selected >Select Charger Subcategory</option>
-                      <option value="Wall Charger">Wall Charger</option>
-                      <option value="Multiport Charger">Multiport Charger</option>
-                      <option value="Wireless Charger">Wireless Charger</option>
-                    
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='maccat==="Wearables" && category==="Mobile Accessories"'>
-                    <label class="label-control" for="wearables">WEARABLES SUBCATEGORY</label>
-                    <select class="form-control rounded-0 subcat2" (change)="getsubcat2($event)">
-                        <option selected >Select Wearable Subcategory</option>
-                      <option value="Smart Watches">Smart Watches</option>
-                      <option value="Smart Bands">Smart Bands</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='maccat==="Car Accessories" && category==="Mobile Accessories"'>
-                    <label class="label-control" for="car">CAR ACCESORIES SUBCATEGORY</label>
-                    <select class="form-control rounded-0 subcat2" (change)="getsubcat2($event)">
-                        <option selected >Select Car Accessories Subcategory</option>
-                      <option value="Car Charger">Car Charger</option>
-                      <option value="Holders">Holders</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='maccat==="Headphones" && category==="Mobile Accessories"'>
-                    <label class="label-control" for="headphone">HEAD PHONE SUBCATEGORY</label>
-                    <select class="form-control subcat2 rounded-0" (change)="getsubcat2($event)">
-                        <option selected >Select Head Phones Subcategory</option>
-                      <option value="Wireless and Bluetooths">Wireless and Bluetooths</option>
-                      <option value="Ear Buds and In-Ear">Ear Buds and In-Ear</option>
-                      <option value="Over-Ear and On-Ear">Over-Ear and On-Ear</option>
-                      <option value="Kids Headphones">Kids Headphones</option>
-                      <option value="PC Gaming Headsets">PC Gaming Headsets</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='category==="Electric Scooter"'>
-                    <label class="label-control" for="scooter">PRODUCT CATEGORY(Electirc scooter)</label>
-                    <select class="form-control subcat1 rounded-0" (change)="getsubcat1($event)">
-                        <option selected >Select Product Category</option>
-                      <option value="Segway ninebot Scooter">Segway ninebot Scooter</option>
-                      <option value="MI Electric Scooter">MI Electric Scooter</option>
-                      <option value="Xiaomi Mijia Electric Scooter">Xiaomi Mijia Electric Scooter</option>
-            
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='category==="Computer and Accessories"'>
-                    <label class="label-control" for="computer">COMPUTER ACCESSORIES CATEGORY</label>
-                    <select class="form-control subcat1 rounded-0" (change)="cacat($event)" (change)="getsubcat1($event)">
-                        <option selected >Select Computer Accessories Subcategory</option>
-                      <option value="PC Accessories">PC Accessories</option>
-                      <option value="Laptops">Laptops</option>
-                      <option value="Desktop Computers">Desktop Computers</option>
-                      <option value="Printers and Inks">Printers and Inks</option>
-                      <option value="Networking">Networking</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='cascat==="PC Accessories" && category==="Computer and Accessories"'>
-                    <label class="label-control" for="pc">PC ACCESORIES SUBCATEGORY</label>
-                    <select class="form-control subcat2 rounded-0" (change)="getsubcat2($event)">
-                        <option selected >Select PC Accessories</option>
-                      <option value="Mouse">Mouse</option>
-                      <option value="Keyboards">keyboards</option>
-                      <option value="Monitors">Monitors</option>
-                      <option value="Mother Boards">Mother Boards</option>
-                      <option value="Processor">Processor</option>
-                      <option value="Ram">Ram</option>
-                      <option value="Pen Drives">Pen Drives</option>
-                      <option value="Computer Cases">Computer Cases</option>
-                      <option value="PC Speakers">PC Speakers</option>
-                    </select>
-                  </div>
-
                   
-                  <div class="form-group" *ngIf='category==="Smart Home"'>
-                    <label class="label-control" for="smart home"> SMART HOME SUBCATEGORY</label>
-                    <select class="form-control subcat1 rounded-0" (change)="smarthome($event)" (change)="getsubcat1($event)">
-                        <option selected >Select Product Subcategory</option>
-                      <option value="Home Theartre">Home Theartre</option>
-                      <option value="Projector">Projector</option>
-                      <option value="Tvs">Tvs</option>
-                      <option value="Video Games and Consoles">Video Games and Consoles</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group"  *ngIf='smarth==="Tvs" && category==="Smart Home"'>
-                    <label class="label-control" for="tv">TV SUBCATEGORY</label>
-                    <select class="form-control subcat2 rounded-0" (change)="getsubcat2($event)">
-                        <option selected >Select Product Subcategory</option>
-                      <option value="Smart Tvs">Smart Tvs</option>
-                      <option value="Curved Tvs">Curved Tvs</option>
-                      <option value="4K Ultra HD TVs">4K Ultra HD TVs</option>
-                      <option value="LED Tvs">LED Tvs</option>
-                      <option value="OLED TVs">OLED TVs</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='smarth==="Video Games and Consoles" && category==="Smart Home"'>
-                    <label class="label-control" for="games">VIDEO GAMES AND CONSOLE SUBCATEGORY</label>
-                    <select class="form-control subcat2 rounded-0" (change)="getsubcat2($event)">
-                        <option selected >Select Product Subcategory</option>
-                      <option value="Play Stations">Play Stations</option>
-                      <option value="Games Console">Games Console</option>
-                      <option value="XBOX">XBOX</option>
-                      <option value="Gaming Accesories">Gaming Accesories</option>
-                    </select>
-                  </div>
-
-                  <div class="form-group" *ngIf='category==="Cameras"'>
-                    <label class="label-control" for="cameras">CAMERAS SUBCATEGORY</label>
-                    <select class="form-control subcat1 rounded-0" (change)="getsubcat1($event)">
-                        <option selected >Select Product Subcategory</option>
-                      <option value="DSLR Cameras">DSLR Cameras</option>
-                     
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="images" class="label-control">  COVER IMAGE</label>
-                    <input type="file"  (change)="oncoverupload($event)" name="cfile" id="cfile" class="form-control rounded-0">
-                </div>
-                  <div class="form-group">
-                    <label for="images" class="label-control">PRODUCT IMAGES</label>
-                    <input type="file" multiple  (change)="onFileChanged($event)" name="file" id="file" class="form-control rounded-0">
-                </div>
-<div class="form-group">
-    <label for="price" class="label-control">PRODUCT PRICE</label>
-    <input type="text" name="price" id="price" class="form-control rounded-0" >
-</div>
-
-<div class="form-group">
-    <label for="quantity" class="label-control">PRODUCT AVAILABLE QUANTITY</label>
-    <input type="text" name="quantity" id="quantity" class="form-control rounded-0">
-</div>
-<div class="form-group">
-    <label for="features" class="label-control">PRODUCT FEATURES</label>
-    <input type="text" class="form-control rounded-0" id="feature" name="feature" (keyup.enter)="updatefeatures($event)"
-    (blur)="updatefeatures($event)">
-    <button class="btn btn-sm btn-info mt-2 rounded-0" type="button" (click)="addfeatures()" >ADD FEATURE</button>
-    
-</div>
-
-<div class="form-group">
-    <label for="description" class="label-control">PRODUCT DESCRIPTION</label>
-    <input type="text" name="pdesc" id="pdesc" class="form-control rounded-0"
-    (keyup.enter)="updatedesc($event)"
-    (blur)="updatedesc($event)"
-    >
-    <button class="btn btn-sm btn-info mt-2 rounded-0" type="button" (click)="adddesc()" >ADD DESCRIPTION</button>
-</div>
-
-<div class="form-group">
-    <label for="images" class="label-control">PRODUCT DESCRIPTION IMAGES</label>
-    <input type="file" multiple  (change)="ondescimages($event)" name="file" id="file" class="form-control rounded-0">
-</div>
-
-<h6>PRODUCT SPECIFICATIONS</h6>
-<div class="form-group">
-    <label for="color" class="label-control">COLOR</label>
-    <input type="text" name="color" id="color" class="form-control rounded-0">
-</div>
-<div class="form-group">
-    <label for="capacity" class="label-control">DIGITAL CAPACITY</label>
-    <input type="text" name="capacity" id="capacity" class="form-control rounded-0">
-</div>
-<div class="form-group">
-    <label for="ram" class="label-control">RAM</label>
-    <input type="text" name="ram" id="ram" class="form-control rounded-0">
-</div>
-
+                <p  style="color:white;font-size: 14px" class="text-center">NOORDEAL</p>
+                <p style="color:white;font-size: 12px; margin-top:-15px" class="text-center">nooraljoharamt@gmail.com</p>
+                <div style="margin-left:30px">
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center pb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-archive" aria-hidden="true"></i> All Products</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-plus" aria-hidden="true"></i>  Add Products</a> <br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit Products</a> <br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit User</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-envelope" aria-hidden="true"></i> Contact</a><br>
+                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user" aria-hidden="true"></i> Profile</a><br>
                
-<button class="btn btn-md form-control rounded-0" type="submit" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>
-    </form>
+                </div>
+                
+ 
+            </div>
         </div>
-        <div class="col-md-3"></div>
-    </div>
+        <div class="col-md-10">
+          <div class="container-fluid">
+            <div style="background-color:white;height: 65px;" class="display-inline mt-4">
+              <form class="form-inline my-2 my-lg-0 pt-2">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+              <div style="float:right">
+                <p style="font-size: 12px; margin-top:-15px" class="text-center">nooraljoharamt@gmail.com</p>
   
+              </div>
+                         </div>
+              <h4 class="mt-4">Add new product</h4>
+              <hr>
+          </div>
+           
+            
+            <div class="container-fluid">
+                <div class="row mt-4">
+                  <div class="col-md-8">
+                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DETAILS</h6>
+                    <div class="card pt-2">
+                      <div class="container-fluid">
+                        <label for="" class="label-control">Product name</label>
+                          <input type="text" class="mb-4" [(ngModel)]="name" placeholder="Product name" class="form-control"><br>
+                          <form  enctype="multipart/form-data" >
+                                     
+                            <div class="form-group">
+                                    <label class="label-control" for="categories">Product Category</label>
+                                    <select class="form-control " style="border: 1px solid lightgray;" (change)="getcatvalue($event)" >
+                                      <option selected >Please Choose</option>
+                                      <option value="Smartphones">Smartphones</option>
+                                     <option value="Tablets">Tablets</option>
+                                      <option value="Mobile Phones">Mobile Phones</option>
+                                      <option value="Mobile Accessories">Mobile Accessories</option>
+                                      <option value="Electric Scooter">Electric Scooter</option>
+                                      <option value="Computer and Accessories">Computer and Accessories</option>
+                                      <option value="Smart Home">Smart Home</option>
+                                      <option value="Cameras">Cameras</option>
+                                    </select>
+                                  </div>
+                        
+                        
+                                  <div class="form-group" *ngIf='category === "Smartphones" || category==="Tablets" || category==="Mobile Phones"'>
+                                    <label for="brand" class="label-control">{{category | uppercase}} BRAND</label>
+                                    <select class="form-control  " style="border: 1px solid lightgray;" id="brand" (change)="getbrand($event)">
+                                        <option selected >Select {{category}} Brand</option>
+                                      <option value="Iphone">Iphone</option>
+                                      <option value="Xiaomi Mobile Phones">Xiaomi Mobile Phones</option>
+                                      <option value="Huawei Mobile Phones">Huawei Mobile phones</option>
+                                      <option value="Honor Mobile">Honor Mobile Phones</option>
+                                      <option value="Black shark">Black Shark</option>
+                                      <option value="One Plus">One Plus</option>
+                                      <option value="Oppo">Oppo</option>
+                                      <option value="Real Me">Real Me</option>
+                                      <option value="Lenovo">Lenovo</option>
+                                      <option value="Nokia">Nokia</option>
+                                      <option value="Nubia">Nubia</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='category==="Mobile Accessories"'>
+                                    <label class="label-control" for="mobile">{{category | uppercase}} SUBCATEGORY</label>
+                                    <select class="form-control  subcat1" style="border: 1px solid lightgray;" (change)="getsubcat1($event)" (change)="mobileacat($event)">
+                                        <option selected >Select {{category}} Subcategory</option>
+                                      <option value="Speaker">Speaker</option>
+                                      <option value="Cables">Cables</option>
+                                      <option value="Power Bank">Power Bank</option>
+                                      <option value="Chargers">Chargers</option>
+                                      <option value="Wearables">Wearables</option>
+                                      <option value="Car Accessories">Car Accessories</option>
+                                      <option value="Headphones">Headphones</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='maccat==="Chargers" && category==="Mobile Accessories"'>
+                                    <label class="label-control" for="charger">CHARGER SUBCATEGORY</label>
+                                    <select class="form-control  subcat2" style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Charger Subcategory</option>
+                                      <option value="Wall Charger">Wall Charger</option>
+                                      <option value="Multiport Charger">Multiport Charger</option>
+                                      <option value="Wireless Charger">Wireless Charger</option>
+                                    
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='maccat==="Wearables" && category==="Mobile Accessories"'>
+                                    <label class="label-control" for="wearables">WEARABLES SUBCATEGORY</label>
+                                    <select class="form-control  subcat2" style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Wearable Subcategory</option>
+                                      <option value="Smart Watches">Smart Watches</option>
+                                      <option value="Smart Bands">Smart Bands</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='maccat==="Car Accessories" && category==="Mobile Accessories"'>
+                                    <label class="label-control" for="car">CAR ACCESORIES SUBCATEGORY</label>
+                                    <select class="form-control  subcat2" style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Car Accessories Subcategory</option>
+                                      <option value="Car Charger">Car Charger</option>
+                                      <option value="Holders">Holders</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='maccat==="Headphones" && category==="Mobile Accessories"'>
+                                    <label class="label-control" for="headphone">HEAD PHONE SUBCATEGORY</label>
+                                    <select class="form-control subcat2 " style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Head Phones Subcategory</option>
+                                      <option value="Wireless and Bluetooths">Wireless and Bluetooths</option>
+                                      <option value="Ear Buds and In-Ear">Ear Buds and In-Ear</option>
+                                      <option value="Over-Ear and On-Ear">Over-Ear and On-Ear</option>
+                                      <option value="Kids Headphones">Kids Headphones</option>
+                                      <option value="PC Gaming Headsets">PC Gaming Headsets</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='category==="Electric Scooter"'>
+                                    <label class="label-control" for="scooter">PRODUCT CATEGORY(Electirc scooter)</label>
+                                    <select class="form-control subcat1 " style="border: 1px solid lightgray;" (change)="getsubcat1($event)">
+                                        <option selected >Select Product Category</option>
+                                      <option value="Segway ninebot Scooter">Segway ninebot Scooter</option>
+                                      <option value="MI Electric Scooter">MI Electric Scooter</option>
+                                      <option value="Xiaomi Mijia Electric Scooter">Xiaomi Mijia Electric Scooter</option>
+                            
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='category==="Computer and Accessories"'>
+                                    <label class="label-control" for="computer">COMPUTER ACCESSORIES CATEGORY</label>
+                                    <select class="form-control subcat1 " style="border: 1px solid lightgray;" (change)="cacat($event)" (change)="getsubcat1($event)">
+                                        <option selected >Select Computer Accessories Subcategory</option>
+                                      <option value="PC Accessories">PC Accessories</option>
+                                      <option value="Laptops">Laptops</option>
+                                      <option value="Desktop Computers">Desktop Computers</option>
+                                      <option value="Printers and Inks">Printers and Inks</option>
+                                      <option value="Networking">Networking</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='cascat==="PC Accessories" && category==="Computer and Accessories"'>
+                                    <label class="label-control" for="pc">PC ACCESORIES SUBCATEGORY</label>
+                                    <select class="form-control subcat2 " style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select PC Accessories</option>
+                                      <option value="Mouse">Mouse</option>
+                                      <option value="Keyboards">keyboards</option>
+                                      <option value="Monitors">Monitors</option>
+                                      <option value="Mother Boards">Mother Boards</option>
+                                      <option value="Processor">Processor</option>
+                                      <option value="Ram">Ram</option>
+                                      <option value="Pen Drives">Pen Drives</option>
+                                      <option value="Computer Cases">Computer Cases</option>
+                                      <option value="PC Speakers">PC Speakers</option>
+                                    </select>
+                                  </div>
+                        
+                                  
+                                  <div class="form-group" *ngIf='category==="Smart Home"'>
+                                    <label class="label-control" for="smart home"> SMART HOME SUBCATEGORY</label>
+                                    <select class="form-control subcat1 " style="border: 1px solid lightgray;" (change)="smarthome($event)" (change)="getsubcat1($event)">
+                                        <option selected >Select Product Subcategory</option>
+                                      <option value="Home Theartre">Home Theartre</option>
+                                      <option value="Projector">Projector</option>
+                                      <option value="Tvs">Tvs</option>
+                                      <option value="Video Games and Consoles">Video Games and Consoles</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group"  *ngIf='smarth==="Tvs" && category==="Smart Home"'>
+                                    <label class="label-control" for="tv">TV SUBCATEGORY</label>
+                                    <select class="form-control subcat2 " style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Product Subcategory</option>
+                                      <option value="Smart Tvs">Smart Tvs</option>
+                                      <option value="Curved Tvs">Curved Tvs</option>
+                                      <option value="4K Ultra HD TVs">4K Ultra HD TVs</option>
+                                      <option value="LED Tvs">LED Tvs</option>
+                                      <option value="OLED TVs">OLED TVs</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='smarth==="Video Games and Consoles" && category==="Smart Home"'>
+                                    <label class="label-control" for="games">VIDEO GAMES AND CONSOLE SUBCATEGORY</label>
+                                    <select class="form-control subcat2 " style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
+                                        <option selected >Select Product Subcategory</option>
+                                      <option value="Play Stations">Play Stations</option>
+                                      <option value="Games Console">Games Console</option>
+                                      <option value="XBOX">XBOX</option>
+                                      <option value="Gaming Accesories">Gaming Accesories</option>
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group" *ngIf='category==="Cameras"'>
+                                    <label class="label-control" for="cameras">CAMERAS SUBCATEGORY</label>
+                                    <select style="border: 1px solid lightgray;" class="form-control subcat1 " (change)="getsubcat1($event)">
+                                        <option selected >Select Product Subcategory</option>
+                                      <option value="DSLR Cameras">DSLR Cameras</option>
+                                     
+                                    </select>
+                                  </div>
+                        
+                                  <div class="form-group">
+                                    <label for="images" class="label-control">Product Cover Image</label>
+                                    <input type="file"  (change)="oncoverupload($event)" style="border: 1px solid lightgray;" name="cfile" id="cfile" class="form-control ">
+                                </div>
+                                  <div class="form-group">
+                                    <label for="images" class="label-control">Product Images</label>
+                                    <input type="file" multiple  (change)="onFileChanged($event)" style="border: 1px solid lightgray;" name="file" id="file" class="form-control ">
+                                </div>
+                        
+                               
+                        
+                        </form>
+                      </div>
+                    </div>
+              <br>
+              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT FEATURES</h6>
+            <editor
+            [(ngModel)]="features"
+            initialValue="<p>Initial content of the editor</p>"
+            apiKey="0zdkwzyolkjb7wno4bisfcjfe1ase56cxgyyqra1x9ommzyf"
+            [init]="{
+              height: 500,
+              menubar: true,
+              plugins: [
+                'advlist autolink lists link image charmap print',
+                'preview anchor searchreplace visualblocks code',
+                'fullscreen insertdatetime media table paste',
+                'help wordcount'
+              ],
+              toolbar:
+                'insertfile undo redo | formatselect | bold italic | \
+                alignleft aligncenter alignright alignjustify | \
+                bullist numlist outdent indent | help'
+            }"
+            >
+            </editor>
+                 <br>
+                 <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DESCRIPTION</h6>
+              <editor id="image-tools"
+              [(ngModel)]="description"
+              apiKey="0zdkwzyolkjb7wno4bisfcjfe1ase56cxgyyqra1x9ommzyf"
+              [init]="{
+                height: 500,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste imagetools wordcount'
+                ],
+                toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+                image_advtab: true,
+                images_upload_url: 'postAcceptor.php',
+                images_upload_credentials: true,
+                automatic_uploads: false,
+                image_uploadtab: true
+              }"
+              
+              >
+              
+              </editor>
+              <br>
+              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DATA</h6>
+              <div class="card">
+                
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="rprice" class="label-control">product Type</label>
+                        <select class="form-control" [(ngModel)]="ptype" style="border: 1px solid lightgray;height:30px;font-size: 14px">
+                          <option value="Taxable" style="font-size:14px">Simple product</option>
+                          <option value="Shipping only"style="font-size:14px">Grouped product</option>
+                          <option value="None"style="font-size:14px">External/affiliate product</option>
+                          <option value="None"style="font-size:14px">variable product</option>
+                        </select>
+                      </div>
+                          <div class="ml-2 form-check">
+                            <input type="checkbox" [(ngModel)]="productdata.virtual" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Virtual</label>
+                          </div>
+                          <div class="ml-2 form-check">
+                            <input type="checkbox" [(ngModel)]="productdata.downloadable" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Downloadable</label>
+                          </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rprice" class="label-control">Regular Price (AED)</label>
+                            <input type="text" [(ngModel)]="productdata.regularprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <label for="rprice" class="label-control">Sales Price (AED)</label>
+                              <input type="text" [(ngModel)]="productdata.saleprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="rprice" class="label-control">Sale Quantity</label>
+                                <input type="number" [(ngModel)]="productdata.salequantity" style="border: 1px solid lightgray;height:30px" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="rprice" class="label-control">Sold Items</label>
+                                  <input type="number" [(ngModel)]="productdata.solditems" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="rprice" class="label-control">Tax Status</label>
+                                    <select class="form-control" [(ngModel)]="productdata.taxstatus" style="border: 1px solid lightgray;height:30px;font-size: 14px" >
+                                      <option value="Taxable" style="font-size:14px">Taxable</option>
+                                      <option value="Shipping only"style="font-size:14px">Shipping only</option>
+                                      <option value="None"style="font-size:14px">None</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="rprice" class="label-control">Tax Class</label>
+                                      <select class="form-control" [(ngModel)]="productdata.taxclass" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                                        <option value="Standard" style="font-size:14px">Standard</option>
+                                        <option value="Reduced rate" style="font-size:14px">Reduced rate</option>
+                                        <option value="Tax 1" style="font-size:14px">Tax 1</option>
+                                        <option value="Tax 2" style="font-size:14px">Tax 2</option>
+                                        <option value="Tax 3" style="font-size:14px">Tax 3</option>
+                                        <option value="Zero rate" style="font-size:14px">Zero rate</option>
+                                        
+                                      </select>
+                                    </div>
+                                    
+                    </div>
+                    <div class="col-md-4"></div>
+                  </div>
+                </div>
+                
+              </div>
+              
+             
+                  </div>
+                  
+                  <div class="col-md-4">
+                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT SPECIFICATIONS</h6>
+                    <div class="card">
+                      <div class="container-fluid">
+                        <div class="form-group">
+                          <label for="color" class="label-control">Color</label>
+                          <input type="text" name="color" id="color" [(ngModel)]="productspec.color" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="capacity" class="label-control">Digital Capacity</label>
+                          <input type="text" name="capacity" [(ngModel)]="productspec.capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="capacity" class="form-control">
+                      </div>
+                      <div class="form-group">
+                          <label for="ram" class="label-control">RAM</label>
+                          <input type="text" name="ram" [(ngModel)]="productspec.ram" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
+                      </div>
+                      </div>
+                    </div>
+                   
+                    
+                  </div>
+                </div>
+                <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event)" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>
+              </div>
+             
+                     
         </div>
-        <button type="submit"></button>
-<app-footer></app-footer>
+      </div>
+      <div [innerHTML]="description"></div>
+      {{productspec.ram}}
+
+    <div style="height:50px" class="bg-dark mt-1">
+        <p class="text-center pt-2" style="color:lightgray;font-size: 14px">Copyright &copy; Noor Al Johara Mobiles Trading LLC. | All RIGHTS RESERVED | <small style="color:lightgray">  <a routerLink="" style="color:lightgray">Privacy Policy</a>   </small> | <small><a routerLink="" style="color:lightgray">Terms and Conditions</a></small> </p> 
+    </div>
+</div>

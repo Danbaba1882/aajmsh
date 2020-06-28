@@ -8,15 +8,11 @@ const product = new schema({
     Subcategory1: String,
     Subcategory2: String,
     brand: String,
-    price: Number,
-    quantity: Number,
-    features: [],
-    description: [],
-    dimages: [],
+    features: String,
+    description: String,
     images: [],
-    color: String,
-    capacity: String,
-    ram: String,
+    productData: String,
+    productSpec: String,
     cimage: []
 })
 

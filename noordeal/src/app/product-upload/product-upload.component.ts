@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+
 
 @Component({
   selector: 'app-product-upload',
@@ -7,6 +11,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-upload.component.css']
 })
 export class ProductUploadComponent implements OnInit {
+
   name;
   brand;
   price;
@@ -14,12 +19,10 @@ export class ProductUploadComponent implements OnInit {
   color;
   capacity;
   ram;
-  feature;
   features;
-  cimagess = [];
-  images;
+  cimage;
+  images = [];
   description;
-  descriptions;
   category;
   ucategory;
   subcat1;
@@ -30,27 +33,44 @@ export class ProductUploadComponent implements OnInit {
   cascat;
   smarth;
   gbrand;
-  dimages;
-  cimage;
-  cimages;
-  ufeatures = [];
-  udescription = [];
-  uimages = [];
-  descimages = [];
+  ptype;
+  virtual;
+  downloadable;
+  regularprice;
+  saleprice;
+  salequantity;
+  solditems;
+  taxstatus;
+  taxclass;
+  productspec = {
+    ram: this.ram,
+    color: this.color,
+    capacity: this.capacity
+  };
+  productdata = {
+    ptype: this.ptype,
+    virtual: this.virtual,
+    downloadable: this.downloadable,
+    regularprice: this.regularprice,
+    saleprice: this.saleprice,
+    salequantity: this.salequantity,
+    solditems: this.solditems,
+    taxstatus: this.taxstatus,
+    taxclass: this.taxclass
+  };
   constructor(private prodservice: ProductService) { }
   ngOnInit(): void {
   }
+
+
+
 oncoverupload(e){
 this.cimage = e.target.files[0];
 console.log(this.cimage);
 }
   onFileChanged(e){
-    this.uimages = e.target.files;
-    console.log(this.uimages);
-  }
-
-  ondescimages(e){
-this.descimages = e.target.files;
+    this.images = e.target.files;
+    console.log(this.images);
   }
 
   getcatvalue(e){
@@ -69,24 +89,6 @@ this.cascat = e.target.value;
     this.smarth = e.target.value;
   }
 
-  updatefeatures(e){
-    this.feature = e.target.value;
-  }
-  updatedesc(e){
-    this.descriptions = e.target.value;
-  }
-
-  adddesc(){
-    this.udescription.push(this.descriptions);
-  }
-
-
-  addfeatures(){
-    this.ufeatures.push(this.feature);
-    console.log(this.ufeatures);
-    this.feature = '';
-  }
-
   getsubcat1(e){
 this.subcat1 = e.target.value;
 alert(this.subcat1);
@@ -100,25 +102,62 @@ alert(this.subcat1);
   getbrand(e){
     this.gbrand = e.target.value;
   }
+
+  onReady(eventData) {
+    eventData.plugins.get('FileRepository').createUploadAdapter =  (loader) => {
+      console.log(btoa(loader.file));
+      return new UploadAdapter(loader);
+    };
+  }
   uploadProduct(e){
-    this.name = e.target.querySelector('#name').value;
     this.brand = this.gbrand;
-    this.price = e.target.querySelector('#price').value;
-    this.quantity = e.target.querySelector('#quantity').value;
-    this.color = e.target.querySelector('#color').value;
-    this.capacity = e.target.querySelector('#capacity').value;
-    this.ram = e.target.querySelector('#ram').value;
-    this.features = this.ufeatures;
-    this.description = this.udescription;
-    this.images = this.uimages;
-    this.dimages = this.descimages;
     this.ucategory = this.category;
     this.subcategory1 = this.subcat1;
     this.subcategory2 = this.subcat2;
+    console.log(this.name);
+    console.log(this.brand);
     console.log(this.subcategory1, this.subcategory2, this.category);
-    this.prodservice.upload(this.name, this.brand, this.price, this.quantity, this.color, this.capacity, this.ram,
-    this.features, this.description, this.images, this.dimages, this.ucategory, this.subcategory1, this.subcategory2,
+    console.log(this.features);
+    console.log(this.description);
+    console.log(this.productspec);
+    console.log(this.productdata);
+    console.log(this.images);
+    console.log(this.cimage);
+    console.log(this.ram);
+    this.prodservice.upload(this.name, this.brand, this.productdata, this.productspec,
+    this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
     this.cimage).subscribe(data => {
     });
   }
+}
+
+export class UploadAdapter {
+  private loader;
+  constructor(loader: any) {
+    this.loader = loader;
+    console.log(this.readThis(loader.file));
+  }
+  MyBlob = new Blob(['content'], {type : 'text/plain'});
+
+
+  public upload(): Promise<any> {
+    // "data:image/png;base64,"+ btoa(binaryString)
+    return this.readThis(this.loader.file);
+  }
+
+  readThis(file: File): Promise<any> {
+    console.log(file);
+    const imagePromise: Promise<any> = new Promise((resolve, reject) => {
+      const myReader: FileReader = new FileReader();
+      myReader.onloadend = (e) => {
+        const image = myReader.result;
+        console.log(image);
+        return { default: 'data:image/png;base64,' + image };
+        resolve();
+      };
+      myReader.readAsDataURL(this.MyBlob);
+    });
+    return imagePromise;
+  }
+
 }

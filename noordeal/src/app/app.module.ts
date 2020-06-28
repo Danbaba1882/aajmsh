@@ -30,6 +30,9 @@ import { TrackComponent } from './track/track.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProductUploadComponent } from './product-upload/product-upload.component';
 import { RefundComponent } from './refund/refund.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { RefundComponent } from './refund/refund.component';
     HttpClientModule,
     FormsModule,
     BrowserModule,
+    EditorModule,
     AppRoutingModule,
+    CKEditorModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {

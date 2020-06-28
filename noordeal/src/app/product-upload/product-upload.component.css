@@ -1,8 +1,13 @@
 label{
     color:#cc5500;
     font-size:14px;
+    text-transform: capitalize;
 }
 
 option{
     font-size:14px;
+}
+
+.body{
+    background-color: lightgray;
 }

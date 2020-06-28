@@ -39,7 +39,7 @@ var storage = multer.diskStorage({
   })
   var upload = multer({ storage: storage })
 
-noordeal.post('/api/upload', upload.fields([{name:'images'},{name: 'dimages'}, {name: 'cimage'}]), async (req, res)=>{
+noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimage'}]), async (req, res)=>{
     console.log(req.body);
     console.log(req.files)
     const product = new Product({
@@ -49,15 +49,12 @@ noordeal.post('/api/upload', upload.fields([{name:'images'},{name: 'dimages'}, {
         subcategory1: req.body.subcategory1,
         subcategory2: req.body.subcategory2,
         brand: req.body.brand,
-        price: req.body.price,
-        quantity: req.body.price,
         features: req.body.features,
         description: req.body.description,
-        dimages: req.files.dimages,
         images: req.files.images,
         color: req.body.color,
-        capacity: req.body.capacity,
-        ram: req.body.ram,
+        productData: req.body.productdata,
+        productSpec: req.body.productspec,
         cimage: req.files.cimage,
         date: {type: Date,default: Date.now()},
 
