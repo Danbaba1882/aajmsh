@@ -10,15 +10,15 @@
                 <p  style="color:white;font-size: 14px" class="text-center">NOORDEAL</p>
                 <p style="color:white;font-size: 12px; margin-top:-15px" class="text-center">nooraljoharamt@gmail.com</p>
                 <div style="margin-left:30px">
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center pb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-archive" aria-hidden="true"></i> All Products</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-plus" aria-hidden="true"></i>  Add Products</a> <br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit Products</a> <br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit User</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-envelope" aria-hidden="true"></i> Contact</a><br>
-                  <a href="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user" aria-hidden="true"></i> Profile</a><br>
+                  <a routerLink="/admin" style="color:lightgray;font-size: 14px" class="align-center pb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-dashboard" aria-hidden="true"></i> Dashboard</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-archive" aria-hidden="true"></i> All Products</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-plus" aria-hidden="true"></i>  Add Products</a> <br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit Products</a> <br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user-plus" aria-hidden="true"></i> Add User</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-edit" aria-hidden="true"></i> Edit User</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-envelope" aria-hidden="true"></i> Contact</a><br>
+                  <a routerLink="" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-user" aria-hidden="true"></i> Profile</a><br>
                
                 </div>
                 
@@ -292,11 +292,11 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="rprice" class="label-control">product Type</label>
-                        <select class="form-control" [(ngModel)]="ptype" style="border: 1px solid lightgray;height:30px;font-size: 14px">
-                          <option value="Taxable" style="font-size:14px">Simple product</option>
-                          <option value="Shipping only"style="font-size:14px">Grouped product</option>
-                          <option value="None"style="font-size:14px">External/affiliate product</option>
-                          <option value="None"style="font-size:14px">variable product</option>
+                        <select class="form-control" [(ngModel)]="productdata.ptype" style="border: 1px solid lightgray;height:30px;font-size: 14px">
+                          <option value="Simple product" style="font-size:14px">Simple product</option>
+                          <option value="Grouped product"style="font-size:14px">Grouped product</option>
+                          <option value="External/affiliate product"style="font-size:14px">External/affiliate product</option>
+                          <option value="Variable product"style="font-size:14px">variable product</option>
                         </select>
                       </div>
                           <div class="ml-2 form-check">

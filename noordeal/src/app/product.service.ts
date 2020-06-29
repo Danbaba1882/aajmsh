@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductService {
   constructor(private http: HttpClient) { }
-upload(name, brand, productData, productspec,
+upload(name, brand, productdata, productspec,
        features, description, images, ucategory, subcategory1, subcategory2, cimage){
 const formData = new FormData();
 for (const image of images){
@@ -14,7 +14,7 @@ for (const image of images){
 }
 formData.append('name', name);
 formData.append('brand', brand);
-formData.append('productData', productData);
+formData.append('productdata', productdata);
 formData.append('productspec', productspec);
 formData.append('features', features);
 formData.append('description', description);

@@ -123,7 +123,6 @@ alert(this.subcat1);
     console.log(this.productdata);
     console.log(this.images);
     console.log(this.cimage);
-    console.log(this.ram);
     this.prodservice.upload(this.name, this.brand, this.productdata, this.productspec,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
     this.cimage).subscribe(data => {
