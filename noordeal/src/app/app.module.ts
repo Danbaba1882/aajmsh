@@ -19,7 +19,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { ProductService } from './product.service';
 import { FaqsComponent } from './faqs/faqs.component';
 import { PrivacyComponent } from './privacy/privacy.component';
-import { AboutComponent } from './terms/about/about.component';
+import { AboutComponent } from './about/about.component';
 import { TermsComponent } from './terms/terms.component';
 import { Covid19Component } from './covid19/covid19.component';
 import { BlogComponent } from './blog/blog.component';
@@ -32,6 +32,7 @@ import { ProductUploadComponent } from './product-upload/product-upload.componen
 import { RefundComponent } from './refund/refund.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import * as $ from 'jquery';
 
 
 @NgModule({

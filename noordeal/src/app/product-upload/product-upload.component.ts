@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import * as $ from 'jquery';
 
 
 
@@ -42,6 +43,7 @@ export class ProductUploadComponent implements OnInit {
   solditems;
   taxstatus;
   taxclass;
+  data;
   productspec = {
     ram: this.ram,
     color: this.color,
@@ -58,6 +60,7 @@ export class ProductUploadComponent implements OnInit {
     taxstatus: this.taxstatus,
     taxclass: this.taxclass
   };
+  res;
   constructor(private prodservice: ProductService) { }
   ngOnInit(): void {
   }
@@ -126,8 +129,14 @@ alert(this.subcat1);
     this.prodservice.upload(this.name, this.brand, this.productdata, this.productspec,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
     this.cimage).subscribe(data => {
-    });
+      this.data = data;
+      console.log('this is data ', data);
+        });
+    if (this.data.success === true){
+    const modal = document.getElementById('exampleModalCenter');
+        }
   }
+
 }
 
 export class UploadAdapter {

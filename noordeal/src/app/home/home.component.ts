@@ -17,6 +17,7 @@ prod;
   ngOnInit(): void {
     this.hpservice.gethomepageproducts().subscribe(data =>
       {
+        console.log(data);
         this.hpproducts = data;
       });
     console.log('this is', this.hpproducts);
