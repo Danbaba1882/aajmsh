@@ -135,9 +135,6 @@ alert(this.subcat1);
       this.data = data;
       console.log('this is data ', data);
         });
-    if (this.data.success === true){
-    const modal = document.getElementById('exampleModalCenter');
-        }
   }
 
 }
