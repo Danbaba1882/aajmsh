@@ -20,7 +20,7 @@ noordeal.use(bodyparser.json());
 noordeal.use(cors());
 noordeal.use(bodyparser.urlencoded({extended: true}));
 noordeal.use(express.static(__dirname+'/noordeal/dist/testtt'));
-noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/403.html'));
+noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'));
 
 noordeal.get('/api/*', async function(req,res){
     const allproducts = await Product.find({}).sort({"_id":-1});
