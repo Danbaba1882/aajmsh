@@ -366,7 +366,14 @@
                       </div>
                       <div class="form-group">
                           <label for="capacity" class="label-control">Digital Capacity</label>
-                          <input type="text" name="capacity" [(ngModel)]="productspec.capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="capacity" class="form-control">
+                          <select class="form-control" [(ngModel)]="productspec.capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                            <option value="16GB" style="font-size:14px">16GB</option>
+                            <option value="32GB" style="font-size:14px">32GB</option>
+                            <option value="64GB" style="font-size:14px">64GB</option>
+                            <option value="128GB" style="font-size:14px">128GB</option>
+                            <option value="256GB" style="font-size:14px">256GB</option>
+                            
+                          </select>
                       </div>
                       <div class="form-group">
                           <label for="ram" class="label-control">RAM</label>
@@ -374,8 +381,20 @@
                       </div>
                       </div>
                     </div>
-                   
-                    
+                    <h6 class="pt-2 pb-2 pl-2 pr-2 mt-4" style="background-color:#cc5500;color:white">WARRANTY</h6>
+                    <div class="card">
+                      <div class="container-fluid">
+                        <div class="form-group">
+              
+                          <input type="text"  name="color" id="color" [(ngModel)]="productspec.warranty" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="mt-2 form-control">
+                      </div>
+                     
+                      <div class="form-group">
+                          <label for="ram" class="label-control">UPC Code</label>
+                          <input type="text" name="ram" [(ngModel)]="productspec.upc" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
+                      </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event)" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>

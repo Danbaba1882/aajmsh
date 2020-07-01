@@ -44,10 +44,13 @@ export class ProductUploadComponent implements OnInit {
   taxstatus;
   taxclass;
   data;
+  upc;
   productspec = {
     ram: this.ram,
     color: this.color,
-    capacity: this.capacity
+    capacity: this.capacity,
+    warranty: '1 Year',
+    upc: this.upc
   };
   productdata = {
     ptype: this.ptype,
