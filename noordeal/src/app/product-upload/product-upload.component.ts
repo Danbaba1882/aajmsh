@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { HomeService } from '../home.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import * as $ from 'jquery';
 
@@ -45,7 +46,15 @@ export class ProductUploadComponent implements OnInit {
   taxclass;
   data;
   upc;
+  uploadpage;
+  gcat;
+  gsubcat1;
+  gsubcat2;
+  ggbrand;
+  gcolor;
+  cable;
   productspec = {
+    cable: this.cable,
     ram: this.ram,
     color: this.color,
     capacity: this.capacity,
@@ -64,8 +73,20 @@ export class ProductUploadComponent implements OnInit {
     taxclass: this.taxclass
   };
   res;
-  constructor(private prodservice: ProductService) { }
+  constructor(private prodservice: ProductService, private home: HomeService) { }
   ngOnInit(): void {
+    this.home.gethomepageproducts().subscribe(data => {
+    this.uploadpage = data;
+    this.gcat = this.uploadpage.categories;
+    this.gsubcat1 = this.uploadpage.subcat1;
+    this.gsubcat2 = this.uploadpage.subcat2;
+    this.ggbrand = this.uploadpage.brand;
+    this.gcolor = this.uploadpage.color;
+    console.log(this.gcat, this.gsubcat1, this.gsubcat2, this.ggbrand, this.gcolor);
+    });
+    this.prodservice.getcategories().subscribe(data => {
+});
+
   }
 
 

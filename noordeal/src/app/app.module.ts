@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
@@ -33,6 +34,15 @@ import { RefundComponent } from './refund/refund.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import * as $ from 'jquery';
+import { DashboardSidebarComponent } from './dashboard-sidebar/dashboard-sidebar.component';
+import { DashboardHeaderComponent } from './dashboard-header/dashboard-header.component';
+import { DashboardFooterComponent } from './dashboard-footer/dashboard-footer.component';
+import { AllproductsComponent } from './allproducts/allproducts.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
+import { OrdersComponent } from './orders/orders.component';
+import { UsersComponent } from './users/users.component';
+import { ProductlisterComponent } from './productlister/productlister.component';
 
 
 @NgModule({
@@ -60,7 +70,16 @@ import * as $ from 'jquery';
     TrackComponent,
     WishlistComponent,
     ProductUploadComponent,
-    RefundComponent
+    RefundComponent,
+    DashboardSidebarComponent,
+    DashboardHeaderComponent,
+    DashboardFooterComponent,
+    AllproductsComponent,
+    ProfileComponent,
+    EditproductComponent,
+    OrdersComponent,
+    UsersComponent,
+    ProductlisterComponent
   ],
   imports: [
     HttpClientModule,
@@ -70,6 +89,7 @@ import * as $ from 'jquery';
     AppRoutingModule,
     CKEditorModule,
     BrowserAnimationsModule,
+    FlashMessagesModule.forRoot(),
     RouterModule.forRoot([
       {
         path: '',
@@ -150,6 +170,26 @@ import * as $ from 'jquery';
       {
         path: 'wishlist',
         component: WishlistComponent
+      },
+      {
+        path: 'products',
+        component: AllproductsComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent
+      },
+      {
+        path: 'orders',
+        component: OrdersComponent
+      },
+      {
+        path: 'product-lister',
+        component: ProductlisterComponent
+      },
+      {
+        path: 'edit-product',
+        component: EditproductComponent
       }
     ])
   ],

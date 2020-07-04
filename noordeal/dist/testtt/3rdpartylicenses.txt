@@ -90,6 +90,9 @@ Trademarks
 @tinymce/tinymce-angular
 Apache-2.0
 
+angular2-flash-messages
+MIT
+
 bootstrap
 MIT
 The MIT License (MIT)
