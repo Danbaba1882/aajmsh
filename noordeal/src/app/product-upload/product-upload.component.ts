@@ -118,12 +118,10 @@ this.cascat = e.target.value;
 
   getsubcat1(e){
 this.subcat1 = e.target.value;
-alert(this.subcat1);
   }
 
   getsubcat2(e){
     this.subcat2 = e.target.value;
-    alert(this.subcat2);
   }
 
   getbrand(e){

@@ -43,7 +43,7 @@
                                     <label class="label-control" for="charger">Product Subcategory II</label>
                                     <select class="form-control  subcat2" style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
                                         <option selected >Select Subcatgeory II</option>
-                                    <option *ngFor="let subcat2 of gsubcat2" value="{{subcat2.gsubcat2}}">{{subcat2.gsubcat2}}</option>
+                                    <option *ngFor="let subcat2 of gsubcat2" value="{{subcat2.subcategory2}}">{{subcat2.subcategory2}}</option>
                                     </select>
                                   </div>
                         
@@ -246,7 +246,6 @@
                      
         </div>
       </div>
-      <div [innerHTML]="description"></div>
       <!-- Button trigger modal -->
 
 
