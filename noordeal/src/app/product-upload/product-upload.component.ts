@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { HomeService } from '../home.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import * as $ from 'jquery';
 
@@ -25,16 +26,16 @@ export class ProductUploadComponent implements OnInit {
   cimage;
   images = [];
   description;
-  category;
+  category = 'Select Product Category';
   ucategory;
-  subcat1;
-  subcat2;
+  subcat1 = 'Select Product Subcategory I';
+  subcat2 = 'Select Product Subcategory II';
   subcategory1;
   subcategory2;
   maccat;
   cascat;
   smarth;
-  gbrand;
+  gbrand = 'Select Product Brand';
   ptype;
   virtual;
   downloadable;
@@ -73,7 +74,7 @@ export class ProductUploadComponent implements OnInit {
     taxclass: this.taxclass
   };
   res;
-  constructor(private prodservice: ProductService, private home: HomeService) { }
+  constructor(private prodservice: ProductService, private home: HomeService, private flash: FlashMessagesService) { }
   ngOnInit(): void {
     this.home.gethomepageproducts().subscribe(data => {
     this.uploadpage = data;
@@ -91,6 +92,11 @@ export class ProductUploadComponent implements OnInit {
 
 
 
+  showFlash(){
+    // 1st parameter is a flash message text
+    // 2nd parameter is optional. You can pass object with options.
+    this.flash.show('Success! Product has successfully been added', { cssClass: 'alert-success', timeout: 10000 });
+}
 oncoverupload(e){
 this.cimage = e.target.files[0];
 console.log(this.cimage);
@@ -112,21 +118,7 @@ this.category = e.target.value;
 this.cascat = e.target.value;
   }
 
-  smarthome(e){
-    this.smarth = e.target.value;
-  }
 
-  getsubcat1(e){
-this.subcat1 = e.target.value;
-  }
-
-  getsubcat2(e){
-    this.subcat2 = e.target.value;
-  }
-
-  getbrand(e){
-    this.gbrand = e.target.value;
-  }
 
   onReady(eventData) {
     eventData.plugins.get('FileRepository').createUploadAdapter =  (loader) => {
@@ -152,6 +144,36 @@ this.subcat1 = e.target.value;
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
     this.cimage).subscribe(data => {
       this.data = data;
+      if (this.data.success === true){
+        this.name = '';
+        this.gbrand = 'Select Product Brand';
+        this.subcat1 = 'Select Product Subcategory I';
+        this.subcat2 = 'Select Product Subcategory II';
+        this.category = 'Select Product Category';
+        this.productspec = {
+          cable: '',
+          ram: '',
+          color: '',
+          capacity: '',
+          warranty: '1 Year',
+          upc: ''
+        };
+        this.productdata = {
+          ptype: '',
+          virtual: '',
+          downloadable: '',
+          regularprice: '',
+          saleprice: '',
+          salequantity: '',
+          solditems: '',
+          taxstatus: '',
+          taxclass: ''
+        };
+        this.cimage = [];
+        this.images = [];
+        this.features = '';
+        this.description = '';
+      }
       console.log('this is data ', data);
         });
   }

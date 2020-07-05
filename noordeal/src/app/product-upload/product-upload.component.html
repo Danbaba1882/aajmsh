@@ -7,6 +7,16 @@
         <div class="col-md-9">
           <div class="container-fluid">
            <app-dashboard-header></app-dashboard-header>
+           <div *ngIf="data.success === true" class="mt-2 alert alert-success alert-dismissible" role="alert">
+            Success! Product has successfully been added
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="mt-2">
+            <flash-messages *ngIf="data.success === true"></flash-messages>
+          </div>
+         
               <h4 class="mt-4">Add new product</h4>
               <hr>
           </div>
@@ -24,16 +34,16 @@
                                      
                             <div class="form-group" >
                                     <label class="label-control"  for="categories">Product Category</label>
-                                    <select class="form-control "  style="border: 1px solid lightgray;" (change)="getcatvalue($event)" >
-                                      <option selected>Please Choose</option>
+                                    <select class="form-control "  style="border: 1px solid lightgray;" [(ngModel)]="category"  [ngModelOptions]="{standalone: true}" >
+                                      <option selected>{{category}}</option>
                                       <option *ngFor="let cat of gcat" value="{{cat.category}}">{{cat.category}}</option>
                                    
                                     </select>
                                   </div>
                                   <div class="form-group">
                                     <label class="label-control" for="mobile">Product Subcategory I</label>
-                                    <select class="form-control  subcat1" style="border: 1px solid lightgray;" (change)="getsubcat1($event)" (change)="mobileacat($event)">
-                                        <option selected >Select Subcategory I</option>
+                                    <select class="form-control  subcat1" style="border: 1px solid lightgray;" [(ngModel)]="subcat1"  [ngModelOptions]="{standalone: true}">
+                                        <option selected >{{subcat1}}</option>
                                       <option *ngFor="let subcat1 of gsubcat1" value="{{subcat1.subcategory1}}">{{subcat1.subcategory1}}</option>
                                       <option value="Cables">Cables</option>
                                     </select>
@@ -41,8 +51,8 @@
 
                                   <div class="form-group">
                                     <label class="label-control" for="charger">Product Subcategory II</label>
-                                    <select class="form-control  subcat2" style="border: 1px solid lightgray;" (change)="getsubcat2($event)">
-                                        <option selected >Select Subcatgeory II</option>
+                                    <select class="form-control  subcat2" style="border: 1px solid lightgray;" [(ngModel)]="subcat2"  [ngModelOptions]="{standalone: true}">
+                                        <option selected >{{subcat2}}</option>
                                     <option *ngFor="let subcat2 of gsubcat2" value="{{subcat2.subcategory2}}">{{subcat2.subcategory2}}</option>
                                     </select>
                                   </div>
@@ -50,8 +60,8 @@
                         
                                   <div class="form-group" >
                                     <label for="brand" class="label-control">Product Brand</label>
-                                    <select class="form-control  " style="border: 1px solid lightgray;" id="brand" (change)="getbrand($event)">
-                                        <option selected >Select product brand</option>
+                                    <select class="form-control  " style="border: 1px solid lightgray;" [(ngModel)]="gbrand"  [ngModelOptions]="{standalone: true}" id="brand" >
+                                        <option selected >{{gbrand}}</option>
                                       <option *ngFor="let brand of ggbrand" value="{{brand.brand}}">{{brand.brand}}</option>
           
                                     </select>
@@ -240,7 +250,7 @@
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event)" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>
+                <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event);showFlash()" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>
               </div>
              
                      
