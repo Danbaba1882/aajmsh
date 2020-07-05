@@ -34,6 +34,7 @@ noordeal.get('/api/*', async function(req,res){
     const color = await Color.find({});
     console.log(categories);
     console.log('is working');
+    console.log(subcat2)
     res.send({allproducts, categories,subcat1, subcat2, brand,color});
 })
 

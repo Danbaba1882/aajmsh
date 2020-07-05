@@ -13,7 +13,8 @@ const product = new schema({
     images: [],
     productData: String,
     productSpec: String,
-    cimage: []
+    cimage: [],
+    date: {type: Date,default: Date.now()}
 })
 
 module.exports = mongoose.model('Product', product);
