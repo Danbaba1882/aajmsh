@@ -32,10 +32,21 @@ noordeal.get('/api/*', async function(req,res){
     const subcat2 = await Subcategory2.find({});
     const brand = await Brand.find({});
     const color = await Color.find({});
+    const listers = await Lister.find({});
+    const sp = await Product.find({category:"Smartphones"})
+    const tab = await Product.find({category:"Tablets"})
+    const mp = await Product.find({category:"Mobile Phones"})
+    const sw = await Product.find({subcategory2:"Smart Watches"})
+    const tv = await Product.find({subcategory1:"Tvs"})
+    const eles = await Product.find({category:"Electric Scooter"})
+    const cam = await Product.find({category:"Cameras"})
+    const mac = await Product.find({category:"Mobile Accessories"})
+    const caa = await Product.find({category:"Computer and Accessories"})
+    const sh = await Product.find({category:"Smart Homes"})
     console.log(categories);
     console.log('is working');
     console.log(subcat2)
-    res.send({allproducts, categories,subcat1, subcat2, brand,color});
+    res.send({allproducts, categories,subcat1, subcat2, brand,color,listers,sp,mp,tab,sw,tv,eles,cam,mac,caa,sh});
 })
 
 noordeal.post('/api/checkout', (req,res)=>{
@@ -216,6 +227,30 @@ noordeal.get('/api/getttt/', (req, res)=>{
 noordeal.get('/api/uploads', async (req, res)=>{
     console.log('all is well')
     res.send('ok')
+})
+
+const lister = new schema({
+    username:String,
+    password:String
+})
+
+const Lister = mongoose.model('lister',lister);
+
+noordeal.post('/api/addlister', async (req,res)=>{
+    const lister = new Lister({
+        username:req.body.username,
+        password:req.body.password
+    }) 
+    await Lister.create(lister).then((p)=>{
+        console.log(p)
+    })
+    res.json({success: true})
+})
+
+noordeal.get('/api/listers/*', async (req, res)=>{
+    console.log('lister is working')
+ const listers = await Lister.find({})
+ console.log(listers);
 })
 
 noordeal.listen(process.env.PORT || 3000)

@@ -31,7 +31,8 @@ cf;
   }
 
   addcategory(){
-this.dashboard.addcategory(this.category).subscribe(category => {
+  console.log(this.category);
+  this.dashboard.addcategory(this.category).subscribe(category => {
   console.log(category);
   this.categoryR = category;
   this.categoryRR = this.categoryR.success;

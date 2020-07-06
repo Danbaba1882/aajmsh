@@ -33,7 +33,7 @@
                           <form  enctype="multipart/form-data" >
                                      
                             <div class="form-group" >
-                                    <label class="label-control"  for="categories">Product Category</label>
+                                    <label class="label-control"  for="categories">Product category</label>
                                     <select class="form-control "  style="border: 1px solid lightgray;" [(ngModel)]="category"  [ngModelOptions]="{standalone: true}" >
                                       <option selected>{{category}}</option>
                                       <option *ngFor="let cat of gcat" value="{{cat.category}}">{{cat.category}}</option>

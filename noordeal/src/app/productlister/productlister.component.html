@@ -1,1 +1,90 @@
-<p>productlister works!</p>
+
+<div style="background-color:lightgray">
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-md-3 bg-dark h-auto">
+    <app-dashboard-sidebar></app-dashboard-sidebar>
+            </div>
+            <div class="col-md-9">
+    <app-dashboard-header>
+    
+    </app-dashboard-header>
+    
+    <h4 class="mt-4" *ngIf="router.url === '/add-product-lister'">Add new Product Lister</h4>
+    <h4 class="mt-4" *ngIf="router.url === '/product-listers'">Products Listers</h4>
+    <h4 class="mt-4" *ngIf="router.url === '/edit-product-lister'">Edit product lister</h4>
+    <hr>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card mt-4 rounded-0 shadow" *ngIf="router.url === '/add-product-lister'">
+                <div class="container-fluid">
+                        
+                                <div class="form-group mt-2">
+                                    <label for="username" class="label-control">Username</label>
+                                    <input type="text" [(ngModel)]="username" class="form-control rounded-0" id="username" name="username">
+                                </div>
+                                
+                                    <div class="form-group">
+                                            <label for="password" class="label-control">Password</label>
+                                            <input type="text"  [(ngModel)]="password" class="form-control rounded-0" id="password" name="Password">
+                                        </div>
+                                       
+                                            <button (click)="addproductlister()" style="background-color: midnightblue;color: white" class="btn rounded-0 form-control btn-md">CREATE PRODUCT LISTER</button>
+                            
+                           
+                </div>
+            </div>
+            <div class="card mt-4 rounded-0 shadow" *ngIf="router.url === '/edit-product-lister'">
+                <div class="container-fluid">
+                        <form action="">
+                                <div class="form-group mt-2">
+                                    <label for="username" class="label-control">Username</label>
+                                    <input type="text" value="nooraljoharamat@gmail.com" class="form-control rounded-0" id="username" name="username">
+                                </div>
+                                
+                                    <div class="form-group">
+                                            <label for="password" class="label-control">Password</label>
+                                            <input type="text" class="form-control rounded-0" value="password" id="password" name="Password">
+                                        </div>
+                                       
+                                            <button (click)="editproductlister()" style="background-color: midnightblue;color: white" class="btn rounded-0 form-control btn-md">UPDATE PRODUCT LISTER</button>
+                            </form>
+                           
+                </div>
+            </div>
+            <div class="card mt-4 rounded-0 shadow" *ngIf="router.url === '/product-listers'">
+                <div class="container-fluid">
+                    <table class="table table-borderless mt-4">
+                       
+                        <tbody >
+                          <tr>
+                            
+                            <td> 
+                                nooraljoharamt@gmail.com
+                            </td>
+                            
+                            <td>32842663</td>
+                            <td><a routerLink="['/edit-product-lister', id]" class="delete"><i style="color:gray" class="fa fa-edit edit" aria-hidden="true"></i></a></td>
+                            <td><a (click)="deletelister()" class="delete"><i style="color: gray" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
+    
+                        </tr>
+            
+                      
+            
+                        </tbody>
+                      </table>
+                           
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    
+            </div>
+        </div>
+    </div>
+    <app-dashboard-footer>
+
+    </app-dashboard-footer>
+</div>

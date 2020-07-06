@@ -190,7 +190,15 @@ import { SubcategorytwoComponent } from './subcategorytwo/subcategorytwo.compone
         component: OrdersComponent
       },
       {
-        path: 'product-lister',
+        path: 'product-listers',
+        component: ProductlisterComponent
+      },
+      {
+        path: 'add-product-lister',
+        component: ProductlisterComponent
+      },
+      {
+        path: 'edit-product-lister',
         component: ProductlisterComponent
       },
       {
