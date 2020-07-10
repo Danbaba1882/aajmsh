@@ -21,7 +21,7 @@ a{
   }
 
   .navbar{
-    background-color:blue !important;
+    background-color:#418ec4 !important;
 
   }
 
@@ -34,7 +34,7 @@ a{
   }
 
   .dropdown:hover > #navbarDropdown{
-    color:blue !important;
+    color:#418ec4 !important;
     background-color: white;
     padding-bottom: 10px;
   }
@@ -111,7 +111,7 @@ a{
   width: 100%;
   float: right;
   height: 2px;
-  background-color: blue !important;
-  color:blue;
+  background-color: #418ec4 !important;
+  color:#418ec4;
   margin-bottom: 5px;
 }

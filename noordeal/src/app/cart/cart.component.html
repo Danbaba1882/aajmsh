@@ -7,7 +7,7 @@
 
 
         <table class="table table-borderless table-dark big">
-            <thead style="background-color:#cc5500; color:white">
+            <thead style="background-color:#418ec4; color:white">
               <tr>
                 
                 <th scope="col">PRODUCT</th>
@@ -23,7 +23,7 @@
                 <td> 
                     <div class="row">
                         <div class="col-2">
-                                <img src="{{item.image}}" style="width:100px;height:100px" alt="">
+                                <img src="assets/productimage/{{item.filename}}" style="width:100px;height:100px" alt="">
                         </div>
                         <div class="col-9">
                             <p class="pl-4">{{item.name}} </p>
@@ -46,12 +46,12 @@
 
 
           <table class="table table-borderless table-dark small">
-                <thead style="background-color:#cc5500; color:white">
+                <thead style="background-color:#418ec4; color:white">
                   <tr>
                     
                     <th scope="col">PRODUCT</th>
                     <th scope="col">QUANTITY</th>
-                    <th style="background-color:#cc5500" scope="col" sty></th>
+                    <th style="background-color:#418ec4" scope="col" sty></th>
                   </tr>
                 </thead>
                 <tbody *ngFor="let item of cartitems">
@@ -62,8 +62,8 @@
                                     <img src="{{item.image}}" style="width:100px;height:100px" alt=""><br>
                             
                                    <P>{{item.name}}</P> 
-                                   <p style="color:#cc5500">PRICE: <span style="color:white">{{item.price}}</span></p>  
-                                    <p style="color:#cc5500">SUBTOTAL: <span style="color:white">{{item.price * item.quantity}}</span></p>
+                                   <p style="color:#418ec4">PRICE: <span style="color:white">{{item.price}}</span></p>  
+                                    <p style="color:#418ec4">SUBTOTAL: <span style="color:white">{{item.price * item.quantity}}</span></p>
 
                          
                     </td>
@@ -81,7 +81,7 @@
 
 <div class="row mt-2">
     <div class="col-12 d-flex justify-content-center">
-    <a routerLink="/" class="btn btn-lg rounded-0" style="background-color:#cc5500;color:white">CONTINUE SHOPPING</a>
+    <a routerLink="/" class="btn btn-lg rounded-0" style="background-color:#418ec4;color:white">CONTINUE SHOPPING</a>
     </div>
     
 </div>
@@ -105,7 +105,7 @@
                         <input type="text" class="form-control rounded-0">
                     </div>
 
-                    <button type="submit" style="background-color:#cc5500;color:white" class="btn rounded-0 mb-2 btn-lg">UPDATE</button>
+                    <button type="submit" style="background-color:#418ec4;color:white" class="btn rounded-0 mb-2 btn-lg">UPDATE</button>
         </form>
     </div>
     <div class="col-md-4">
@@ -119,7 +119,7 @@
             <h4 class="mb-2">Total AED 45,980</h4>
              
     </div>
-    <a routerLink="/ckeckout" class="mt-4"><button style="background-color:#cc5500;color:white" class="form-control rounded-0 btn btn-lg">PROCEED TO CHECKOUT</button></a>
+    <a routerLink="/ckeckout" class="mt-4"><button style="background-color:#418ec4;color:white" class="form-control rounded-0 btn btn-lg">PROCEED TO CHECKOUT</button></a>
            
 </div>
 

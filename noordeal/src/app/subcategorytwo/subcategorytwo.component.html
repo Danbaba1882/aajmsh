@@ -1,1 +1,323 @@
-<p>subcategorytwo works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid">
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Wall-Charger'" class="text-center mt-4">CATEGORY: <span style="color:black">WALL CHARGERS</span></h2>
+    <h2 style="color:#418ec4"  class="text-center mt-4" *ngIf="router.url ==='/shop/product/Multi-Port-Charger'">CATEGORY: <span style="color:black">MULTIPORT CHARGER</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Wireless-Charger'" class="text-center mt-4">CATEGORY: <span style="color:black">WIRELESS CHARGER</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Smart-Watches'" class="text-center mt-4">CATEGORY: <span style="color:black">SMART WATCHES</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Smart-Bands'" class="text-center mt-4">CATEGORY: <span style="color:black">SMART BANDS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Car-Charger'">CATEGORY: <span style="color:black">CAR CHARGERS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Ear-Buds-and-In-Ear'" class="text-center mt-4">CATEGORY: <span style="color:black">EAR-BUDS & IN-EAR</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Over-Ear-and-On-Ear'" class="text-center mt-4">CATEGORY: <span style="color:black">OVER-EAR & ON-EAR</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Kids-Headphones'" class="text-center mt-4">CATEGORY: <span style="color:black">KIDS HEADPHONES</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Wireless-and-Bluetooths'" class="text-center mt-4">CATEGORY: <span style="color:black">WIRELESS & BLUETOOTHS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Holders'">CATEGORY: <span style="color:black">HOLDERS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/PC-Speakers'">CATEGORY: <span style="color:black">PC SPEAKERS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/PC-Gaming-Headsets'" class="text-center mt-4">CATEGORY: <span style="color:black">PC GAMING HEADSETS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Smart-Tvs'">CATEGORY: <span style="color:black">SMART TVS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Curved-Tvs'">CATEGORY: <span style="color:black">CURVED TVS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/LED-Tvs'">CATEGORY: <span style="color:black">LED TVS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Mouse'" class="text-center mt-4">CATEGORY: <span style="color:black">MOUSE</span></h2>
+    <h2 *ngIf="router.url ==='/shop/product/Keyboards'" style="color:#418ec4" class="text-center mt-4">CATEGORY: <span style="color:black">KEYBOARDS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Mother-Board'" class="text-center mt-4">CATEGORY: <span style="color:black">MOTHER BOARDS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Monitors'" class="text-center mt-4">CATEGORY: <span style="color:black">MONITORS</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Ram'" class="text-center mt-4">CATEGORY: <span style="color:black">RAM</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Hard-Disk'">CATEGORY: <span style="color:black">HARD DISK</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Pen-Drives'">CATEGORY: <span style="color:black">PEN DRIVE</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Processor'" class="text-center mt-4">CATEGORY: <span style="color:black">PROCESSOR</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Computer-Cases'">CATEGORY: <span style="color:black">COMPUTER CASES</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Play-Stations'">CATEGORY: <span style="color:black">PLAY STATIONS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4"*ngIf="router.url ==='/shop/product/Xbox'" >CATEGORY: <span style="color:black">XBOX</span></h2>
+    <h2 style="color:#418ec4" *ngIf="router.url ==='/shop/product/Gaming-Consoles'"  class="text-center mt-4">CATEGORY: <span style="color:black">GAMES CONSOLES</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/Gaming-Accessories'">CATEGORY: <span style="color:black">GAMING ACCESSORIES</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/4K-UltraHD-Tvs'">CATEGORY: <span style="color:black">4K ULTRA HD TVS</span></h2>
+    <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/shop/product/OLED-Tvs'">CATEGORY: <span style="color:black">OLED TVS</span></h2>
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Wall-Charger'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Wall-Charger' && wch.length === 0 || wch.length === undefined">
+        <div class="col-md-12">
+            <h2 class="text-center">There are no products available</h2>
+        </div>
+   
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Multi-Port-Charger'">
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" *ngIf="router.url ==='/shop/product/Multi-Port-Charger' && mpch.length === 0">
+        <div class="col-md-12" style="height:300px">
+            <h2 class="text-center" style="margin-top:150px">There are no products available</h2>
+        </div>
+        
+     </div>
+ 
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Wireless-Charger'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Wireless-Charger' && wrch.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Smart-Watches'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Smart-Watches' && swatch.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Smart-Bands'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Smart-Bands' && sband.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Car-Charger'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Car-Charger' && cch.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Holders'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Holders' && hol.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Wireless-and-Bluetooths'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Wireless-and-Bluetooths' && wandb.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Ear-Buds-and-In-Ear'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Ear-Buds-and-In-Ear' && ebie.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Over-Ear-and-On-Ear'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Over-Ear-and-On-Ear' && oeoe.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+<!---->
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Kids-Headphones'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Kids-Headphones' && khp.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/PC-Gaming-Headsets'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/PC-Gaming-Headsets' && pcgh.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Mouse'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Mouse' && mouse.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Keyboards'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Keyboards' && kb.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Monitors'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Monitors' && mon.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Mother-Board'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Mother-Board' && mb.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Processor'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Processor' && proc.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <!---->
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Ram'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Ram' && ram.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Gaming-Consoles'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Gaming-Consoles' && gc.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Xbox'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Xbox' && xb.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Play-Stations'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Play-Stations' && ps.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/OLED-Tvs'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/OLED-Tvs' && otv.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/LED-Tvs'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/LED-Tvs' && ltv.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/4K-UltraHD-Tvs'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/4K-UltraHD-Tvs' && fktv.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Curved-Tvs'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Curved-Tvs' && ctv.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Pen-Drives'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Pen-Drives' && pd.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Computer-Cases'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Computer-Cases' && cc.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/PC-Speakers'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/PC-Speakers' && pcs.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Smart-Tvs'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Smart-Tvs' && stv.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/shop/product/Gaming-Accessories'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px;margin-top:100px" *ngIf="router.url ==='/shop/product/Gaming-Accessories' && gc.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+
+   
+</div>
+<app-footer></app-footer>

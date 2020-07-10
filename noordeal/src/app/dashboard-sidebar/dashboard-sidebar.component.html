@@ -16,11 +16,11 @@
       <a routerLink="/orders" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-shopping-cart" aria-hidden="true"></i> Orders</a><br>
       <a routerLink="/users" style="color:lightgray;font-size: 14px" class="align-center mb-4"><i style="color:lightgray;font-size: 14px" class="fa fa-users" aria-hidden="true"></i> Users</a><br>
         </div>
-        <button data-toggle="modal" data-target="#category" class="btn btn-sm form-control mb-2 mt-4 rounded-0" style="background-color:midnightblue;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD CATEGORY</button>
-        <button data-toggle="modal" data-target="#subcat1" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:midnightblue;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD SUBCATEGORY I</button>
-        <button data-toggle="modal" data-target="#subcat2" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:midnightblue;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD SUBCATEGORY II</button>
-        <button data-toggle="modal" data-target="#brand" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:midnightblue;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD BRAND</button>
-        <button data-toggle="modal" data-target="#color" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:midnightblue;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD COLOR</button>
+        <button data-toggle="modal" data-target="#category" class="btn btn-sm form-control mb-2 mt-4 rounded-0" style="background-color:#418ec4;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD CATEGORY</button>
+        <button data-toggle="modal" data-target="#subcat1" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:#418ec4;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD SUBCATEGORY I</button>
+        <button data-toggle="modal" data-target="#subcat2" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:#418ec4;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD SUBCATEGORY II</button>
+        <button data-toggle="modal" data-target="#brand" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:#418ec4;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD BRAND</button>
+        <button data-toggle="modal" data-target="#color" class="btn btn-sm form-control mb-2 rounded-0" style="background-color:#418ec4;color:white"><i style="color:white;" class="fa fa-plus" aria-hidden="true"></i> ADD COLOR</button>
     
     
   
@@ -50,12 +50,12 @@
               An error occured while creating category!
             </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="category" [ngModelOptions]="{standalone: true}" style="border: 1px solid midnightblue" class="form-control rounded-0">
+            <input type="text" [(ngModel)]="category" [ngModelOptions]="{standalone: true}" style="border: 1px solid #418ec4" class="form-control rounded-0">
           </div>
         </div>
         <div class="modal-footer">
 
-          <button type="button" (click)="addcategory();showFlash()"class="btn btn-md rounded-0" style="background-color:midnightblue;color:white">CREATE</button>
+          <button type="button" (click)="addcategory();showFlash()"class="btn btn-md rounded-0" style="background-color:#418ec4;color:white">CREATE</button>
         </div>
       </div>
     </div>
@@ -77,12 +77,12 @@
               Success! Subategory I has been added
             </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="subcategory1" style="border: 1px solid midnightblue" class="form-control rounded-0">
+            <input type="text" [(ngModel)]="subcategory1" style="border: 1px solid #418ec4" class="form-control rounded-0">
           </div>
         </div>
         <div class="modal-footer">
 
-          <button type="button" (click)="addsubcategory1();showFlashs1()" class="btn btn-md rounded-0" style="background-color:midnightblue;color:white">CREATE</button>
+          <button type="button" (click)="addsubcategory1();showFlashs1()" class="btn btn-md rounded-0" style="background-color:#418ec4;color:white">CREATE</button>
         </div>
       </div>
     </div>
@@ -104,12 +104,12 @@
             Success! Subcategory II has been added
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="subcategory2" style="border: 1px solid midnightblue" class="form-control rounded-0">
+            <input type="text" [(ngModel)]="subcategory2" style="border: 1px solid #418ec4" class="form-control rounded-0">
           </div>
         </div>
         <div class="modal-footer">
 
-          <button type="button" (click)="addsubcategory2();showFlashs2()" class="btn btn-md rounded-0" style="background-color:midnightblue;color:white">CREATE</button>
+          <button type="button" (click)="addsubcategory2();showFlashs2()" class="btn btn-md rounded-0" style="background-color:#418ec4;color:white">CREATE</button>
         </div>
       </div>
     </div>
@@ -131,12 +131,12 @@
             Success! Brand has been added
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="brand" style="border: 1px solid midnightblue" class="form-control rounded-0">
+            <input type="text" [(ngModel)]="brand" style="border: 1px solid #418ec4" class="form-control rounded-0">
           </div>
         </div>
         <div class="modal-footer">
 
-          <button type="button" (click)="addbrand();showFlashb()" class="btn btn-md rounded-0" style="background-color:midnightblue;color:white">CREATE</button>
+          <button type="button" (click)="addbrand();showFlashb()" class="btn btn-md rounded-0" style="background-color:#418ec4;color:white">CREATE</button>
         </div>
       </div>
     </div>
@@ -156,12 +156,12 @@
               Success! Color has been added
             </div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="color" style="border: 1px solid midnightblue" class="form-control rounded-0">
+              <input type="text" [(ngModel)]="color" style="border: 1px solid #418ec4" class="form-control rounded-0">
             </div>
           </div>
           <div class="modal-footer">
   
-            <button type="button" (click)="addcolor();showFlashc()" class="btn btn-md rounded-0" style="background-color:midnightblue;color:white">CREATE</button>
+            <button type="button" (click)="addcolor();showFlashc()" class="btn btn-md rounded-0" style="background-color:#418ec4;color:white">CREATE</button>
           </div>
         </div>
       </div>

@@ -38,6 +38,7 @@ export class ProductUploadComponent implements OnInit {
   gbrand = 'Select Product Brand';
   ptype;
   virtual;
+  warranty = '1 Year';
   downloadable;
   regularprice;
   saleprice;
@@ -54,25 +55,6 @@ export class ProductUploadComponent implements OnInit {
   ggbrand;
   gcolor;
   cable;
-  productspec = {
-    cable: this.cable,
-    ram: this.ram,
-    color: this.color,
-    capacity: this.capacity,
-    warranty: '1 Year',
-    upc: this.upc
-  };
-  productdata = {
-    ptype: this.ptype,
-    virtual: this.virtual,
-    downloadable: this.downloadable,
-    regularprice: this.regularprice,
-    saleprice: this.saleprice,
-    salequantity: this.salequantity,
-    solditems: this.solditems,
-    taxstatus: this.taxstatus,
-    taxclass: this.taxclass
-  };
   res;
   constructor(private prodservice: ProductService, private home: HomeService, private flash: FlashMessagesService) { }
   ngOnInit(): void {
@@ -136,13 +118,14 @@ this.cascat = e.target.value;
     console.log(this.subcategory1, this.subcategory2, this.category);
     console.log(this.features);
     console.log(this.description);
-    console.log(this.productspec);
-    console.log(this.productdata);
     console.log(this.images);
     console.log(this.cimage);
-    this.prodservice.upload(this.name, this.brand, this.productdata, this.productspec,
+    console.log(this.salequantity);
+    this.prodservice.upload(this.name, this.brand,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
-    this.cimage).subscribe(data => {
+    this.cimage, this.saleprice, this.salequantity, this.regularprice, this.taxclass, this.taxstatus,
+    this.downloadable, this.virtual, this.ptype, this.cable, this.ram, this.color, this.capacity, this.warranty,
+    this.upc, this.solditems).subscribe(data => {
       this.data = data;
       if (this.data.success === true){
         this.name = '';
@@ -150,25 +133,21 @@ this.cascat = e.target.value;
         this.subcat1 = 'Select Product Subcategory I';
         this.subcat2 = 'Select Product Subcategory II';
         this.category = 'Select Product Category';
-        this.productspec = {
-          cable: '',
-          ram: '',
-          color: '',
-          capacity: '',
-          warranty: '1 Year',
-          upc: ''
-        };
-        this.productdata = {
-          ptype: '',
-          virtual: '',
-          downloadable: '',
-          regularprice: '',
-          saleprice: '',
-          salequantity: '',
-          solditems: '',
-          taxstatus: '',
-          taxclass: ''
-        };
+        this.cable = '';
+        this.ram = '';
+        this.color = '';
+        this.capacity = '';
+        this.warranty = '1 Year';
+        this.upc = '';
+        this.ptype = '';
+        this.virtual = '';
+        this.downloadable = '';
+        this.regularprice = '';
+        this.saleprice = '';
+        this.salequantity = '';
+        this.solditems = '';
+        this.taxstatus = '';
+        this.taxclass = '';
         this.cimage = [];
         this.images = [];
         this.features = '';

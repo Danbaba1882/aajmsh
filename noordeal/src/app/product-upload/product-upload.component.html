@@ -25,7 +25,7 @@
             <div class="container-fluid">
                 <div class="row mt-4">
                   <div class="col-md-8">
-                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DETAILS</h6>
+                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT DETAILS</h6>
                     <div class="card pt-2">
                       <div class="container-fluid">
                         <label for="" class="label-control">Product Name</label>
@@ -84,7 +84,7 @@
                       </div>
                     </div>
               <br>
-              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT FEATURES</h6>
+              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT FEATURES</h6>
             <editor
             [(ngModel)]="features"
             initialValue="<p>Initial content of the editor</p>"
@@ -106,7 +106,7 @@
             >
             </editor>
                  <br>
-                 <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DESCRIPTION</h6>
+                 <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT DESCRIPTION</h6>
               <editor id="image-tools"
               [(ngModel)]="description"
               apiKey="0zdkwzyolkjb7wno4bisfcjfe1ase56cxgyyqra1x9ommzyf"
@@ -129,7 +129,7 @@
               
               </editor>
               <br>
-              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT DATA</h6>
+              <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT DATA</h6>
               <div class="card">
                 
                 <div class="container-fluid">
@@ -137,7 +137,7 @@
                     <div class="col-md-4">
                       <div class="form-group">
                         <label for="rprice" class="label-control">product Type</label>
-                        <select class="form-control" [(ngModel)]="productdata.ptype" style="border: 1px solid lightgray;height:30px;font-size: 14px">
+                        <select class="form-control" [(ngModel)]="ptype" style="border: 1px solid lightgray;height:30px;font-size: 14px">
                           <option value="Simple product" style="font-size:14px">Simple product</option>
                           <option value="Grouped product"style="font-size:14px">Grouped product</option>
                           <option value="External/affiliate product"style="font-size:14px">External/affiliate product</option>
@@ -145,34 +145,35 @@
                         </select>
                       </div>
                           <div class="ml-2 form-check">
-                            <input type="checkbox" [(ngModel)]="productdata.virtual" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" [(ngModel)]="virtual" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Virtual</label>
                           </div>
                           <div class="ml-2 form-check">
-                            <input type="checkbox" [(ngModel)]="productdata.downloadable" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" [(ngModel)]="downloadable" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Downloadable</label>
                           </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="rprice" class="label-control">Regular Price (AED)</label>
-                            <input type="text" [(ngModel)]="productdata.regularprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                            <input type="number" [(ngModel)]="regularprice" style="border: 1px solid lightgray;height:30px" class="form-control">
                           </div>
                           <div class="form-group">
                               <label for="rprice" class="label-control">Sales Price (AED)</label>
-                              <input type="text" [(ngModel)]="productdata.saleprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                              <input type="number" [(ngModel)]="saleprice" style="border: 1px solid lightgray;height:30px" class="form-control">
                             </div>
+                            {{saleprice}}
                             <div class="form-group">
                                 <label for="rprice" class="label-control">Sale Quantity</label>
-                                <input type="number" [(ngModel)]="productdata.salequantity" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                <input type="number" [(ngModel)]="salequantity" style="border: 1px solid lightgray;height:30px" class="form-control">
                               </div>
                               <div class="form-group">
                                   <label for="rprice" class="label-control">Sold Items</label>
-                                  <input type="number" [(ngModel)]="productdata.solditems" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                  <input type="number" [(ngModel)]="solditems" style="border: 1px solid lightgray;height:30px" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="rprice" class="label-control">Tax Status</label>
-                                    <select class="form-control" [(ngModel)]="productdata.taxstatus" style="border: 1px solid lightgray;height:30px;font-size: 14px" >
+                                    <select class="form-control" [(ngModel)]="taxstatus" style="border: 1px solid lightgray;height:30px;font-size: 14px" >
                                       <option value="Taxable" style="font-size:14px">Taxable</option>
                                       <option value="Shipping only"style="font-size:14px">Shipping only</option>
                                       <option value="None"style="font-size:14px">None</option>
@@ -180,7 +181,7 @@
                                   </div>
                                   <div class="form-group">
                                       <label for="rprice" class="label-control">Tax Class</label>
-                                      <select class="form-control" [(ngModel)]="productdata.taxclass" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                                      <select class="form-control" [(ngModel)]="taxclass" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                                         <option value="Standard" style="font-size:14px">Standard</option>
                                         <option value="Reduced rate" style="font-size:14px">Reduced rate</option>
                                         <option value="Tax 1" style="font-size:14px">Tax 1</option>
@@ -202,12 +203,12 @@
                   </div>
                   
                   <div class="col-md-4">
-                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#cc5500;color:white">PRODUCT SPECIFICATIONS</h6>
+                      <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT SPECIFICATIONS</h6>
                     <div class="card">
                       <div class="container-fluid">
                         <div class="form-group">
                           <label for="color" class="label-control">Color</label>
-                         <select class="form-control" [(ngModel)]="productspec.color" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                         <select class="form-control" [(ngModel)]="color" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                             <option *ngFor="let color of gcolor" value="{{color.color}}" style="font-size:14px">{{color.color}}</option>
                            
                             
@@ -215,11 +216,11 @@
                         </div>
                         <div class="form-group">
                           <label for="ram" class="label-control">Cable length</label>
-                          <input type="text" name="ram" [(ngModel)]="productspec.cable" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
+                          <input type="text" name="ram" [(ngModel)]="cable" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
                       </div>
                       <div class="form-group">
                           <label for="capacity" class="label-control">Digital Capacity</label>
-                          <select class="form-control" [(ngModel)]="productspec.capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                          <select class="form-control" [(ngModel)]="capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                             <option value="16GB" style="font-size:14px">16GB</option>
                             <option value="32GB" style="font-size:14px">32GB</option>
                             <option value="64GB" style="font-size:14px">64GB</option>
@@ -230,27 +231,27 @@
                       </div>
                       <div class="form-group">
                           <label for="ram" class="label-control">RAM</label>
-                          <input type="text" name="ram" [(ngModel)]="productspec.ram" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
+                          <input type="text" name="ram" [(ngModel)]="ram" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
                       </div>
                       </div>
                     </div>
-                    <h6 class="pt-2 pb-2 pl-2 pr-2 mt-4" style="background-color:#cc5500;color:white">WARRANTY</h6>
+                    <h6 class="pt-2 pb-2 pl-2 pr-2 mt-4" style="background-color:#418ec4;color:white">WARRANTY</h6>
                     <div class="card">
                       <div class="container-fluid">
                         <div class="form-group">
               
-                          <input type="text"  name="color" [(ngModel)]="productspec.warranty" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="mt-2 form-control">
+                          <input type="text"  name="color" [(ngModel)]="warranty" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="mt-2 form-control">
                       </div>
                      
                       <div class="form-group">
                           <label for="ram" class="label-control">UPC Code</label>
-                          <input type="text" name="ram" [(ngModel)]="productspec.upc" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
+                          <input type="text" name="ram" [(ngModel)]="upc" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
                       </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event);showFlash()" style="background-color:#cc5500; color:white">UPLOAD PRODUCT</button>
+                <button class="btn btn-md form-control mt-2 mb-2" (click)="uploadProduct($event);showFlash()" style="background-color:#418ec4; color:white">UPLOAD PRODUCT</button>
               </div>
              
                      

@@ -1,0 +1,132 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Iphone'">BRAND: <span style="color:black">IPHONE</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Samsung'">BRAND: <span style="color:black">SAMSUNG</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Honor'">BRAND: <span style="color:black">HONOR</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Xiaomi'">BRAND: <span style="color:black">XIAOMI</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Black-Shark'">BRAND: <span style="color:black">BLACK SHARK</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Huawei'">BRAND: <span style="color:black">HUAWEI</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Oppo'">BRAND: <span style="color:black">OPPO</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/One-Plus'">BRAND: <span style="color:black">ONE PLUS</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Nokia'">BRAND: <span style="color:black">NOKIA</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Nubia'">BRAND: <span style="color:black">NUBIA</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4" *ngIf="router.url ==='/brand/Amazfit'">BRAND: <span style="color:black">AMAZFIT</span></h2>
+        <div class="row" style="float:right" *ngIf="router.url ==='/brand/Iphone'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Iphone' && iphone.length === 0 || iphone.length === undefined">
+       <h2 class="text-center">There are no products available</h2>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Samsung'">
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" *ngIf="router.url ==='/brand/Samsung' && samsung.length === 0">
+        <div class="col-md-12" style="height:300px">
+            <h2 class="text-center" style="margin-top:150px">There are no products available</h2>
+        </div>
+        
+     </div>
+ 
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Xiaomi'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Xiaomi' && xiaomi.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Huawei'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Huawei' && huawei.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Asus'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Asus' && asus.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Oppo'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Oppo' && oppo.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Real-me'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Real-me' && realme.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Nokia'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Nokia' && nokia.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/brand/Nubia'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Honor' && nokia.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/brand/honor'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Black-Shark' && nokia.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/brand/Black-Shark'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/One-Plus' && oneplus.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+     <div class="row" style="float:right" *ngIf="router.url ==='/brand/Amazfit'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="float:right" *ngIf="router.url ==='/brand/Amazfit' && amazfit.length === 0">
+        <h2 class="text-center">There are no products available</h2>
+     </div>
+
+   
+</div>
+<app-footer></app-footer>

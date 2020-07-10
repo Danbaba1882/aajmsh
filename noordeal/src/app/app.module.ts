@@ -46,6 +46,7 @@ import { ProductlisterComponent } from './productlister/productlister.component'
 import { CategoryComponent } from './category/category.component';
 import { SubcategoryoneComponent } from './subcategoryone/subcategoryone.component';
 import { SubcategorytwoComponent } from './subcategorytwo/subcategorytwo.component';
+import { BrandComponent } from './brand/brand.component';
 
 
 @NgModule({
@@ -79,13 +80,14 @@ import { SubcategorytwoComponent } from './subcategorytwo/subcategorytwo.compone
     DashboardFooterComponent,
     AllproductsComponent,
     ProfileComponent,
-    EditproductComponent,
+    CategoryComponent,
     OrdersComponent,
     UsersComponent,
     ProductlisterComponent,
     CategoryComponent,
     SubcategoryoneComponent,
-    SubcategorytwoComponent
+    SubcategorytwoComponent,
+    BrandComponent
   ],
   imports: [
     HttpClientModule,
@@ -114,7 +116,7 @@ import { SubcategorytwoComponent } from './subcategorytwo/subcategorytwo.compone
         component: CartComponent
       },
       {
-        path: 'product/:productId',
+        path: 'product/:id',
         component: ProductDetailsComponent
       },
       {
@@ -204,7 +206,291 @@ import { SubcategorytwoComponent } from './subcategorytwo/subcategorytwo.compone
       {
         path: 'edit-product',
         component: EditproductComponent
-      }
+      },
+      {
+        path: 'Smartphones',
+        component: CategoryComponent
+      },
+      {
+        path: 'Tablets',
+        component: CategoryComponent
+      },
+      {
+        path: 'Mobile-Phones',
+        component: CategoryComponent
+      },
+      {
+        path: 'Smart-Homes',
+        component: CategoryComponent
+      },
+      {
+        path: 'noordeal-admin',
+        component: AdminloginComponent
+      },
+      {
+        path: 'Computer-and-Accessories',
+        component: CategoryComponent
+      },
+      {
+        path: 'Mobile-Accessories',
+        component: CategoryComponent
+      },
+      {
+        path: 'Cameras',
+        component: CategoryComponent
+      },
+      {
+        path: 'Electric-Scooters',
+        component: CategoryComponent
+      },
+      {
+        path: 'shop/Segway-Ninebot-Scooter',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/MI-Electric-Scooter',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Xiaomi-Mijia-Electric-Scooter',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/PC-Accessories',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Desktop-Computers',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Laptops',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Printers-and-Ink',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Networking',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Home-Theartres',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Projectors',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Tvs',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Video-Games-and-Consoles',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/DSLR-Cameras',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Speakers',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Cables',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Powerbanks',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Chargers',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Wearables',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Car-Accessories',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/Headphones',
+        component: SubcategoryoneComponent
+      },
+      {
+        path: 'shop/product/Wall-Charger',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Multi-port-Charger',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Wireless-Charger',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Smart-Watches',
+        component: SubcategorytwoComponent
+      },
+       {
+        path: 'shop/product/Smart-Bands',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Car-Charger',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Holders',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Wireless-and-Bluetooths',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Ear-Buds-and-In-Ear',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Over-Ear-and-On-Ear',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Kids-Headphones',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/PC-Gaming-Headsets',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Mouse',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Keyboards',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Monitors',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Mother-Board',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Processor',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Ram',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Hard-Disk',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Pen-Drives',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Computer-Cases',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/PC-Speakers',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Smart-Tvs',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Curved-Tvs',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/4K-UltraHD-Tvs',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/LED-Tvs',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/OLED-Tvs',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Play-Stations',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Xbox',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Game-Consoles',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'shop/product/Gaming-Accessories',
+        component: SubcategorytwoComponent
+      },
+      {
+        path: 'brand/Iphone',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Samsung',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Xiaomi',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Huawei',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Honor',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Black-Shark',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Oppo',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Real-me',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Nubia',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/Nokia',
+        component: BrandComponent
+      },
+      {
+        path: 'brand/One-Plus',
+        component: BrandComponent
+      },
     ])
   ],
   providers: [ProductService],

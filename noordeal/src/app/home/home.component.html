@@ -15,7 +15,7 @@
             <img class="first-slide img" style="width:100%" src="assets/IMAGES/Anker.png" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
-               <p><a class="btn btn-md rounded-0" style="background-color: blue;color: white;" routerLink="#" role="button">SHOP NOW</a></p>
+               <p><a class="btn btn-md rounded-0" style="background-color: blue;color: white;" role="button">SHOP NOW</a></p>
               </div>
             </div>
           </div>
@@ -23,7 +23,7 @@
             <img class="second-slide img"   src="assets/IMAGES/Amazfit GTS Black.jpg" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
-                 <p><a class="btn btn-md rounded-0" style="background-color: blue;color: white;" routerLink="#" role="button">SHOP NOW</a></p>
+                 <p><a class="btn btn-md rounded-0" style="background-color: blue;color: white;" role="button">SHOP NOW</a></p>
               </div>
             </div>
           </div>
@@ -31,16 +31,16 @@
             <img class="third-slide img" style="width:100%" src="assets/IMAGES/miseries.png" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
-                  <p><a class="btn btn-md rounded-0 " style="background-color: blue;color: white;" routerLink="#" role="button">SHOP NOW</a></p>
+                  <p><a class="btn btn-md rounded-0 " style="background-color: blue;color: white;" role="button">SHOP NOW</a></p>
               </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" routerLink="#myCarousel" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" style="color:white;background-color:gray;width:30px;height:30px;border-radius:50%;padding:2px 2px 2px 2px" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" routerLink="#myCarousel" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
           <span class="carousel-control-next-icon" style="color:white;background-color:gray;width:30px;height:30px;border-radius:30%" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
@@ -80,12 +80,12 @@
       <div class="row">
         <div class="col-6" >
           <img  class="img-cat" src="assets/IMAGES/m1.png" alt="" style="border:1px solid gray;"><br>
-          <a routerLink="" class="text-center">Electric Scooter</a>
+          <a [routerLink]="" class="text-center">Electric Scooter</a>
           
         </div>
         <div class="col-6" >
           <img  class="img-cat" src="assets/IMAGES/m3.png" style="border:1px solid gray;" alt="">
-          <a routerLink="" class="text-center">Power Banks</a>
+          <a [routerLink]="" class="text-center">Power Banks</a>
         </div>
       </div>
     </div>
@@ -95,11 +95,11 @@
           
         <div class="col-6" >
           <img  class="img-cat" src="assets/IMAGES/m5.png" style="border:1px solid gray;" alt="">
-          <a routerLink="" class="text-center">Speakers</a>
+          <a [routerLink]="" class="text-center">Speakers</a>
         </div>
         <div class="col-6" >
           <img  class="img-cat" src="assets/IMAGES/m7.png" style="border:1px solid gray;" alt="">
-          <a routerLink="" class="text-center">Smart Watches</a>
+          <a [routerLink]="" class="text-center">Smart Watches</a>
         </div>
       </div>
     </div>
@@ -107,11 +107,11 @@
       <div class="row">
       <div class="col-6" >
            <img  class="img-cat"  src="assets/IMAGES/m2.png" style="border:1px solid gray;" alt="">
-           <a routerLink="" class="text-center">Car Chargers</a>
+           <a [routerLink]="" class="text-center">Car Chargers</a>
       </div>
       <div class="col-6"  >
           <img  class="img-cat" src="assets/IMAGES/m4.png" style="border:1px solid gray;" alt="">
-          <a routerLink="" class="text-center">Headphones</a>
+          <a [routerLink]="" class="text-center">Headphones</a>
       </div>
 
     </div></div>
@@ -119,12 +119,12 @@
       <div class="row">
         <div class="col-6"              >
 <img  class="img-cat" src="assets/IMAGES/m6.png" style="border:1px solid gray;" alt="">
-<a routerLink="" class="text-center">Chargers</a>
+<a [routerLink]="" class="text-center">Chargers</a>
         </div>
         
         <div class="col-6"   >
            <img src="assets/IMAGES/m8.png" class="img-cat" style="border:1px solid gray;"  alt="">
-           <a routerLink="" class="text-center">Smartphones</a>
+           <a [routerLink]="" class="text-center">Smartphones</a>
         </div>
         
       </div>
@@ -138,16 +138,16 @@
 
      <div class="container-fluid mt-2">
        <div class="card d-flex justify-content-center rounded-0 bg-white shadow" *ngIf="smartphones" style="width:100%;border-top:1px solid lightgray;border-bottom: 1px solid lightgray">
-       <h6 routerLink="" class="text-center mt-3">Smartphones</h6> <br>
+       <h6 class="text-center mt-3">Smartphones</h6> <br>
         <hr>
           <div class="row pl-2">
             <div class=" col-md-2" style="float:right;border-right: 1px solid lightgray" *ngFor="let product of smartphones | slice:0:6">
               <div class="container-fluid">
                   <div *ngFor="let cimages of product.cimage">
-                      <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%;height:200px" alt=""> <br>
+                      <img src="assets/product/simages/{{cimages.filename}}"  class="img-hom" style="width:100%;height:200px" alt=""> <br>
                    </div>
                         
-                            <a  style="font-size:14px"  class="mr-2 text-center">{{ product.name }}</a>
+                            <a [routerLink]="['/product/', product._id]" style="font-size:14px"  class="mr-2 hitems text-center">{{ product.name }}</a>
                             <br>
                             <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
                 
@@ -156,22 +156,22 @@
             
             </div>
             <hr>
-            <a href="" class="text-center mb-2">View all</a>
+            <a routerLink="/Smartphones" class="text-center mb-2">View all</a>
        </div>
      </div>
      <div class="container-fluid mt-4">
         <div class="card rounded-0 shadow" style="width:100%;" *ngIf="tab">
-          <h6 routerLink="" class="text-center mt-3">Tablets</h6> 
+          <h6 class="text-center mt-3 hitems">Tablets</h6> 
         <hr>
            <div class="row">
                <div class="col-md-2 " *ngFor="let product of tab | slice:0:6" >
                  <div class="container-fluid">
                     <div  *ngFor="let cimages of product.cimage">
-                        <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                        <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                      </div>
                      
                      
-                     <a routerLink="" class="text-center">
+                     <a [routerLink]="['/product/', product._id]" class="text-center hitems">
                       {{product.name}}
                       
                      </a>
@@ -183,21 +183,21 @@
                </div>
              </div>
              <hr>
-             <a href="" class="text-center mb-2">View all</a>
+             <a routerLink="/Tablets" class="text-center mb-2">View all</a>
         </div>
       </div>
         <div class="container-fluid mt-4">
             <div class="card rounded-0 shadow" style="width:100%;" *ngIf="mp">
-              <h6 routerLink="" class="text-center mt-3">Mobile Phones</h6> 
+              <h6 class="text-center mt-3 ">Mobile Phones</h6> 
         <hr>
                <div class="row">
                    <div class="col-md-2" *ngFor="let product of mp | slice:0:6" >
 <div class="container-fluid">
     <div *ngFor="let cimages of product.cimage">
-        <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%;height:200px" alt=""> <br>
+        <img src="assets/product/simages/{{cimages.filename}}"  class="img-hom" style="width:100%;height:200px" alt=""> <br>
     </div>
      
-     <a routerLink="">
+     <a [routerLink]="['/product/', product._id]" class="hitems">
       {{product.name}}
       
      </a >
@@ -210,7 +210,7 @@
                      
                  </div>
                  <hr>
-                 <a href="" class="text-center mb-2">View all</a>
+                 <a routerLink="/Mobile-Phones" class="text-center mb-2">View all</a>
             </div>
           </div>
          
@@ -241,17 +241,17 @@
 
             <div class="container-fluid mt-4">
                 <div class="card rounded-0 shadow" style="width:100%;" *ngIf="sw">
-                  <h6 routerLink="" class="text-center mt-3">Smart Watches</h6> 
+                  <h6 class="text-center mt-3">Smart Watches</h6> 
         <hr>
                    <div class="row">
                        <div class="col-md-2" *ngFor="let product of sw | slice:0:6" >
                          <div class="container-fluid">
                             <div *ngFor="let cimages of product.cimage">
-                                <a routerLink=""><img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-                                </a>
+                                <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
+                                
                                
                              </div>
-                             <a routerLink="">
+                             <a [routerLink]="['/product/', product._id]" class="hitems">
                                 {{product.name}}
                                     
                                </a>
@@ -263,22 +263,22 @@
                       
                      </div>
                      <hr>
-                     <a href="" class="text-center mb-2">View all</a>
+                     <a routerLink="/shop/product/Smart-Watches" class="text-center mb-2">View all</a>
                 </div>
               </div>
               <div class="container-fluid mt-4">
                 <div class="card rounded-0 shadow" style="width:100%;" *ngIf="tv" >
-                  <h6 routerLink="" class="text-center mt-3">Televisions</h6> 
+                  <h6 class="text-center mt-3">Televisions</h6> 
         <hr>
                    <div class="row">
                        <div class="col-md-2" *ngFor="let product of tv | slice:0:6">
                          <div class="container-fluid">
                             <div *ngFor="let cimages of product.cimage">
-                                <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                                <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                              </div>
                              
                             
-                            <a routerLink="">
+                            <a [routerLink]="['/product/', product._id]" class="hitems">
                               {{product.name}}
                                   
                              </a>
@@ -290,21 +290,21 @@
                       
                      </div>
                      <hr>
-                     <a href="" class="text-center mb-2">View all</a>
+                     <a routerLink="" class="text-center mb-2">View all</a>
                 </div>
               </div>
               <div class="container-fluid mt-4">
                 <div class="card rounded-0 shadow" style="width:100%;" *ngIf="scooters">
-                  <h6 routerLink="" class="text-center mt-3">Electric Scooters</h6> 
+                  <h6 class="text-center mt-3">Electric Scooters</h6> 
         <hr>
                    <div class="row">
                        <div class="col-md-2" *ngFor="let product of scooters | slice:0:6" >
                          <div class="container-fluid">
                             <div *ngFor="let cimages of product.cimage">
-                                <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                                <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                              </div>
     
-                             <a routerLink="">
+                             <a [routerLink]="['/product/', product._id]" class="hitems">
                               {{product.name}}
                                   
                              </a>
@@ -316,34 +316,34 @@
                        
                      </div>
                      <hr>
-                     <a href="" class="text-center mb-2">View all</a>
+                     <a routerLink="/Electric-Scooters" class="text-center mb-2">View all</a>
                 </div>
               </div>
 <div class="mt-4 bg-white container-fluid">
   <div class="row mt-4">
     <div class="col-md-6">
-<a routerLink=""><img src="assets/IMAGES/smartp.png" class="bl mt-4" style="width:100%;height: 310px">
-</a>
+<img src="assets/IMAGES/smartp.png" class="bl mt-4" style="width:100%;height: 310px">
+
     </div>
     <div class="col-md-6 mt-4 mb-4">
       <div class="row">
         <div class="col-md-6 mb-2">
-            <a routerLink=""><img src="assets/IMAGES/Headphones.jpg"  style="width:100%;height: 150px">
-            </a>
+          <img src="assets/IMAGES/Headphones.jpg"  style="width:100%;height: 150px">
+            
         </div>
         <div class="col-md-6">
-            <a routerLink=""><img src="assets/IMAGES/7.jpg"  style="width:100%;height: 150px">
-            </a>
+            <img src="assets/IMAGES/7.jpg"  style="width:100%;height: 150px">
+            
         </div>
       </div>
       <div class="row mt-2">
         <div class="col-md-6 mb-2">
-            <a routerLink=""><img src="assets/IMAGES/smart-homes.png"  style="width:100%;height: 150px">
-            </a>
+            <img src="assets/IMAGES/smart-homes.png"  style="width:100%;height: 150px">
+          
         </div>
         <div class="col-md-6">
-            <a routerLink=""><img src="assets/IMAGES/laptoppp.png"  style="width:100%;height: 150px">
-            </a>
+            <img src="assets/IMAGES/laptoppp.png"  style="width:100%;height: 150px">
+            
         </div>
       </div>
     </div>
@@ -351,17 +351,17 @@
 </div>
 <div class="container-fluid mt-4">
   <div class="card rounded-0 shadow" style="width:100%;" *ngIf="computer">
-    <h6 routerLink="" class="text-center mt-3">Computers and Accessories</h6> 
+    <h6 class="text-center mt-3">Computers and Accessories</h6> 
 <hr>
      <div class="row">
          <div class="col-md-2" *ngFor="let product of  computer | slice:0:6">
            <div class="container-fluid">
               <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                  <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                </div>
               
               
-              <a routerLink="">
+              <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
@@ -373,21 +373,21 @@
         
        </div>
        <hr>
-       <a href="" class="text-center mb-2">View all</a>
+       <a routerLink="Computer-and-Accessories" class="text-center mb-2">View all</a>
   </div>
 </div>
 <div class="container-fluid mt-4">
   <div class="card rounded-0 shadow" style="width:100%;"*ngIf="sh" >
-    <h6 routerLink="" class="text-center mt-3">Smart Homes</h6> 
+    <h6 class="text-center mt-3">Smart Homes</h6> 
 <hr>
      <div class="row">
          <div class="col-md-2" *ngFor="let product of sh | slice:0:6">
            <div class="container-fluid">
               <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                  <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                </div>
               
-              <a routerLink="">
+              <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
@@ -399,24 +399,25 @@
         
        </div>
        <hr>
-       <a href="" class="text-center mb-2">View all</a>
+       <a routerLink="/Smart-homes" class="text-center mb-2">View all</a>
   </div>
 </div>
 <div class="container-fluid mt-4">
   <div class="card rounded-0 shadow" style="width:100%;" *ngIf="mac">
-    <h6 routerLink="" class="text-center mt-3">Mobile and Accessories</h6> 
+    <h6 class="text-center mt-3">Mobile and Accessories</h6> 
 <hr>
      <div class="row">
          <div class="col-md-2" *ngFor="let product of mac | slice:0:6" >
            <div class="container-fluid">
               <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                  <img src="assets/product/simages/{{cimages.filename}}"  style="width:100%;">
                </div>
                
-               <a routerLink="">
+               <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
+
                 <br> <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
             
            </div>
@@ -425,7 +426,7 @@
          
        </div>
        <hr>
-       <a href="" class="text-center mb-2">View all</a>
+       <a routerLink="/Mobile-Accessories" class="text-center mb-2">View all</a>
   </div>
 </div>
 </div>

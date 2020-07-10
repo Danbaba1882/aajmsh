@@ -7,6 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  sh = [];
+  sp = [];
+  es = [];
+  tab = [];
+  cam = [];
+  ca = [];
+  ma = [];
+  mp = [];
 
   constructor(public router: Router) { }
 

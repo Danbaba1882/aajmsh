@@ -26,7 +26,7 @@ noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'))
 
 noordeal.get('/api/*', async function(req,res){
     console.log('from upload page');
-    const allproducts = await Product.find({}).sort({"_id":-1});
+    const allproducts = await Product.find({});
     const categories = await Category.find({});
     const subcat1 = await Subcategory1.find({});
     const subcat2 = await Subcategory2.find({});
@@ -119,10 +119,22 @@ noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimage'}]),
         features: req.body.features,
         description: req.body.description,
         images: req.files.images,
-        color: req.body.color,
-        productData: req.body.productdata,
-        productSpec: req.body.productspec,
-        cimage: req.files.cimage
+        saleprice: req.body.saleprice,
+    regularprice: req.body.regularprice,
+    taxstatus: req.body.taxstatus,
+    taxclass: req.body.taxclass,
+    downloadable: req.body.downloadable,
+    virtual: req.body.virtual,
+    solditems: req.body.solditems,
+    salequantity : req.body.salequantity,
+    warranty: req.body.warranty,
+    upc: req.body.upc,
+    color: req.body.color,
+    capacity: req.body.capacity,
+    cable: req.body.cable,
+    ram: req.body.ram,
+    ptype: req.body.ptype,
+    cimage: req.files.cimage
         
 
     })
@@ -251,6 +263,20 @@ noordeal.get('/api/listers/*', async (req, res)=>{
     console.log('lister is working')
  const listers = await Lister.find({})
  console.log(listers);
+})
+
+
+noordeal.post('/api/adminlogin', async (req,res) =>{
+    console.log(req.body)
+    const admin = await Lister.findOne({username: req.body.username})
+    if (!admin) return res.send({success: 'una'})
+
+
+    const validpassword = admin.password;
+    console.log(validpassword);
+    if (req.body.password==validpassword) return res.send({success: true})
+    else
+    return res.send({success:'incp'})
 })
 
 noordeal.listen(process.env.PORT || 3000)

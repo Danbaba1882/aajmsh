@@ -1,51 +1,107 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
-    <div class="row" style="float:right" *ngIf="router.url ==='/smartphones'">
+    <div class="row" style="float:right" *ngIf="router.url ==='/Smartphones'">
+        <div class="col-md-2">
+
+        </div>
+    </div>
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Smartphones' && sp.length === 0 || sp.length === undefined">
+       
+       <div class="col-md-12">
+            <h2 class="text-center">There are no products in the smartphones category</h2>
+       </div>
+    </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Tablets'">
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" *ngIf="router.url ==='/Tablets' && tab.length === 0">
+        <div class="col-md-12" style="height: 200px; margin-top:100px">
+           
+            <div class="col-md-12">
+                    <h2 class="text-center" style="margin-top:150px">There are no products in the tablets category</h2>
+            </div>
+        </div>
+        
+     </div>
+ 
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Mobile-Phones'">
         <div class="col-md-2">
 
         </div>
     </div>
 
-    <div class="row" style="float:right" *ngIf="router.url ==='/tablets'">
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Mobile-Phones' && mp.length === 0">
+        
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the Mobile Phones category</h2>
+        </div>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Smart-Homes'">
         <div class="col-md-2">
 
         </div>
     </div>
 
-    <div class="row" style="float:right" *ngIf="router.url ==='/mobile-phones'">
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Smart-Homes' && sh.length === 0">
+       
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the smart homes category</h2>
+        </div>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Cameras'">
         <div class="col-md-2">
 
         </div>
     </div>
 
-    <div class="row" style="float:right" *ngIf="router.url ==='/smart-homes'">
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Cameras' && cam.length === 0">
+       
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the cameras category</h2>
+        </div>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Electric-Scooters'">
         <div class="col-md-2">
 
         </div>
     </div>
 
-    <div class="row" style="float:right" *ngIf="router.url ==='/cameras'">
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Electric-Scooters' && es.length === 0">
+        
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the Electric scooters category</h2>
+        </div>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Mobile-Accessories'">
         <div class="col-md-2">
 
         </div>
     </div>
 
-    <div class="row" style="float:right" *ngIf="router.url ==='/electric-scooters'">
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Mobile-Accessories' && ma.length === 0">
+        
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the mobile accessories category</h2>
+        </div>
+     </div>
+
+    <div class="row" style="float:right" *ngIf="router.url ==='/Computer-and-Accessories'">
         <div class="col-md-2">
 
         </div>
     </div>
-
-    <div class="row" style="float:right" *ngIf="router.url ==='/mobile-accessories'">
-        <div class="col-md-2">
-
+    <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Computer-and-Accessories' && ca.length === 0">
+        
+        <div class="col-md-12">
+                <h2 class="text-center">There are no products in the computer and accessories category</h2>
         </div>
-    </div>
-
-    <div class="row" style="float:right" *ngIf="router.url ==='/computer-and-accessories'">
-        <div class="col-md-2">
-
-        </div>
-    </div>
+     </div>
 </div>
 <app-footer></app-footer>

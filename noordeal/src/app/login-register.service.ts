@@ -13,4 +13,8 @@ export class LoginRegisterService {
       username, email, password
       });
   }
+
+  adminlogiin(username, password){
+    return this.http.post('/api/adminlogin', { username, password });
+  }
 }
