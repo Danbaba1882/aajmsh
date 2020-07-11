@@ -1,0 +1,9 @@
+@media(max-width:576px){
+    .prices{
+        text-align: center !important;
+    }
+}
+
+.hitems{
+    text-align:center !important;
+}

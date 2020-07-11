@@ -1,10 +1,37 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
-    <div class="row" style="float:right" *ngIf="router.url ==='/Smartphones'">
-        <div class="col-md-2">
-
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Smartphones'">CATEGORY: <span style="color:black">SMARTPHONES</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Mobile-Phones'">CATEGORY: <span style="color:black">MOBILE PHONES</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Tablets'">CATEGORY: <span style="color:black">TABLETS</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Electric-Scooters'">CATEGORY: <span style="color:black">ELECTRIC SCOOTERS</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Mobile-Accessories'">CATEGORY: <span style="color:black">MOBILE ACCESSORIES</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Computer-and-Accessories'">CATEGORY: <span style="color:black">COMPUTER & ACCESSORIES</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Smart-Homes'">CATEGORY: <span style="color:black">SMART HOMES</span></h2>
+        <h2 style="color:#418ec4" class="text-center mt-4 mb-4" *ngIf="router.url ==='/Cameras'">CATEGORY: <span style="color:black">CAMERAS</span></h2>
+     
+    <div class="row" style="" *ngIf="router.url ==='/Smartphones'">
+        <div class="col-md-2 " *ngFor="let product of sp">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
+      
     </div>
+
     <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Smartphones' && sp.length === 0 || sp.length === undefined">
        
        <div class="col-md-12">
@@ -13,7 +40,24 @@
     </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Tablets'">
-        <div class="col-md-2">
+        <div class="col-md-2 " *ngFor="let product of tab">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
     <div class="row" *ngIf="router.url ==='/Tablets' && tab.length === 0">
@@ -28,8 +72,24 @@
  
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Mobile-Phones'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of mp">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
 
@@ -41,8 +101,24 @@
      </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Smart-Homes'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of sh">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
 
@@ -54,8 +130,24 @@
      </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Cameras'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of cam">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
 
@@ -67,8 +159,24 @@
      </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Electric-Scooters'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of es">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
 
@@ -80,8 +188,24 @@
      </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Mobile-Accessories'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of ma">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
 
@@ -93,8 +217,24 @@
      </div>
 
     <div class="row" style="float:right" *ngIf="router.url ==='/Computer-and-Accessories'">
-        <div class="col-md-2">
-
+        <div class="col-md-2 " *ngFor="let product of ca">
+            <div class="container-fluid">
+                <button class="btn btn-sm btn-info rounded-0" style="float:left;">-{{product.discount}}%</button>
+                <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
+                <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
+                  
+                
+                    <div *ngFor="let cimage of product.cimage">
+                        <img src="assets/productsimages/{{cimage.filename}}"  style="width:100%;">
+                    </div>
+                 
+                 <a [routerLink]="['/product/',product._id]" style="font-size: 14px;color:#418ec4" class="hitems text-center">
+                 
+                      {{product.name}}
+                 </a>
+                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+             
+             </div>
         </div>
     </div>
     <div class="row" style="height: 200px; margin-top:100px" *ngIf="router.url ==='/Computer-and-Accessories' && ca.length === 0">

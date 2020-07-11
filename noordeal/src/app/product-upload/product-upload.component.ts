@@ -100,6 +100,54 @@ this.category = e.target.value;
 this.cascat = e.target.value;
   }
 
+  grprice(e){
+    this.regularprice = e.target.value;
+  }
+
+  gsprice(e){
+    this.saleprice = e.target.value;
+  }
+
+  gsolditems(e){
+    this.solditems = e.target.value;
+  }
+
+  gsquantity(e){
+    this.salequantity = e.target.value;
+  }
+
+  gtaxclass(e){
+    this.taxclass = e.target.value;
+  }
+
+  gtaxstatus(e){
+    this.taxstatus = e.target.value;
+  }
+
+  gram(e){
+    this.ram = e.target.value;
+  }
+
+  ggcolor(e){
+    this.color = e.target.value;
+  }
+
+  gwarranty(e){
+    this.warranty = e.target.value;
+  }
+
+  gcapacity(e){
+    this.capacity = e.target.value;
+  }
+
+  gupc(e){
+    this.upc = e.target.value;
+  }
+
+  gcable(e){
+    this.gcable = e.target.value;
+  }
+
 
 
   onReady(eventData) {
@@ -120,7 +168,10 @@ this.cascat = e.target.value;
     console.log(this.description);
     console.log(this.images);
     console.log(this.cimage);
-    console.log(this.salequantity);
+    console.log(this.taxstatus);
+    console.log(this.taxclass);
+    console.log(this.saleprice);
+    console.log(this.regularprice);
     this.prodservice.upload(this.name, this.brand,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
     this.cimage, this.saleprice, this.salequantity, this.regularprice, this.taxclass, this.taxstatus,

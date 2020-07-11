@@ -1,10 +1,10 @@
 
 <div class="body">
     <div class="row">
-        <div class="col-md-3 bg-dark h-auto ">
+        <div class="col-md-2 bg-dark h-auto ">
             <app-dashboard-sidebar></app-dashboard-sidebar>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
           <div class="container-fluid">
            <app-dashboard-header></app-dashboard-header>
            <div *ngIf="data.success === true" class="mt-2 alert alert-success alert-dismissible" role="alert">
@@ -156,24 +156,25 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="rprice" class="label-control">Regular Price (AED)</label>
-                            <input type="number" [(ngModel)]="regularprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                            <input type="number" (change)="grprice($event)" style="border: 1px solid lightgray;height:30px" class="form-control">
                           </div>
+                          {{regularprice}}
                           <div class="form-group">
                               <label for="rprice" class="label-control">Sales Price (AED)</label>
-                              <input type="number" [(ngModel)]="saleprice" style="border: 1px solid lightgray;height:30px" class="form-control">
+                              <input type="number" (change)="gsprice($event)" style="border: 1px solid lightgray;height:30px" class="form-control">
                             </div>
                             {{saleprice}}
                             <div class="form-group">
                                 <label for="rprice" class="label-control">Sale Quantity</label>
-                                <input type="number" [(ngModel)]="salequantity" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                <input type="number" (change)="gsquantity($event)" style="border: 1px solid lightgray;height:30px" class="form-control">
                               </div>
                               <div class="form-group">
                                   <label for="rprice" class="label-control">Sold Items</label>
-                                  <input type="number" [(ngModel)]="solditems" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                  <input type="number" (change)="gsolditems($event)" style="border: 1px solid lightgray;height:30px" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="rprice" class="label-control">Tax Status</label>
-                                    <select class="form-control" [(ngModel)]="taxstatus" style="border: 1px solid lightgray;height:30px;font-size: 14px" >
+                                    <select class="form-control" (change)="gtaxstatus($event)" style="border: 1px solid lightgray;height:30px;font-size: 14px" >
                                       <option value="Taxable" style="font-size:14px">Taxable</option>
                                       <option value="Shipping only"style="font-size:14px">Shipping only</option>
                                       <option value="None"style="font-size:14px">None</option>
@@ -181,7 +182,7 @@
                                   </div>
                                   <div class="form-group">
                                       <label for="rprice" class="label-control">Tax Class</label>
-                                      <select class="form-control" [(ngModel)]="taxclass" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                                      <select class="form-control" (change)="gtaxclass($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                                         <option value="Standard" style="font-size:14px">Standard</option>
                                         <option value="Reduced rate" style="font-size:14px">Reduced rate</option>
                                         <option value="Tax 1" style="font-size:14px">Tax 1</option>
@@ -208,7 +209,7 @@
                       <div class="container-fluid">
                         <div class="form-group">
                           <label for="color" class="label-control">Color</label>
-                         <select class="form-control" [(ngModel)]="color" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                         <select class="form-control" (change)="ggcolor($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                             <option *ngFor="let color of gcolor" value="{{color.color}}" style="font-size:14px">{{color.color}}</option>
                            
                             
@@ -216,22 +217,23 @@
                         </div>
                         <div class="form-group">
                           <label for="ram" class="label-control">Cable length</label>
-                          <input type="text" name="ram" [(ngModel)]="cable" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
+                          <input type="text" name="ram" (change)="gcable($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
                       </div>
                       <div class="form-group">
                           <label for="capacity" class="label-control">Digital Capacity</label>
-                          <select class="form-control" [(ngModel)]="capacity" style="border: 1px solid lightgray;height:30px; font-size: 14px">
+                          <select class="form-control" (change)="gcapacity($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px">
                             <option value="16GB" style="font-size:14px">16GB</option>
                             <option value="32GB" style="font-size:14px">32GB</option>
                             <option value="64GB" style="font-size:14px">64GB</option>
                             <option value="128GB" style="font-size:14px">128GB</option>
                             <option value="256GB" style="font-size:14px">256GB</option>
+                            <option value="256GB" style="font-size:14px">1TB</option>
                             
                           </select>
                       </div>
                       <div class="form-group">
                           <label for="ram" class="label-control">RAM</label>
-                          <input type="text" name="ram" [(ngModel)]="ram" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
+                          <input type="text" name="ram" (change)="gram($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px" id="ram" class="form-control">
                       </div>
                       </div>
                     </div>
@@ -240,12 +242,12 @@
                       <div class="container-fluid">
                         <div class="form-group">
               
-                          <input type="text"  name="color" [(ngModel)]="warranty" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="mt-2 form-control">
+                          <input type="text"  name="color" (change)="gwarranty($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="mt-2 form-control">
                       </div>
                      
                       <div class="form-group">
                           <label for="ram" class="label-control">UPC Code</label>
-                          <input type="text" name="ram" [(ngModel)]="upc" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
+                          <input type="text" name="ram" (change)="gupc($event)" style="border: 1px solid lightgray;height:30px; font-size: 14px" class="form-control">
                       </div>
                       </div>
                     </div>
