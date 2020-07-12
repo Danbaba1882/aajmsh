@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProductService } from '../product.service';
 import { HomeService } from '../home.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import * as $ from 'jquery';
+declare var jQuery: any;
+import * as bootstrap from 'bootstrap';
 
 
 
@@ -14,6 +15,7 @@ import * as $ from 'jquery';
   styleUrls: ['./product-upload.component.css']
 })
 export class ProductUploadComponent implements OnInit {
+  @ViewChild('alert', { static: true }) alert: ElementRef;
 
   name;
   brand;
@@ -56,6 +58,7 @@ export class ProductUploadComponent implements OnInit {
   gcolor;
   cable;
   res;
+  a = $('#modal');
   constructor(private prodservice: ProductService, private home: HomeService, private flash: FlashMessagesService) { }
   ngOnInit(): void {
     this.home.gethomepageproducts().subscribe(data => {
@@ -71,14 +74,6 @@ export class ProductUploadComponent implements OnInit {
 });
 
   }
-
-
-
-  showFlash(){
-    // 1st parameter is a flash message text
-    // 2nd parameter is optional. You can pass object with options.
-    this.flash.show('Success! Product has successfully been added', { cssClass: 'alert-success', timeout: 10000 });
-}
 oncoverupload(e){
 this.cimage = e.target.files[0];
 console.log(this.cimage);
@@ -138,6 +133,7 @@ this.cascat = e.target.value;
 
   gcapacity(e){
     this.capacity = e.target.value;
+    console.log(this.a);
   }
 
   gupc(e){
@@ -203,6 +199,7 @@ this.cascat = e.target.value;
         this.images = [];
         this.features = '';
         this.description = '';
+        $('#modal').modal();
       }
       console.log('this is data ', data);
         });

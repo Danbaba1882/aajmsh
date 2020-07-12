@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+declare var jQuery: any;
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-dashboard-sidebar',
@@ -39,6 +41,11 @@ cf;
   this.category = '';
   if (this.category === ''){
     this.categoryRR = this.categoryR.success;
+  }
+  if (this.categoryR.success === true){
+    setTimeout(() => {
+      $('.alert').alert('close');
+  }, 2000);
   }
 });
 
@@ -81,6 +88,9 @@ showFlashc(){
       this.scIf = this.scI.success;
       console.log(subcategory1);
       this.subcategory1 = '';
+      if (this.scI.success === true){
+        $('.toast').toast('show');
+      }
     });
   }
   addsubcategory2(){
