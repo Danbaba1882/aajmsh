@@ -143,12 +143,12 @@
           <div class="row pl-2">
             <div class=" col-md-2" style="float:right;border-right: 1px solid lightgray" *ngFor="let product of smartphones | slice:0:6">
               <div class="container-fluid">
-                  <button class="btn btn-sm btn-info rounded-0" *ngIf="product.regularprice !== 0" style="float:left;">-{{(product.saleprice/product.regularprice)*100}}%</button>
+                  <button class="btn btn-sm btn-info rounded-0" *ngIf="product.regularprice !== 0" style="float:left;">-{{((product.regularprice-product.saleprice)/product.regularprice)*100 | number : '1.0-0'}}%</button>
                   <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                   <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                    
                   <div *ngFor="let cimages of product.cimage">
-                      <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%;height:200px" alt=""> <br>
+                      <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%;" alt=""> <br>
                    </div>
                         
                             <a [routerLink]="['/product/', product._id]" style="font-size:14px"  class="mr-2 hitems text-center">{{ product.name }}</a>
