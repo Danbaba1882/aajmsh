@@ -5,6 +5,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 declare var jQuery: any;
 import * as bootstrap from 'bootstrap';
+import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 
 
@@ -23,9 +24,10 @@ export class ProductUploadComponent implements OnInit {
   quantity;
   color;
   capacity;
+  dgcapacity;
   ram;
   features;
-  cimage;
+  cimage = [];
   images = [];
   description;
   category = 'Select Product Category';
@@ -44,6 +46,11 @@ export class ProductUploadComponent implements OnInit {
   downloadable;
   regularprice;
   saleprice;
+  allregularprice = [];
+  allsaleprice = [];
+  allsalequantity = [];
+  allsolditems = [];
+  allcapacity = [];
   salequantity;
   solditems;
   taxstatus;
@@ -57,6 +64,7 @@ export class ProductUploadComponent implements OnInit {
   ggbrand;
   gcolor;
   cable;
+  cables;
   res;
   a = $('#modal');
   constructor(private prodservice: ProductService, private home: HomeService, private flash: FlashMessagesService) { }
@@ -75,12 +83,44 @@ export class ProductUploadComponent implements OnInit {
 
   }
 oncoverupload(e){
-this.cimage = e.target.files[0];
+this.cimage = e.target.files;
 console.log(this.cimage);
 }
   onFileChanged(e){
     this.images = e.target.files;
     console.log(this.images);
+  }
+
+  addsalesprice(){
+    if (this.saleprice !== undefined && this.saleprice !== ''){
+    this.allsaleprice.push(this.saleprice);
+    console.log(this.allsaleprice);
+    this.saleprice = '';
+    }
+  }
+
+  addregularprice(){
+    if (this.regularprice !== undefined && this.regularprice !== ''){
+      this.allregularprice.push(this.regularprice);
+      console.log(this.allregularprice);
+      this.regularprice = '';
+    }
+  }
+
+  addsalequantity(){
+    if (this.salequantity !== undefined && this.salequantity !== ''){
+      this.allsalequantity.push(this.salequantity);
+      console.log(this.allsalequantity);
+      this.salequantity = '';
+    }
+  }
+
+  addsolditems(){
+    if (this.solditems !== undefined && this.solditems !== ''){
+    this.allsolditems.push(this.solditems);
+    console.log(this.allsolditems);
+    this.solditems = '';
+    }
   }
 
   getcatvalue(e){
@@ -95,32 +135,12 @@ this.category = e.target.value;
 this.cascat = e.target.value;
   }
 
-  grprice(e){
-    this.regularprice = e.target.value;
-  }
-
-  gsprice(e){
-    this.saleprice = e.target.value;
-  }
-
-  gsolditems(e){
-    this.solditems = e.target.value;
-  }
-
-  gsquantity(e){
-    this.salequantity = e.target.value;
-  }
-
   gtaxclass(e){
     this.taxclass = e.target.value;
   }
 
   gtaxstatus(e){
     this.taxstatus = e.target.value;
-  }
-
-  gram(e){
-    this.ram = e.target.value;
   }
 
   ggcolor(e){
@@ -133,7 +153,9 @@ this.cascat = e.target.value;
 
   gcapacity(e){
     this.capacity = e.target.value;
-    console.log(this.a);
+    this.allcapacity.push(this.capacity);
+    console.log(this.capacity);
+    console.log(this.allcapacity);
   }
 
   gupc(e){
@@ -144,6 +166,14 @@ this.cascat = e.target.value;
     this.gcable = e.target.value;
   }
 
+  gptype(e){
+this.ptype = e.target.value;
+console.log(this.ptype);
+  }
+
+  gpv(e){
+
+  }
 
 
   onReady(eventData) {
@@ -166,7 +196,7 @@ this.cascat = e.target.value;
     console.log(this.cimage);
     console.log(this.taxstatus);
     console.log(this.taxclass);
-    console.log(this.saleprice);
+    console.log(this.capacity);
     console.log(this.regularprice);
     this.prodservice.upload(this.name, this.brand,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,

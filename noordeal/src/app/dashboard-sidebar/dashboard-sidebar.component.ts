@@ -16,6 +16,8 @@ subcategory1;
 subcategory2;
 brand;
 color;
+cable;
+capacity;
 categoryR;
 categoryRR;
 scI;
@@ -48,6 +50,14 @@ cf;
   }, 2000);
   }
 });
+
+  }
+
+  addcable(){
+
+  }
+
+  addcapacity(){
 
   }
 

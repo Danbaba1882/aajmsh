@@ -26,6 +26,7 @@ noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'))
 
 noordeal.get('/api/*', async function(req,res){
     console.log('from upload page');
+    // sidebar component
     const allproducts = await Product.find({});
     const categories = await Category.find({});
     const subcat1 = await Subcategory1.find({});
@@ -33,6 +34,8 @@ noordeal.get('/api/*', async function(req,res){
     const brand = await Brand.find({});
     const color = await Color.find({});
     const listers = await Lister.find({});
+
+    // products category
     const sp = await Product.find({category:"Smartphones"})
     const tab = await Product.find({category:"Tablets"})
     const mp = await Product.find({category:"Mobile Phones"})
@@ -43,6 +46,8 @@ noordeal.get('/api/*', async function(req,res){
     const mac = await Product.find({category:"Mobile Accessories"})
     const caa = await Product.find({category:"Computer and Accessories"})
     const sh = await Product.find({category:"Smart Homes"})
+
+    // products subcategory 1
     const pca = await Product.find({subcategory1:"PC Accessories"})
     const net = await Product.find({subcategory1:"Networking"})
     const pink = await Product.find({subcategory1:"Printers and Ink"})
@@ -58,6 +63,8 @@ noordeal.get('/api/*', async function(req,res){
     const meles = await Product.find({subcategory1:"MI Electric Scooter"})
     const lap = await Product.find({subcategory1:"Laptops"})
     const desc = await Product.find({subcategory1:"Desktop Computers"})
+
+    // products subcategory 2
     const ht = await Product.find({subcategory1:"Home Theartres"})
     const proj = await Product.find({subcategory1:"Projectors"})
     const vgc = await Product.find({subcategory1:"Video, Games and Consoles"})
@@ -75,7 +82,6 @@ noordeal.get('/api/*', async function(req,res){
     const pcgh = await Product.find({subcategory2:"PC Gaming Headsets"});
     const mouse = await Product.find({subcategory2:"Mouse"});
     const kb = await Product.find({subcategory2:"Keyboards"});
-    console.log(kb.length)
     const mon = await Product.find({subcategory2:"Monitors"});
     const mb = await Product.find({subcategory2:"Mother Board"});
     const proc = await Product.find({subcategory2:"Processor"});
@@ -93,6 +99,8 @@ noordeal.get('/api/*', async function(req,res){
     const xb = await Product.find({subcategory2:"Xbox"});
     const gc = await Product.find({subcategory2:"Gaming Consoles"});
     const ga = await Product.find({subcategory2:"Gaming Accessories"});
+
+    // products brands
     const iphone = await Product.find({brand:"Iphone"});
     const asus = await Product.find({brand:"Asus"});
     const realme = await Product.find({brand:"Real me"});
@@ -107,10 +115,6 @@ noordeal.get('/api/*', async function(req,res){
     const xiaomi = await Product.find({brand:"Xiaomi Mobile phones"});
     const amazfit = await Product.find({brand:"Amazfit"});
     const oneplus = await Product.find({brand:"One Plus"});
-  
-    console.log(categories);
-    console.log('is working');
-    console.log(subcat2)
     res.send({allproducts, categories,subcat1, subcat2, brand,color,listers,sp,mp,tab,sw,tv,eles,cam,mac,caa,sh,
     pca, net, pink, dslr, xes, wear, chargers, crac, speakers,
     cables, pb, snscot, meles, lap, desc, ht, proj, vgc,
@@ -177,7 +181,7 @@ var storage = multer.diskStorage({
   })
   var upload = multer({ storage: storage })
 
-noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimage'}]), async (req, res)=>{
+noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimages'}]), async (req, res)=>{
     console.log('kkkkkk',req.body);
     console.log(req.files)
     const product = new Product({
@@ -191,23 +195,20 @@ noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimage'}]),
         description: req.body.description,
         images: req.files.images,
         saleprice: req.body.saleprice,
-    regularprice: req.body.regularprice,
-    taxstatus: req.body.taxstatus,
-    taxclass: req.body.taxclass,
-    downloadable: req.body.downloadable,
-    virtual: req.body.virtual,
-    solditems: req.body.solditems,
-    salequantity : req.body.salequantity,
-    warranty: req.body.warranty,
-    upc: req.body.upc,
-    color: req.body.color,
-    capacity: req.body.capacity,
-    cable: req.body.cable,
-    ram: req.body.ram,
-    ptype: req.body.ptype,
-    cimage: req.files.cimage
-        
-
+        regularprice: req.body.regularprice,
+        taxstatus: req.body.taxstatus,
+        taxclass: req.body.taxclass,
+        downloadable: req.body.downloadable,
+        virtual: req.body.virtual,
+        solditems: req.body.solditems,
+        salequantity : req.body.salequantity,
+        warranty: req.body.warranty,
+        upc: req.body.upc,
+        color: req.body.color,
+        capacity: req.body.capacity,
+        cable: req.body.cable,
+        ptype: req.body.ptype,
+        cimage: req.files.cimages
     })
 
     await Product.create(product).then((p)=>{
@@ -298,6 +299,37 @@ noordeal.post('/api/color', async (req,res)=>{
         color:req.body.color
     })
     await Color.create(color).then((p)=>{
+        console.log(p)
+    })
+    res.json({success: true})
+})
+
+
+const capacity = new schema({
+    capacity: String
+})
+const Capacity = mongoose.model('capacity',capacity);
+noordeal.post('/api/capacity', async (req,res)=>{
+    console.log(req.body)
+    const capacity = new Capacity({
+        capacity:req.body.capacity
+    })
+    await Capacity.create(capacity).then((p)=>{
+        console.log(p)
+    })
+    res.json({success: true})
+})
+
+const cable = new schema({
+    cable: String
+})
+const Cable = mongoose.model('cable',cable);
+noordeal.post('/api/cable', async (req,res)=>{
+    console.log(req.body)
+    const cable = new Cable({
+        cable:req.body.cable
+    })
+    await Cable.create(cable).then((p)=>{
         console.log(p)
     })
     res.json({success: true})

@@ -14,6 +14,9 @@ const formData = new FormData();
 for (const image of images){
   formData.append('images', image);
 }
+for (const cimages of cimage){
+  formData.append('cimages', cimages);
+}
 formData.append('name', name);
 formData.append('brand', brand);
 formData.append('features', features);
