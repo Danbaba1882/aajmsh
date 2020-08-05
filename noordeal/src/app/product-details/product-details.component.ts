@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { ProductService } from '../product.service';
 import {PRODUCTS} from '../product';
 import { ActivatedRoute } from '@angular/router';
@@ -62,6 +62,7 @@ this.carts.addtocart(product);
       console.log(p);
       if (p._id === this.id) {
         this.product = p;
+        console.log(this.product.capacity);
         this.l = this.product.saleprice.length;
         console.log(this.l);
         const data = JSON.stringify(this.product.productData);
