@@ -24,6 +24,7 @@ export class CartService {
   addtocart(product){
     this.items.push(product);
     this.cartstorage.setItem('cartcontent', JSON.stringify(this.items));
+    console.log(this.items);
   }
   getItemss(){
     const cartitems = JSON.parse(this.cartstorage.getItem('cartcontent'));

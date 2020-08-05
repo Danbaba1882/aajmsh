@@ -13,7 +13,6 @@
               <hr>
           </div>
            
-            
             <div class="container-fluid">
                 <div class="row mt-4">
                   <div class="col-md-8">
@@ -35,10 +34,9 @@
                               <label for="rprice" class="label-control">Product Variation Property</label>
                               <select class="form-control" (change)="gpv($event)" style="border: 1px solid lightgray;height:30px;font-size: 14px">
                                <option></option>
-                                <option value="Simple product" style="font-size:14px">Color</option>
-                                <option value="Grouped product"style="font-size:14px">Digital Capacity</option>
-                                <option value="External/affiliate product"style="font-size:14px">Cable length</option>
-                                <option value="Variable product"style="font-size:14px">variable product</option>
+                                <option value="Simple product" style="font-size:14px">Color and Capacity Variations</option>
+                                <option value="Grouped product"style="font-size:14px">Only Color variation </option>
+                                <option value="External/affiliate product"style="font-size:14px">Only capacity variation</option>
                               </select>
                             </div>
 
@@ -81,8 +79,6 @@
           
                                     </select>
                                   </div>
-                        
-                               
                         
                                   <div class="form-group">
                                     <label for="images" class="label-control">Product Cover Image(s)</label>
@@ -168,6 +164,20 @@
                           </div>
                     </div>
                     <div class="col-md-4">
+          <div *ngIf="ptype">
+
+    <div class="form-group">
+        <label for="" class="label-control">Minimum Price</label>
+        <input type="number" name="minimumPrice" id="minimumPrice" [(ngModel)]="minimumPrice" style="border: 1px solid lightgray;height:30px" class="form-control">
+      </div>
+
+      <div class="form-group">
+          <label for="" class="label-control">Maximum Price</label>
+          <input type="number" name="maximumPrice" id="maximumPrice" [(ngModel)]="maximumPrice" style="border: 1px solid lightgray;height:30px" class="form-control">
+        </div>
+
+</div>
+                     
                         <div class="form-group">
                             <label for="rprice" class="label-control">Regular Price (AED)</label>
                             <input type="number" id="regularprice_input" [(ngModel)]="regularprice" style="border: 1px solid lightgray;height:30px" class="form-control">
@@ -222,6 +232,58 @@
                 </div>
                 
               </div>
+<!--
+ <h6 class="pt-2 pb-2 pl-2 pr-2" style="background-color:#418ec4;color:white">PRODUCT DATA (COLOR)</h6>
+             <div *ngFor="let cap of capacity; let i = index">
+                <h6 class="mt-4">For {{cap}}</h6>
+              <div class="card">
+                
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4">
+                      
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rprice" class="label-control">Regular Price (AED)</label>
+                            <input type="number" id="regularprice_input" [(ngModel)]="regularpriceColor" style="border: 1px solid lightgray;height:30px" class="form-control">
+                            <button class="btn btn-sm mt-2 rounded-0" (click)="addregularpriceColor()" style="color:white;background-color:#418ec4">ADD PRICE</button>
+                          </div>
+                          {{regularprice}}
+                          <div >
+
+                          </div>
+                          <div class="form-group">
+                              <label for="rprice" class="label-control">Sales Price (AED)</label>
+                              <input type="number" [(ngModel)]="salepriceColor" style="border: 1px solid lightgray;height:30px" class="form-control">
+                              <button class="btn btn-sm mt-2 rounded-0" (click)="addsalespriceColor()" style="color:white;background-color:#418ec4">ADD PRICE</button>
+                            </div>
+                            {{saleprice}}
+                            <div class="form-group">
+                                <label for="rprice" class="label-control">Sale Quantity</label>
+                                <input type="number" [(ngModel)]="salequantityColor" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                <button class="btn btn-sm mt-2 rounded-0" (click)="addsalequantityColor()" style="color:white;background-color:#418ec4">ADD PRICE</button>
+                            
+                              </div>
+                              <div class="form-group">
+                                  <label for="rprice" class="label-control">Sold Items</label>
+                                  <input type="number" [(ngModel)]="solditemsColor" style="border: 1px solid lightgray;height:30px" class="form-control">
+                                  <button class="btn btn-sm mt-2 rounded-0" (click)="addsolditemsColor()" style="color:white;background-color:#418ec4">ADD PRICE</button>
+                            
+                                </div>
+                                    
+                    </div>
+                    <div class="col-md-4"></div>
+                  </div>
+                </div>
+                
+              </div>
+             </div>
+             
+
+-->
+             
+             
               
              
                   </div>

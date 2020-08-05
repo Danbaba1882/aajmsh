@@ -23,7 +23,7 @@
                 <td> 
                     <div class="row">
                         <div class="col-2">
-                                <img src="assets/productimage/{{item.filename}}" style="width:100px;height:100px" alt="">
+                                <img src="assets/productsimages/{{item.cimage.filename}}" style="width:100px;height:100px" alt="">
                         </div>
                         <div class="col-9">
                             <p class="pl-4">{{item.name}} </p>
@@ -32,9 +32,9 @@
                     </div>
                 </td>
                 
-                <td>{{item.price}}</td>
-                <td><input type="number" name="" style="width:150px" value="{{item.quantity}}" (keyup)="onKey($event, item)" class="form-control" id=""></td>
-                <td>{{item.price * item.quantity}}</td>
+                <td>{{item.saleprice}}</td>
+                <td><input type="number" name="" style="width:150px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control" id=""></td>
+                <td> {{item.saleprice * item.quantity}}</td>
                 <td><a (click)="deleteitem(item)" class="delete"><i style="color:white" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
                 <hr style="background-color:white">  
             </tr>

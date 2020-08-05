@@ -26,7 +26,11 @@ return this.http.post('/api/category', {category});
   return  this.http.post('/api/color', {color});
   }
 
-  getlll(){
-    return this.http.get('/api/getttt', {responseType: 'text'});
-  }
+  addcapacity(capacity){
+    return this.http.post('/api/capacity', {capacity});
+   }
+
+   addcable(cable){
+   return  this.http.post('/api/cable', {cable});
+   }
 }

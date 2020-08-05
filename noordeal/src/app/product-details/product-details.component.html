@@ -3,15 +3,19 @@
     <div class="row mt-4">
         <div class="col-md-4">
 <div class="row">
-    <div class="col-4" >
-        <div *ngFor="let images of product.images">
-                <img src="assets/productsimages/{{images.filename}}" class="mb-2" style="height:100px; width:100px" alt=""> <br>
-        </div>
-
+    <div class="col-5" >
+            <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 400px;max-width:400px">
+                    <div *ngFor="let images of product.images">
+                            <img src="assets/productsimages/{{images.filename}}" class="mb-2" style="height:100px; width:100px" alt=""> <br>
+                    </div>
+            
+                  </div>
     </div>
-    <div class="col-8">
-            <div *ngFor="let cimage of product.cimage">
-                    <img src="assets/productsimages/{{cimage.filename}}" style="width:100%" alt=""> <br>
+    
+    <div class="col-7 overflow-auto">
+            <div *ngFor="let cimage of product.cimage; let first = first" >
+                    <img src="assets/productsimages/{{cimage.filename}}" *ngIf="first" style="width:100%" alt=""> <br>
+                    
             </div>
         
     </div>
@@ -21,10 +25,36 @@
 <h3>{{product.name}}</h3>
 <a routerLink="" style="color:gray;font-size:14px">Brand: <span style="color:#418ec4">{{product.brand}} </span> </a>
 <hr>
-<h3 style="color:#418ec4"><b>AED {{product.saleprice}} </b></h3>
+<h3 style="color:#418ec4" *ngIf= "product.saleprice.length === 1"><b>AED {{product.saleprice}} </b></h3>
+<h3 style="color:#418ec4" *ngIf= "product.saleprice.length > 1 && product.minimumPrice !== undefined && product.maximumPrice !==undefined"><b>AED {{product.minimumPrice}} - AED {{product.maximumPrice}} </b></h3>
 <p style="font-size:14px">Status: <span style="color:lightgreen">Only left {{product.salequantity - product.solditems}} in the stock</span> </p>
 <div innerHTML="{{product.features}}"></div>
 <hr>
+<br>
+<div class="row">
+    <div class="col-12">
+        <div *ngFor="let cimage of product.cimage;let i = index" class="" style="float:left">
+            
+                <button class="btn rounded-0"  (click)="showprice(product.saleprice[i])"><img src="assets/productsimages/{{cimage.filename}}" style="width:100px;height:100px" alt=""></button>
+         
+            
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+    <p *ngIf="dgcapacity !== undefined" style="color:gray;font-size:14px">Digital storage capacity: <span style="color:#418ec4">{{dgcapacity}}</span></p>
+<div *ngIf="product.cimage.length > 1">
+    <div *ngFor = "let capacity of product.capacity; let i = index" class="mr-2 mt-4"  style="border:1px solid gray;float:left">
+        <button class="btn btn-sm cap rounded-0 "  (click)="showcapacityprice(product.saleprice[i],product.cimage[i],capacity)">{{capacity}}</button>
+        </div>
+</div>
+        
+    </div>
+</div>
+
+<br>
 <div class="row">
     <div class="col-md-2 mt-1">
             
@@ -43,7 +73,7 @@
        
             <a routerLink="" style="font-size:30px;color: #418ec4" class="mr-2"><i class="fa fa-heart" aria-hidden="true"></i></a>
 <a routerLink="" style="font-size:30px;color: #418ec4" class="mr-2"><i class="fa fa-bar-chart" aria-hidden="true"></i></a>
-    </div>
+    </div> <br>
 </div>
 <hr>
 <p style="font-size:14px">Categories: <a routerLink="">{{product.Brand}}</a>, <a routerLink="">{{product.subcategory}}</a>,<a routerLink="">{{product.category}}</a></p>

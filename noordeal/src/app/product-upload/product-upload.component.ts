@@ -21,6 +21,8 @@ export class ProductUploadComponent implements OnInit {
   name;
   brand;
   price;
+  minimumPrice;
+  maximumPrice;
   quantity;
   color;
   capacity;
@@ -46,10 +48,18 @@ export class ProductUploadComponent implements OnInit {
   downloadable;
   regularprice;
   saleprice;
+  salepriceColor;
+  regularpriceColor;
+  salequantityColor;
+  solditemsColor;
   allregularprice = [];
   allsaleprice = [];
   allsalequantity = [];
   allsolditems = [];
+  allregularpriceColor = [];
+  allsalepriceColor = [];
+  allsalequantityColor = [];
+  allsolditemsColor = [];
   allcapacity = [];
   salequantity;
   solditems;
@@ -76,6 +86,8 @@ export class ProductUploadComponent implements OnInit {
     this.gsubcat2 = this.uploadpage.subcat2;
     this.ggbrand = this.uploadpage.brand;
     this.gcolor = this.uploadpage.color;
+    this.cables = this.uploadpage.cable;
+    this.dgcapacity = this.uploadpage.capacity;
     console.log(this.gcat, this.gsubcat1, this.gsubcat2, this.ggbrand, this.gcolor);
     });
     this.prodservice.getcategories().subscribe(data => {
@@ -86,6 +98,8 @@ oncoverupload(e){
 this.cimage = e.target.files;
 console.log(this.cimage);
 }
+
+
   onFileChanged(e){
     this.images = e.target.files;
     console.log(this.images);
@@ -120,6 +134,39 @@ console.log(this.cimage);
     this.allsolditems.push(this.solditems);
     console.log(this.allsolditems);
     this.solditems = '';
+    }
+  }
+
+
+  addsalespriceColor(){
+    if (this.salepriceColor !== undefined && this.salepriceColor !== ''){
+    this.allsalepriceColor.push(this.salepriceColor);
+    console.log(this.allsalepriceColor);
+    this.salepriceColor = '';
+    }
+  }
+
+  addregularpriceColor(){
+    if (this.regularpriceColor !== undefined && this.regularpriceColor !== ''){
+      this.allregularpriceColor.push(this.regularpriceColor);
+      console.log(this.allregularpriceColor);
+      this.regularpriceColor = '';
+    }
+  }
+
+  addsalequantityColor(){
+    if (this.salequantityColor !== undefined && this.salequantityColor !== ''){
+      this.allsalequantityColor.push(this.salequantityColor);
+      console.log(this.allsalequantityColor);
+      this.salequantityColor = '';
+    }
+  }
+
+  addsolditemsColor(){
+    if (this.solditemsColor !== undefined && this.solditemsColor !== ''){
+    this.allsolditemsColor.push(this.solditemsColor);
+    console.log(this.allsolditemsColor);
+    this.solditemsColor = '';
     }
   }
 
@@ -187,22 +234,11 @@ console.log(this.ptype);
     this.ucategory = this.category;
     this.subcategory1 = this.subcat1;
     this.subcategory2 = this.subcat2;
-    console.log(this.name);
-    console.log(this.brand);
-    console.log(this.subcategory1, this.subcategory2, this.category);
-    console.log(this.features);
-    console.log(this.description);
-    console.log(this.images);
-    console.log(this.cimage);
-    console.log(this.taxstatus);
-    console.log(this.taxclass);
-    console.log(this.capacity);
-    console.log(this.regularprice);
     this.prodservice.upload(this.name, this.brand,
     this.features, this.description, this.images, this.ucategory, this.subcategory1, this.subcategory2,
-    this.cimage, this.saleprice, this.salequantity, this.regularprice, this.taxclass, this.taxstatus,
-    this.downloadable, this.virtual, this.ptype, this.cable, this.ram, this.color, this.capacity, this.warranty,
-    this.upc, this.solditems).subscribe(data => {
+    this.cimage, this.allsaleprice, this.allsalequantity, this.allregularprice, this.taxclass, this.taxstatus,
+    this.downloadable, this.virtual, this.ptype, this.cable, this.color, this.allcapacity, this.warranty,
+    this.upc, this.allsolditems, this.minimumPrice, this.maximumPrice).subscribe(data => {
       this.data = data;
       if (this.data.success === true){
         this.name = '';
@@ -219,10 +255,10 @@ console.log(this.ptype);
         this.ptype = '';
         this.virtual = '';
         this.downloadable = '';
-        this.regularprice = '';
-        this.saleprice = '';
-        this.salequantity = '';
-        this.solditems = '';
+        this.allregularprice = [];
+        this.allsaleprice = [];
+        this.allsalequantity = [];
+        this.allsolditems = [];
         this.taxstatus = '';
         this.taxclass = '';
         this.cimage = [];

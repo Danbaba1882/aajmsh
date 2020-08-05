@@ -198,8 +198,8 @@
                     <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                     <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                      
-                    <div  *ngFor="let cimages of product.cimage">
-                        <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
+                    <div  *ngFor="let cimages of product.cimage; let first = first">
+                        <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
                      </div>
                      
                      

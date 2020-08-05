@@ -26,6 +26,8 @@ const product = new schema({
     cable:[],
     ptype: String,
     cimage: [],
+    minimumPrice: Number,
+    maximumPrice: Number,
     date: {type: Date,default: Date.now()}
 })
 

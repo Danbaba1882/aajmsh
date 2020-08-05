@@ -11,9 +11,7 @@ export class LoginComponent implements OnInit {
   constructor(private d: DashboardService) { }
 
   ngOnInit(): void {
-    this.d.getlll().subscribe(data => {
-      console.log(data);
-    });
+
   }
 
 }

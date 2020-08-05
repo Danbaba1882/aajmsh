@@ -12,6 +12,7 @@ cartstorage = localStorage;
 carray;
 id;
 i;
+total = 0;
 index;
 parray;
   constructor(private cartservice: CartService) { }
@@ -49,6 +50,7 @@ parray;
 
   ngOnInit(): void {
     this.cartitems = this.cartservice.getItemss();
+    console.log(this.cartitems);
   }
 
 }

@@ -26,6 +26,7 @@ noordeal.use('/*', express.static(__dirname+'/noordeal/dist/testtt/index.html'))
 
 noordeal.get('/api/*', async function(req,res){
     console.log('from upload page');
+    
     // sidebar component
     const allproducts = await Product.find({});
     const categories = await Category.find({});
@@ -33,6 +34,8 @@ noordeal.get('/api/*', async function(req,res){
     const subcat2 = await Subcategory2.find({});
     const brand = await Brand.find({});
     const color = await Color.find({});
+    const capacity = await Capacity.find({});
+    const cable = await Cable.find({});
     const listers = await Lister.find({});
 
     // products category
@@ -119,7 +122,7 @@ noordeal.get('/api/*', async function(req,res){
     pca, net, pink, dslr, xes, wear, chargers, crac, speakers,
     cables, pb, snscot, meles, lap, desc, ht, proj, vgc,
      wch, mpch, wrch, swatch, sband, cch, hol, wandb, ebie, oeoe, khp, pcgh, mouse, kb, mon, mb,
-    proc, ram, hd, pd, cc, pcs, stv, ctv, fktv, ltv, otv, ps, xb, gc,ga,
+    proc, ram, hd, pd, cc, pcs, stv, ctv, fktv, ltv, otv, ps, xb, gc,ga, capacity, cable,
     iphone, nokia, nubia,asus,oneplus,amazfit,xiaomi,samsung,huawei,blackshark,lenovo,oppo,honor,realme
     });
 })
@@ -208,7 +211,9 @@ noordeal.post('/api/upload', upload.fields([{name:'images'}, {name: 'cimages'}])
         capacity: req.body.capacity,
         cable: req.body.cable,
         ptype: req.body.ptype,
-        cimage: req.files.cimages
+        cimage: req.files.cimages,
+        minimumPrice: req.body.minimumPrice,
+        maximumPrice: req.body.maximumPrice
     })
 
     await Product.create(product).then((p)=>{

@@ -9,6 +9,11 @@ section {
 }
 
 
+.capacity{
+    color:#418ec4;
+    border: 1px solid #418ec4;
+}
+
 section .section-title {
     text-align: center;
     color: #007b5e;

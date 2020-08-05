@@ -54,11 +54,15 @@ cf;
   }
 
   addcable(){
-
+this.dashboard.addcable(this.cable).subscribe( data => {
+console.log(data);
+});
   }
 
   addcapacity(){
-
+this.dashboard.addcapacity(this.capacity).subscribe(data => {
+  console.log(data);
+});
   }
 
     showFlash(){
