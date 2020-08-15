@@ -16,7 +16,7 @@
               <img src="assets/IMAGES/aslogo.png" style="width:100%" alt="">
           </div>
           <div class="col-md-6">
-              <div class="input-group md-form form-sm form-2 pl-0" style="padding-top:50px;">
+              <div class="input-group mb-2 md-form form-sm form-2 pl-0" style="padding-top:50px;">
                   <input class="form-control my-0 py-1 amber-border rounded-0" type="text" placeholder="Search" aria-label="Search">
                   <div class="input-group-append">
                     <span class="input-group-text amber rounded-0 lighten-3" style="color:white;background-color:#418ec4" id="basic-text1"><i class="fa fa-search rounded-0 text-grey"
@@ -26,15 +26,14 @@
                 
           </div>
           <div class="col-md-3 lists" style="padding-top:55px;float: right">
-<ul style="list-style:none;" class="">
-  <li><a routerLink="" style="color:#418ec4" class="mr-2"><h4><i class="fa fa-heart" aria-hidden="true"></i></h4></a></li>
-  <li><h4><a routerLink="/cart" style="color:#418ec4" (click)="gotocart()" class="mr-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h4>
+<ul style="list-style:none;" class="lrcw">
+  <li><a routerLink="" style="color:#418ec4" class="mr-2"><h6><i class="fa fa-heart" aria-hidden="true"></i></h6></a></li>
+  <li><h6><a routerLink="/cart" style="color:#418ec4" (click)="gotocart()" class="mr-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h6>
   </li>
-  <li><h4 class="mr-2" style="color:#418ec4"><i class="fa fa-user-circle" aria-hidden="true"></i></h4>
-    
-  </li>
-  <li><a routerLink="/login" style="color:#418ec4"> <h5>Login |</h5> </a></li>
-  <li><a routerLink="/register" style="color:#418ec4"> <h5> Register</h5> </a></li>
+  
+  <li><a routerLink="/login" style="color:#418ec4"> <h6>Login </h6> </a></li>
+  <li><a routerLink="/register" style="color:#418ec4"> <h6> Register</h6> </a></li>
+
 </ul>
 
           </div>
@@ -44,19 +43,15 @@
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler max" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="line"></span> 
         <span class="line"></span> 
         <span class="line"></span>
       </button>
       
-    <a class="navbar-brand" routerLink="/"><img src="assets/IMAGES/aslogo.png" style="margin-right:-20px" alt=""></a>
-    <div class="phones" style="display:none">
-        <a routerLink="" style="color:#418ec4;font-size: 20px" class=""><i class="fa fa-heart" aria-hidden="true"></i></a>
-        <a routerLink="/cart" style="color:#418ec4;font-size: 20px" class="ml-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-        <a routerLink="" style="color:#418ec4;font-size: 20px" class="ml-2"><i class="fa fa-user-circle " aria-hidden="true"></i></a>
        
-    </div>
+    <a class="navbar-brand" routerLink="/"><img src="assets/IMAGES/aslogo.png" style="margin-right:-20px" alt=""></a>
+   
      <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         
@@ -214,17 +209,12 @@
 
       </ul>
     </div>
-    <br>
-    <form class="form-inline" style="display:none">
-      <div class="row">
-        <div class="col-10">
-            <input class="form-control rounded-0" style="float: right;width:100%;padding-right: 0px" type="search" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="col-2">
-            <button class="btn btn-md rounded-0" style="padding-left:0px;float: left;width:100%" type="submit" style="background-color:#418ec4;color:white"><i class="fa fa-search rounded-0 text-grey"
-              aria-hidden="true"></i></button>
-        </div>
-      </div>
-      
-    </form>
+    <div class="phones d-flex justify-content-end" style="float: right !important;">
+        <a routerLink="" style="color:#343a40;font-size: 20px" class=""><i class="fa fa-heart" aria-hidden="true"></i></a>
+        <a routerLink="/cart" style="color:#343a40;font-size: 20px" class="ml-2 mr-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+       <a routerLink="/login" style="color:#343a40">Login</a>
+  <a routerLink="/register" style="color:#343a40"> Register</a>
+    </div>
+   
+   
   </nav>

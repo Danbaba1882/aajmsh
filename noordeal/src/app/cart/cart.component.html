@@ -5,78 +5,161 @@
 <hr>
 
 
-
-        <table class="table table-borderless table-dark big">
-            <thead style="background-color:#418ec4; color:white">
-              <tr>
-                
-                <th scope="col">PRODUCT</th>
-                <th scope="col">PRICE</th>
-                <th scope="col">QUANTITY</th>
-                <th scope="col"> SUBTOTAL</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let item of cartitems">
-              <tr>
-                
-                <td> 
+<div class="big">
+    <div class="row">
+        <div class="col-md-8">
+            <div *ngFor="let item of cartitems">
                     <div class="row">
-                        <div class="col-2">
+                            <div class="col-md-2">
                                 <img src="assets/productsimages/{{item.cimage.filename}}" style="width:100px;height:100px" alt="">
-                        </div>
-                        <div class="col-9">
-                            <p class="pl-4">{{item.name}} </p>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="">{{item.name}} </p>
+                                <input type="number" name="" style="width:100px; height: 40px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control max" id="">
                                 
-                        </div>
-                    </div>
-                </td>
-                
-                <td>{{item.saleprice}}</td>
-                <td><input type="number" name="" style="width:150px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control" id=""></td>
-                <td> {{item.saleprice * item.quantity}}</td>
-                <td><a (click)="deleteitem(item)" class="delete"><i style="color:white" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
-                <hr style="background-color:white">  
-            </tr>
+                                <p class="mt-2"><b>Unit Price: </b>{{item.saleprice}}</p>
+                                <p style="margin-top: 5px !important"><b>Total Price: </b>{{item.saleprice * item.quantity}}</p>
+                                <button (click)="deleteitem(item)" class="btn btn-sm btn-danger rounded-0"><i style="" class="fa fa-trash delete" aria-hidden="true"></i> Remove</button>
+                            </div>
+                            <div class="col-md-2 min">
+                                <input type="number" name="" style="width:100px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control" id="">
+                            </div>
 
-          
-
-            </tbody>
-          </table>
-
-
-          <table class="table table-borderless table-dark small">
-                <thead style="background-color:#418ec4; color:white">
-                  <tr>
-                    
-                    <th scope="col">PRODUCT</th>
-                    <th scope="col">QUANTITY</th>
-                    <th style="background-color:#418ec4" scope="col" sty></th>
-                  </tr>
-                </thead>
-                <tbody *ngFor="let item of cartitems">
-                  <tr>
-                    
-                    <td> 
-                        
-                                    <img src="{{item.image}}" style="width:100px;height:100px" alt=""><br>
                             
-                                   <P>{{item.name}}</P> 
-                                   <p style="color:#418ec4">PRICE: <span style="color:white">{{item.price}}</span></p>  
-                                    <p style="color:#418ec4">SUBTOTAL: <span style="color:white">{{item.price * item.quantity}}</span></p>
+        
+                        </div>
+                        <hr>
+            </div>
 
-                         
-                    </td>
-                    
-                    <td><input type="number" name="" style="width:50px" value="{{item.quantity}}" (keyup)="onKey($event, item)" class="form-control" id=""></td>
-                    <td><a (click)="deleteitem(item)" class="delete"><i style="color:white" class="fa fa-trash delete" aria-hidden="true"></i></a></td>
-                    <hr style="background-color:white">  
-                </tr>
+        </div>
+        <div class="col-md-4">
+                
+                            <div class="card rounded-0 bg-light border-0">
+                                <div class="container-fluid">
+                                    <div class="row mt-4">
+                                        <div class="col-6"> <p><b>Subtotal</b></p></div>
+                                        <div class="col-6">AED 4567</div>
+                                    </div>
+                                    <div class="row">
+                                            <div class="col-6"> <p><b>Shipping</b></p></div>
+                                            <div class="col-6">AED 4567</div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                                <div class="col-6"> <p><b>Total</b></p></div>
+                                                <div class="col-6">AED 4567</div>
+                                            </div>
+                                        
+                                        <a routerLink="/ckeckout" style="background-color:#418ec4;color:white" class="mt-4 mb-4 rounded-0 form-control btn btn-md">PROCEED TO CHECKOUT</a>
+                                
+                                </div>
+                                </div>
+                        
+                                <div class="card rounded-0 border-0">
+                                    <div class="container-fluid">
+                                            <h5 class="pt-2 mt-4">Calculate shipping</h5>
+                                            <form action="">
+                                                <div class="form-group">
+                                                    <label for="" class="label-control">Country</label>
+                                                    <input type="text" class="form-control rounded-0">
+                                                </div>
+                                    
+                                                <div class="form-group">
+                                                        <label for="" class="label-control">State</label>
+                                                        <input type="text" class="form-control rounded-0">
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <label for="" class="label-control">Town/city</label>
+                                                            <input type="text" class="form-control rounded-0">
+                                                        </div>
+                                    
+                                                        <button type="submit" style="background-color:#418ec4;color:white" class="btn form-control rounded-0 mb-2 btn-md">UPDATE</button>
+                                            </form>
+                                    </div>
+                                        
+                                    </div>        
+                   
+        </div>
+    </div>
     
-              
+</div>
+
+<div class="small">
+    <div class="row">
+        <div class="col-md-12">
+                <div *ngFor="let item of cartitems">
+                        <div class="row">
+                                <div class="col-md-2">
+                                    <img src="assets/productsimages/{{item.cimage.filename}}" style="width:100px;height:100px" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="">{{item.name}} </p>
+                                    <input type="number" name="" style="width:100px;height: 30px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control max" id="">
+                                    <p class="mt-2"><b>Unit Price: </b>{{item.saleprice}}</p>
+                                    <p style="margin-top: 2px !important"><b>Total Price: </b>{{item.saleprice * item.quantity}}</p>
+                                    <button (click)="deleteitem(item)" class="btn btn-sm btn-danger rounded-0"><i style="" class="fa fa-trash delete" aria-hidden="true"></i> Remove</button>
+                                </div>
+                                <div class="col-md-2 min">
+                                    <input type="number" name="" style="width:100px" value="{{item.quantity}}" (change)="onKey($event, item)" (keyup)="onKey($event, item)" class="form-control" id="">
+                                </div>
     
-                </tbody>
-              </table>
+                                
+            
+                            </div>
+                            <hr>
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+                <div class="card rounded-0 bg-light border-0">
+                        <div class="container-fluid">
+                            <div class="row mt-4">
+                                <div class="col-6"> <p><b>Subtotal</b></p></div>
+                                <div class="col-6">AED 4567</div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-6"> <p><b>Shipping</b></p></div>
+                                    <div class="col-6">AED 4567</div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                        <div class="col-6"> <p><b>Total</b></p></div>
+                                        <div class="col-6">AED 4567</div>
+                                    </div>
+                                
+                                <a routerLink="/ckeckout" style="background-color:#418ec4;color:white" class="mt-4 mb-4 rounded-0 form-control btn btn-md">PROCEED TO CHECKOUT</a>
+                        
+                        </div>
+                        </div>
+                
+                        <div class="card rounded-0 border-0">
+                            <div class="container-fluid">
+                                    <h5 class="pt-2 mt-4">Calculate shipping</h5>
+                                    <form action="">
+                                        <div class="form-group">
+                                            <label for="" class="label-control">Country</label>
+                                            <input type="text" class="form-control rounded-0">
+                                        </div>
+                            
+                                        <div class="form-group">
+                                                <label for="" class="label-control">State</label>
+                                                <input type="text" class="form-control rounded-0">
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="" class="label-control">Town/city</label>
+                                                    <input type="text" class="form-control rounded-0">
+                                                </div>
+                            
+                                                <button type="submit" style="background-color:#418ec4;color:white" class="btn form-control rounded-0 mb-2 btn-md">UPDATE</button>
+                                    </form>
+                            </div>
+                                
+                            </div>   
+        </div>
+    </div>
+</div>
+         
 
 
 <div class="row mt-2">
@@ -84,45 +167,6 @@
     <a routerLink="/" class="btn btn-lg rounded-0" style="background-color:#418ec4;color:white">CONTINUE SHOPPING</a>
     </div>
     
-</div>
-
-<div class="row mt-4">
-    <div class="col-md-4"></div>
-    <div class="card rounded-0 col-md-4">
-        <h5 class="pt-2">Calculate shipping</h5>
-        <form action="">
-            <div class="form-group">
-                <label for="" class="label-control">Country</label>
-                <input type="text" class="form-control rounded-0">
-            </div>
-
-            <div class="form-group">
-                    <label for="" class="label-control">State</label>
-                    <input type="text" class="form-control rounded-0">
-                </div>
-                <div class="form-group">
-                        <label for="" class="label-control">Town/city</label>
-                        <input type="text" class="form-control rounded-0">
-                    </div>
-
-                    <button type="submit" style="background-color:#418ec4;color:white" class="btn rounded-0 mb-2 btn-lg">UPDATE</button>
-        </form>
-    </div>
-    <div class="col-md-4">
-        <div class="card rounded-0" style="background-color:lightgray">
-            <p class="pt-2 pl-2">Subtotal        AED 4567</p>
-            <hr class="pl-2">
-            <p class="pl-2">Shipping</p>
-            <p class="pl-2">Flat rate       AED 7890</p>
-            <small class="pl-2">Shipping options will be updated during checkout</small>
-            <hr class="pl-2">
-            <h4 class="mb-2">Total AED 45,980</h4>
-             
-    </div>
-    <a routerLink="/ckeckout" class="mt-4"><button style="background-color:#418ec4;color:white" class="form-control rounded-0 btn btn-lg">PROCEED TO CHECKOUT</button></a>
-           
-</div>
-
 </div>
 </div>
 <app-footer></app-footer>

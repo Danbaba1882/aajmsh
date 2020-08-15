@@ -25,9 +25,49 @@ a{
 
   }
 
+  
   .navbar-brand{
     display: none;
   }
+
+  @media(min-width: 577px){
+    .navbar-toggler .line{
+      width: 100%;
+      float: right;
+      height: 2px;
+      background-color: #343a40 !important;
+      color:black !important;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media(max-width: 576px){
+    .navbar-toggler .line{
+      width: 100%;
+      float: right;
+      height: 2px;
+      background-color: #418ec4 !important;
+      color:#418ec4 !important;
+      margin-bottom: 5px;
+    }
+  }
+
+  @media(min-width: 577px) and (max-width: 991px){
+    .phones{
+      display: block !important;
+    }
+
+    .lrcw{
+      display: none !important;
+    }
+  }
+
+ @media(min-width: 992px){
+   .phones{
+     display: none !important;
+   }
+
+ }
 
   .dropdown:hover > .dropdown-menu{
     display: block;
@@ -105,13 +145,4 @@ a{
   height: 34px;
   background-color: transparent;
   border:none;
-}
-
-.navbar-toggler .line{
-  width: 100%;
-  float: right;
-  height: 2px;
-  background-color: #418ec4 !important;
-  color:#418ec4;
-  margin-bottom: 5px;
 }

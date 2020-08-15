@@ -2,7 +2,7 @@
 color:#cc5500 !important;
 }
 
-@media(max-width:576px){
+@media(max-width:990px){
 .small{
     display:block !important;
 }
@@ -10,11 +10,31 @@ color:#cc5500 !important;
     display:none !important;
 }
 }
-@media(min-width:576px){
+@media(min-width:991px){
     .small{
         display:none;
     }
     .big{
         display:block;
+        margin-top:30px;
+    }
+}
+
+@media (max-width: 767px){
+    .max{
+        display: block !important;
+    }
+    .min{
+        display: none !important;
+    }
+}
+
+
+@media (min-width: 768px){
+    .max{
+        display: none !important;
+    }
+    .min{
+        display: block !important;
     }
 }
