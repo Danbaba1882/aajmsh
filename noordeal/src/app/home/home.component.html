@@ -171,14 +171,18 @@
                   <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                   <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                    
-                  <div *ngFor="let cimages of product.cimage">
-                      <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%;" alt=""> <br>
-                   </div>
+                  <div  *ngFor="let cimages of product.cimage; let first = first">
+                    <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+                 </div>
                         
                             <a [routerLink]="['/product/', product._id]" style="font-size:14px"  class="mr-2 hitems text-center">{{ product.name }}</a>
+                            <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
                             
-                            <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
               </div>    
              </div>
             
@@ -207,9 +211,13 @@
                       {{product.name}}
                       
                      </a>
-                            
-                     <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+                     <div *ngIf="product.saleprice.length === 1 ">
+                      <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                    </div>
+                    
+     <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+     </div>
                  </div>
                  
                </div>
@@ -229,16 +237,21 @@
     <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
     <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
      
-    <div *ngFor="let cimages of product.cimage">
-        <img src="assets/productsimages/{{cimages.filename}}"  class="img-hom" style="width:100%" alt=""> <br>
-    </div>
+    <div  *ngFor="let cimages of product.cimage; let first = first">
+      <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+   </div>
      
      <a [routerLink]="['/product/', product._id]" class="hitems">
       {{product.name}}
       
      </a >
-     <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+     <div *ngIf="product.saleprice.length === 1 ">
+      <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+    </div>
+    
+<div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+</div>       
      
 </div>
                    
@@ -287,17 +300,20 @@
                             <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                             <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                              
-                            <div *ngFor="let cimages of product.cimage">
-                                <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-                                
-                               
-                             </div>
+                            <div  *ngFor="let cimages of product.cimage; let first = first">
+                              <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+                           </div>
                              <a [routerLink]="['/product/', product._id]" class="hitems">
                                 {{product.name}}
                                     
                                </a>
-                               <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-                  
+                               <div *ngIf="product.saleprice.length === 1 ">
+                                <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                              </div>
+                              
+               <div *ngIf="product.saleprice.length > 1 ">
+  <p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+               </div>
                          </div>
                         
                        </div>
@@ -318,9 +334,9 @@
                             <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                             <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                              
-                            <div *ngFor="let cimages of product.cimage">
-                                <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-                             </div>
+                            <div  *ngFor="let cimages of product.cimage; let first = first">
+                              <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+                           </div>
                              
                             
                             <a [routerLink]="['/product/', product._id]" class="hitems">
@@ -349,16 +365,21 @@
                             <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
                             <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                              
-                            <div *ngFor="let cimages of product.cimage">
-                                <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-                             </div>
+                            <div  *ngFor="let cimages of product.cimage; let first = first">
+                              <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+                           </div>
     
                              <a [routerLink]="['/product/', product._id]" class="hitems">
                               {{product.name}}
                                   
                              </a>
-                             <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-                       
+                             <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
                          </div>
                         
                        </div>
@@ -409,17 +430,21 @@
               <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
               <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">2 items in stcok</button>
                 
-              <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-               </div>
-              
+              <div  *ngFor="let cimages of product.cimage; let first = first">
+                <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+             </div>
               
               <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
-               <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+               <div *ngIf="product.saleprice.length === 1 ">
+                <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+              </div>
+              
+<div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+</div>
            </div>
           
          </div>
@@ -440,16 +465,21 @@
               <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
               <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                
-              <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-               </div>
+              <div  *ngFor="let cimages of product.cimage; let first = first">
+                <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+             </div>
               
               <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
-               <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+               <div *ngIf="product.saleprice.length === 1 ">
+                <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+              </div>
+              
+<div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+</div>
            </div>
           
          </div>
@@ -470,17 +500,21 @@
               <button class="btn btn-sm btn-danger rounded-0" *ngIf="product.salequantity === 0" style="float:right;">Out of Stock</button>
               <button class="btn btn-sm btn-success rounded-0" *ngIf="product.salequantity !== 0" style="float:right;">{{product.salequantity-product.solditems}} items in stcok</button>
                
-              <div *ngFor="let cimages of product.cimage">
-                  <img src="assets/productsimages/{{cimages.filename}}"  style="width:100%;">
-               </div>
+              <div  *ngFor="let cimages of product.cimage; let first = first">
+                <img src="assets/productsimages/{{cimages.filename}}"  *ngIf="first" style="width:100%;">
+             </div>
                
                <a [routerLink]="['/product/', product._id]" class="hitems">
                 {{product.name}}
                     
                </a>
-
-               <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
-             
+               <div *ngIf="product.saleprice.length === 1 ">
+                <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+              </div>
+              
+<div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+</div>
            </div>
           
          </div>

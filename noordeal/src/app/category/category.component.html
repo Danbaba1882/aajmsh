@@ -25,7 +25,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -55,7 +61,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -87,7 +99,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -116,7 +134,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -145,7 +169,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -174,7 +204,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -203,7 +239,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>
@@ -232,7 +274,13 @@
                  
                       {{product.name}}
                  </a>
-                 <p style="color:#d9534f" class="prices" >AED {{product.saleprice}}  <span style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                  <div *ngIf="product.saleprice.length === 1 ">
+                              <p style="color:#dc3545" class="prices" >AED {{product.saleprice}}  <span *ngIf="product.regularprice" style="color:gray;font-size: 14px"> <del>AED {{product.regularprice}}</del></span></p>
+                            </div>
+                            
+             <div *ngIf="product.saleprice.length > 1 ">
+<p style="color:#dc3545" class="prices">{{product.minimumPrice}} - {{product.maximumPrice}}</p>
+             </div>
              
              </div>
         </div>

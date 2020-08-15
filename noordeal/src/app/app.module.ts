@@ -491,7 +491,10 @@ import { BrandComponent } from './brand/brand.component';
         path: 'brand/One-Plus',
         component: BrandComponent
       },
-    ])
+    ],
+    {
+      scrollPositionRestoration: 'enabled'
+    })
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
