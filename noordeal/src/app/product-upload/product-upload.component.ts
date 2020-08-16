@@ -230,6 +230,10 @@ console.log(this.ptype);
     };
   }
   uploadProduct(e){
+    if (this.maximumPrice === undefined && this.minimumPrice === undefined){
+      this.maximumPrice = 0;
+      this.minimumPrice = 0;
+    }
     this.brand = this.gbrand;
     this.ucategory = this.category;
     this.subcategory1 = this.subcat1;

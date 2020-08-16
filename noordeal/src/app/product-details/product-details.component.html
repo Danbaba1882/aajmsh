@@ -26,7 +26,7 @@
 <a routerLink="" style="color:gray;font-size:14px">Brand: <span style="color:#418ec4">{{product.brand}} </span> </a>
 <hr>
 <h3 style="color:#418ec4" *ngIf= "product.saleprice.length === 1"><b>AED {{product.saleprice}} </b></h3>
-<h3 style="color:#418ec4" *ngIf= "product.saleprice.length > 1 && product.minimumPrice !== undefined && product.maximumPrice !==undefined"><b>AED {{product.minimumPrice}} - AED {{product.maximumPrice}} </b></h3>
+<h3 style="color:#418ec4" *ngIf= "product.saleprice.length > 1 && product.minimumPrice !== undefined && product.maximumPrice !==undefined  && product.maximumPrice !==0 && product.minimumPrice !== 0"><b>AED {{product.minimumPrice}} - AED {{product.maximumPrice}} </b></h3>
 <p style="font-size:14px">Status: <span style="color:lightgreen">Only left {{product.salequantity - product.solditems}} in the stock</span> </p>
 <div innerHTML="{{product.features}}"></div>
 <hr>
