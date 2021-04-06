@@ -22,7 +22,7 @@
     "@angular/router": "~9.1.0",
     "@ckeditor/ckeditor5-angular": "^1.2.3",
     "@ckeditor/ckeditor5-build-classic": "^20.0.0",
-    "@ckeditor/ckeditor5-image": "^20.0.0",
+    "@ckeditor/ckeditor5-image": "^27.0.0",
     "@tinymce/tinymce-angular": "^3.6.0",
     "@types/jquery": "^3.5.0",
     "angular2-flash-messages": "^3.0.1",
